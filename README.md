@@ -4,13 +4,6 @@ A glassmorphism `userChrome.css` theme for Firefox: floating rounded content
 area, vertical tabs in a Zen-like style, smooth animations and several color
 palettes. Everything is plain CSS – no scripts, no extra software.
 
-> Screenshot: *add `screenshots/windrad.png` here*
-
-<!-- ![Windrad](screenshots/windrad.png) -->
-
-Companion project: **[Windrad Start](https://github.com/bishpop/windrad-start)** –
-a matching start page / new tab extension.
-
 ---
 
 ## Features
@@ -103,8 +96,8 @@ Set it to `true` to enable, `false` (or delete it) to disable.
 
 ## Colors
 
-The palette lives in section **9) FARBTHEMA** of `userChrome.css`
-(search for `Palette`). Replace the values and restart Firefox.
+The palette lives in section **9) COLOR THEME** of `userChrome.css`
+(search for `palette`). Replace the values and restart Firefox.
 
 ```css
 --wd-night:   #0f2a3a;   /* gradient, left            */
@@ -134,7 +127,7 @@ The second color (where the scrollbar fades to) is set in section
 | **Cherry Blossom** | `#1d1622` `#251a2a` `#2e1d31` `#361f33` | `#ffa3c4` | `#a8e6cf` | `#f6edf2` | `#22192a` |
 | **Graphite** | `#141618` `#181b1e` `#1c1f23` `#202327` | `#7aa2ff` | `#c6a0ff` | `#eceef1` | `#1a1d20` |
 
-> Preview: *add `screenshots/palettes.svg` here*
+![Windrad color palettes](screenshots/palettes.svg)
 
 ### Other settings you can change
 
