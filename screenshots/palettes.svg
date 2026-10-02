@@ -1,0 +1,294 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1192 1186" width="1192" height="1186" font-family="Segoe UI, system-ui, sans-serif" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpiNDBkZjJkNy1jZTYxLTRkYjMtOTliNC1iMzI1ZmJmYmQ0NWEAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaHZErlIWl9trW7oUhpRP3LUAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpkNDAwN2NkNS0xYjRmLTQ2ODEtYjQzNS1kOTJkZjRlZDM0NDJscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoqDe4uYNQXeH/UoVs3NQuswAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggq87WcriY6MK2YenrYAaX2JfhE0UkAxPvsKN0fks99b+kZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaAq3Ns3VmsLiEQT8znls9l0AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCDSzr7/bqSc17Dhb28AJYkbXnbccaAZmunj0VAmYjaVFGRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjIZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmI0MGRmMmQ3LWNlNjEtNGRiMy05OWI0LWIzMjVmYmZiZDQ1YS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjc3MjkxNjU4LTc2MjAtNGQyNC04NWIwLTAzZmRjMTgxOTMzOXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCrztZyuJjowrZh6etgBpfYl+ETRSQDE++wo3R+Sz31v6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggK8UIlKQMG5uCBfdujNXRdiVlbWRz98f5bKofz/aE4IaiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggxEnsWH/9cjcQKDhf0oFY/m+4tJEqX6f4CqfD0h/9qVB0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQEriXBOuDc+STPnsSnApS5Ymgpwh0pNkC1lVW6aQDFABTxniPAWd7FB1h/YSFsud0vlUGf+beIA7/7/2GGNWPGA=</c2pa:manifest></metadata>
+<defs>
+<linearGradient id="bg0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0f2a3a"/><stop offset=".45" stop-color="#1d2a4a"/><stop offset=".8" stop-color="#2c2144"/><stop offset="1" stop-color="#321f3c"/></linearGradient>
+<radialGradient id="gl0" cx="1" cy="0" r=".7"><stop offset="0" stop-color="rgba(224,80,106,0.10)"/><stop offset="1" stop-color="rgba(224,80,106,0.10)" stop-opacity="0"/></radialGradient>
+<linearGradient id="ck0" x1="0" y1="0" x2="1" y2="0"><stop offset=".1" stop-color="#ff7a95"/><stop offset=".5" stop-color="#eee7f6"/><stop offset=".9" stop-color="#4fe3e0"/></linearGradient>
+<linearGradient id="bg1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0b1f2a"/><stop offset=".45" stop-color="#0f2a33"/><stop offset=".8" stop-color="#12303a"/><stop offset="1" stop-color="#1a2f3f"/></linearGradient>
+<radialGradient id="gl1" cx="1" cy="0" r=".7"><stop offset="0" stop-color="rgba(80,230,170,0.12)"/><stop offset="1" stop-color="rgba(80,230,170,0.12)" stop-opacity="0"/></radialGradient>
+<linearGradient id="ck1" x1="0" y1="0" x2="1" y2="0"><stop offset=".1" stop-color="#5fe0a8"/><stop offset=".5" stop-color="#e6f4ef"/><stop offset=".9" stop-color="#8b9cff"/></linearGradient>
+<linearGradient id="bg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#16142b"/><stop offset=".45" stop-color="#1e1a3a"/><stop offset=".8" stop-color="#2a2048"/><stop offset="1" stop-color="#32213f"/></linearGradient>
+<radialGradient id="gl2" cx="1" cy="0" r=".7"><stop offset="0" stop-color="rgba(170,130,255,0.12)"/><stop offset="1" stop-color="rgba(170,130,255,0.12)" stop-opacity="0"/></radialGradient>
+<linearGradient id="ck2" x1="0" y1="0" x2="1" y2="0"><stop offset=".1" stop-color="#b18cff"/><stop offset=".5" stop-color="#eeeaf8"/><stop offset=".9" stop-color="#ff9ccf"/></linearGradient>
+<linearGradient id="bg3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1c1512"/><stop offset=".45" stop-color="#251a16"/><stop offset=".8" stop-color="#2e1d18"/><stop offset="1" stop-color="#351f1a"/></linearGradient>
+<radialGradient id="gl3" cx="1" cy="0" r=".7"><stop offset="0" stop-color="rgba(255,140,60,0.12)"/><stop offset="1" stop-color="rgba(255,140,60,0.12)" stop-opacity="0"/></radialGradient>
+<linearGradient id="ck3" x1="0" y1="0" x2="1" y2="0"><stop offset=".1" stop-color="#ff9a5c"/><stop offset=".5" stop-color="#f5ece6"/><stop offset=".9" stop-color="#ffd166"/></linearGradient>
+<linearGradient id="bg4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0a1418"/><stop offset=".45" stop-color="#0c1b22"/><stop offset=".8" stop-color="#0e212b"/><stop offset="1" stop-color="#112432"/></linearGradient>
+<radialGradient id="gl4" cx="1" cy="0" r=".7"><stop offset="0" stop-color="rgba(60,200,255,0.12)"/><stop offset="1" stop-color="rgba(60,200,255,0.12)" stop-opacity="0"/></radialGradient>
+<linearGradient id="ck4" x1="0" y1="0" x2="1" y2="0"><stop offset=".1" stop-color="#4cc9f0"/><stop offset=".5" stop-color="#e4f2f7"/><stop offset=".9" stop-color="#7b8cff"/></linearGradient>
+<linearGradient id="bg5" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d1622"/><stop offset=".45" stop-color="#251a2a"/><stop offset=".8" stop-color="#2e1d31"/><stop offset="1" stop-color="#361f33"/></linearGradient>
+<radialGradient id="gl5" cx="1" cy="0" r=".7"><stop offset="0" stop-color="rgba(255,170,200,0.12)"/><stop offset="1" stop-color="rgba(255,170,200,0.12)" stop-opacity="0"/></radialGradient>
+<linearGradient id="ck5" x1="0" y1="0" x2="1" y2="0"><stop offset=".1" stop-color="#ffa3c4"/><stop offset=".5" stop-color="#f6edf2"/><stop offset=".9" stop-color="#a8e6cf"/></linearGradient>
+<linearGradient id="bg6" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#141618"/><stop offset=".45" stop-color="#181b1e"/><stop offset=".8" stop-color="#1c1f23"/><stop offset="1" stop-color="#202327"/></linearGradient>
+<radialGradient id="gl6" cx="1" cy="0" r=".7"><stop offset="0" stop-color="rgba(255,255,255,0.06)"/><stop offset="1" stop-color="rgba(255,255,255,0.06)" stop-opacity="0"/></radialGradient>
+<linearGradient id="ck6" x1="0" y1="0" x2="1" y2="0"><stop offset=".1" stop-color="#7aa2ff"/><stop offset=".5" stop-color="#eceef1"/><stop offset=".9" stop-color="#c6a0ff"/></linearGradient>
+</defs>
+<rect width="1192" height="1186" fill="#0c0f14"/>
+<text x="24" y="52" fill="#eee7f6" font-size="28" font-weight="600">Windrad color palettes</text>
+<text x="24" y="76" fill="#eee7f6" fill-opacity=".55" font-size="14">Background gradient · Accent · 2nd color · Text · Panel</text>
+<g transform="translate(24,90)">
+<rect width="560" height="250" rx="18" fill="url(#bg0)"/>
+<rect width="560" height="250" rx="18" fill="url(#gl0)"/>
+<rect x=".5" y=".5" width="559" height="249" rx="18" fill="none" stroke="#fff" stroke-opacity=".12"/>
+<rect x="14" y="14" width="150" height="222" rx="12" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".1"/>
+<rect x="24" y="28" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="41" r="5" fill="#eee7f6" fill-opacity="0.5"/>
+<rect x="54" y="38" width="70" height="6" rx="3" fill="#eee7f6" fill-opacity="0.45"/>
+<rect x="24" y="62" width="130" height="26" rx="8" fill="#ff7a95" fill-opacity=".22" stroke="#ff7a95" stroke-opacity=".75"/>
+<rect x="27" y="69" width="3" height="12" rx="1.5" fill="#ff7a95"/>
+<circle cx="42" cy="75" r="5" fill="#eee7f6" fill-opacity="1"/>
+<rect x="54" y="72" width="62" height="6" rx="3" fill="#eee7f6" fill-opacity="0.9"/>
+<rect x="24" y="96" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="109" r="5" fill="#eee7f6" fill-opacity="0.5"/>
+<rect x="54" y="106" width="54" height="6" rx="3" fill="#eee7f6" fill-opacity="0.45"/>
+<rect x="24" y="130" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="143" r="5" fill="#eee7f6" fill-opacity="0.5"/>
+<rect x="54" y="140" width="46" height="6" rx="3" fill="#eee7f6" fill-opacity="0.45"/>
+<text x="186" y="44" fill="#eee7f6" font-size="17" font-weight="600">Windrad (default)</text>
+<text x="184" y="112" fill="url(#ck0)" font-size="62" font-weight="300" letter-spacing="-1">21:56</text>
+<rect x="186" y="128" width="350" height="30" rx="10" fill="#fff" fill-opacity=".06" stroke="#ff7a95" stroke-opacity=".55"/>
+<text x="200" y="148" fill="#eee7f6" fill-opacity=".6" font-size="12">Search with Google or enter address</text>
+<rect x="186" y="172" width="60" height="30" rx="8" fill="#ff7a95" stroke="#fff" stroke-opacity=".18"/>
+<text x="216" y="218" text-anchor="middle" fill="#eee7f6" fill-opacity=".7" font-size="10">Accent</text>
+<text x="216" y="232" text-anchor="middle" fill="#eee7f6" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#ff7a95</text>
+<rect x="258" y="172" width="60" height="30" rx="8" fill="#4fe3e0" stroke="#fff" stroke-opacity=".18"/>
+<text x="288" y="218" text-anchor="middle" fill="#eee7f6" fill-opacity=".7" font-size="10">2nd color</text>
+<text x="288" y="232" text-anchor="middle" fill="#eee7f6" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#4fe3e0</text>
+<rect x="330" y="172" width="60" height="30" rx="8" fill="#eee7f6" stroke="#fff" stroke-opacity=".18"/>
+<text x="360" y="218" text-anchor="middle" fill="#eee7f6" fill-opacity=".7" font-size="10">Text</text>
+<text x="360" y="232" text-anchor="middle" fill="#eee7f6" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#eee7f6</text>
+<rect x="402" y="172" width="60" height="30" rx="8" fill="#142636" stroke="#fff" stroke-opacity=".18"/>
+<text x="432" y="218" text-anchor="middle" fill="#eee7f6" fill-opacity=".7" font-size="10">Panel</text>
+<text x="432" y="232" text-anchor="middle" fill="#eee7f6" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#142636</text>
+<rect x="474" y="172" width="60" height="30" rx="8" fill="#0f2a3a" stroke="#fff" stroke-opacity=".18"/>
+<text x="504" y="218" text-anchor="middle" fill="#eee7f6" fill-opacity=".7" font-size="10">Background</text>
+<text x="504" y="232" text-anchor="middle" fill="#eee7f6" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#0f2a3a</text>
+</g>
+<g transform="translate(608,90)">
+<rect width="560" height="250" rx="18" fill="url(#bg1)"/>
+<rect width="560" height="250" rx="18" fill="url(#gl1)"/>
+<rect x=".5" y=".5" width="559" height="249" rx="18" fill="none" stroke="#fff" stroke-opacity=".12"/>
+<rect x="14" y="14" width="150" height="222" rx="12" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".1"/>
+<rect x="24" y="28" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="41" r="5" fill="#e6f4ef" fill-opacity="0.5"/>
+<rect x="54" y="38" width="70" height="6" rx="3" fill="#e6f4ef" fill-opacity="0.45"/>
+<rect x="24" y="62" width="130" height="26" rx="8" fill="#5fe0a8" fill-opacity=".22" stroke="#5fe0a8" stroke-opacity=".75"/>
+<rect x="27" y="69" width="3" height="12" rx="1.5" fill="#5fe0a8"/>
+<circle cx="42" cy="75" r="5" fill="#e6f4ef" fill-opacity="1"/>
+<rect x="54" y="72" width="62" height="6" rx="3" fill="#e6f4ef" fill-opacity="0.9"/>
+<rect x="24" y="96" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="109" r="5" fill="#e6f4ef" fill-opacity="0.5"/>
+<rect x="54" y="106" width="54" height="6" rx="3" fill="#e6f4ef" fill-opacity="0.45"/>
+<rect x="24" y="130" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="143" r="5" fill="#e6f4ef" fill-opacity="0.5"/>
+<rect x="54" y="140" width="46" height="6" rx="3" fill="#e6f4ef" fill-opacity="0.45"/>
+<text x="186" y="44" fill="#e6f4ef" font-size="17" font-weight="600">Aurora</text>
+<text x="184" y="112" fill="url(#ck1)" font-size="62" font-weight="300" letter-spacing="-1">21:56</text>
+<rect x="186" y="128" width="350" height="30" rx="10" fill="#fff" fill-opacity=".06" stroke="#5fe0a8" stroke-opacity=".55"/>
+<text x="200" y="148" fill="#e6f4ef" fill-opacity=".6" font-size="12">Search with Google or enter address</text>
+<rect x="186" y="172" width="60" height="30" rx="8" fill="#5fe0a8" stroke="#fff" stroke-opacity=".18"/>
+<text x="216" y="218" text-anchor="middle" fill="#e6f4ef" fill-opacity=".7" font-size="10">Accent</text>
+<text x="216" y="232" text-anchor="middle" fill="#e6f4ef" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#5fe0a8</text>
+<rect x="258" y="172" width="60" height="30" rx="8" fill="#8b9cff" stroke="#fff" stroke-opacity=".18"/>
+<text x="288" y="218" text-anchor="middle" fill="#e6f4ef" fill-opacity=".7" font-size="10">2nd color</text>
+<text x="288" y="232" text-anchor="middle" fill="#e6f4ef" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#8b9cff</text>
+<rect x="330" y="172" width="60" height="30" rx="8" fill="#e6f4ef" stroke="#fff" stroke-opacity=".18"/>
+<text x="360" y="218" text-anchor="middle" fill="#e6f4ef" fill-opacity=".7" font-size="10">Text</text>
+<text x="360" y="232" text-anchor="middle" fill="#e6f4ef" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#e6f4ef</text>
+<rect x="402" y="172" width="60" height="30" rx="8" fill="#10262a" stroke="#fff" stroke-opacity=".18"/>
+<text x="432" y="218" text-anchor="middle" fill="#e6f4ef" fill-opacity=".7" font-size="10">Panel</text>
+<text x="432" y="232" text-anchor="middle" fill="#e6f4ef" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#10262a</text>
+<rect x="474" y="172" width="60" height="30" rx="8" fill="#0b1f2a" stroke="#fff" stroke-opacity=".18"/>
+<text x="504" y="218" text-anchor="middle" fill="#e6f4ef" fill-opacity=".7" font-size="10">Background</text>
+<text x="504" y="232" text-anchor="middle" fill="#e6f4ef" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#0b1f2a</text>
+</g>
+<g transform="translate(24,364)">
+<rect width="560" height="250" rx="18" fill="url(#bg2)"/>
+<rect width="560" height="250" rx="18" fill="url(#gl2)"/>
+<rect x=".5" y=".5" width="559" height="249" rx="18" fill="none" stroke="#fff" stroke-opacity=".12"/>
+<rect x="14" y="14" width="150" height="222" rx="12" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".1"/>
+<rect x="24" y="28" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="41" r="5" fill="#eeeaf8" fill-opacity="0.5"/>
+<rect x="54" y="38" width="70" height="6" rx="3" fill="#eeeaf8" fill-opacity="0.45"/>
+<rect x="24" y="62" width="130" height="26" rx="8" fill="#b18cff" fill-opacity=".22" stroke="#b18cff" stroke-opacity=".75"/>
+<rect x="27" y="69" width="3" height="12" rx="1.5" fill="#b18cff"/>
+<circle cx="42" cy="75" r="5" fill="#eeeaf8" fill-opacity="1"/>
+<rect x="54" y="72" width="62" height="6" rx="3" fill="#eeeaf8" fill-opacity="0.9"/>
+<rect x="24" y="96" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="109" r="5" fill="#eeeaf8" fill-opacity="0.5"/>
+<rect x="54" y="106" width="54" height="6" rx="3" fill="#eeeaf8" fill-opacity="0.45"/>
+<rect x="24" y="130" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="143" r="5" fill="#eeeaf8" fill-opacity="0.5"/>
+<rect x="54" y="140" width="46" height="6" rx="3" fill="#eeeaf8" fill-opacity="0.45"/>
+<text x="186" y="44" fill="#eeeaf8" font-size="17" font-weight="600">Lavender Night</text>
+<text x="184" y="112" fill="url(#ck2)" font-size="62" font-weight="300" letter-spacing="-1">21:56</text>
+<rect x="186" y="128" width="350" height="30" rx="10" fill="#fff" fill-opacity=".06" stroke="#b18cff" stroke-opacity=".55"/>
+<text x="200" y="148" fill="#eeeaf8" fill-opacity=".6" font-size="12">Search with Google or enter address</text>
+<rect x="186" y="172" width="60" height="30" rx="8" fill="#b18cff" stroke="#fff" stroke-opacity=".18"/>
+<text x="216" y="218" text-anchor="middle" fill="#eeeaf8" fill-opacity=".7" font-size="10">Accent</text>
+<text x="216" y="232" text-anchor="middle" fill="#eeeaf8" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#b18cff</text>
+<rect x="258" y="172" width="60" height="30" rx="8" fill="#ff9ccf" stroke="#fff" stroke-opacity=".18"/>
+<text x="288" y="218" text-anchor="middle" fill="#eeeaf8" fill-opacity=".7" font-size="10">2nd color</text>
+<text x="288" y="232" text-anchor="middle" fill="#eeeaf8" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#ff9ccf</text>
+<rect x="330" y="172" width="60" height="30" rx="8" fill="#eeeaf8" stroke="#fff" stroke-opacity=".18"/>
+<text x="360" y="218" text-anchor="middle" fill="#eeeaf8" fill-opacity=".7" font-size="10">Text</text>
+<text x="360" y="232" text-anchor="middle" fill="#eeeaf8" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#eeeaf8</text>
+<rect x="402" y="172" width="60" height="30" rx="8" fill="#1c1932" stroke="#fff" stroke-opacity=".18"/>
+<text x="432" y="218" text-anchor="middle" fill="#eeeaf8" fill-opacity=".7" font-size="10">Panel</text>
+<text x="432" y="232" text-anchor="middle" fill="#eeeaf8" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#1c1932</text>
+<rect x="474" y="172" width="60" height="30" rx="8" fill="#16142b" stroke="#fff" stroke-opacity=".18"/>
+<text x="504" y="218" text-anchor="middle" fill="#eeeaf8" fill-opacity=".7" font-size="10">Background</text>
+<text x="504" y="232" text-anchor="middle" fill="#eeeaf8" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#16142b</text>
+</g>
+<g transform="translate(608,364)">
+<rect width="560" height="250" rx="18" fill="url(#bg3)"/>
+<rect width="560" height="250" rx="18" fill="url(#gl3)"/>
+<rect x=".5" y=".5" width="559" height="249" rx="18" fill="none" stroke="#fff" stroke-opacity=".12"/>
+<rect x="14" y="14" width="150" height="222" rx="12" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".1"/>
+<rect x="24" y="28" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="41" r="5" fill="#f5ece6" fill-opacity="0.5"/>
+<rect x="54" y="38" width="70" height="6" rx="3" fill="#f5ece6" fill-opacity="0.45"/>
+<rect x="24" y="62" width="130" height="26" rx="8" fill="#ff9a5c" fill-opacity=".22" stroke="#ff9a5c" stroke-opacity=".75"/>
+<rect x="27" y="69" width="3" height="12" rx="1.5" fill="#ff9a5c"/>
+<circle cx="42" cy="75" r="5" fill="#f5ece6" fill-opacity="1"/>
+<rect x="54" y="72" width="62" height="6" rx="3" fill="#f5ece6" fill-opacity="0.9"/>
+<rect x="24" y="96" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="109" r="5" fill="#f5ece6" fill-opacity="0.5"/>
+<rect x="54" y="106" width="54" height="6" rx="3" fill="#f5ece6" fill-opacity="0.45"/>
+<rect x="24" y="130" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="143" r="5" fill="#f5ece6" fill-opacity="0.5"/>
+<rect x="54" y="140" width="46" height="6" rx="3" fill="#f5ece6" fill-opacity="0.45"/>
+<text x="186" y="44" fill="#f5ece6" font-size="17" font-weight="600">Ember</text>
+<text x="184" y="112" fill="url(#ck3)" font-size="62" font-weight="300" letter-spacing="-1">21:56</text>
+<rect x="186" y="128" width="350" height="30" rx="10" fill="#fff" fill-opacity=".06" stroke="#ff9a5c" stroke-opacity=".55"/>
+<text x="200" y="148" fill="#f5ece6" fill-opacity=".6" font-size="12">Search with Google or enter address</text>
+<rect x="186" y="172" width="60" height="30" rx="8" fill="#ff9a5c" stroke="#fff" stroke-opacity=".18"/>
+<text x="216" y="218" text-anchor="middle" fill="#f5ece6" fill-opacity=".7" font-size="10">Accent</text>
+<text x="216" y="232" text-anchor="middle" fill="#f5ece6" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#ff9a5c</text>
+<rect x="258" y="172" width="60" height="30" rx="8" fill="#ffd166" stroke="#fff" stroke-opacity=".18"/>
+<text x="288" y="218" text-anchor="middle" fill="#f5ece6" fill-opacity=".7" font-size="10">2nd color</text>
+<text x="288" y="232" text-anchor="middle" fill="#f5ece6" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#ffd166</text>
+<rect x="330" y="172" width="60" height="30" rx="8" fill="#f5ece6" stroke="#fff" stroke-opacity=".18"/>
+<text x="360" y="218" text-anchor="middle" fill="#f5ece6" fill-opacity=".7" font-size="10">Text</text>
+<text x="360" y="232" text-anchor="middle" fill="#f5ece6" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#f5ece6</text>
+<rect x="402" y="172" width="60" height="30" rx="8" fill="#241a16" stroke="#fff" stroke-opacity=".18"/>
+<text x="432" y="218" text-anchor="middle" fill="#f5ece6" fill-opacity=".7" font-size="10">Panel</text>
+<text x="432" y="232" text-anchor="middle" fill="#f5ece6" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#241a16</text>
+<rect x="474" y="172" width="60" height="30" rx="8" fill="#1c1512" stroke="#fff" stroke-opacity=".18"/>
+<text x="504" y="218" text-anchor="middle" fill="#f5ece6" fill-opacity=".7" font-size="10">Background</text>
+<text x="504" y="232" text-anchor="middle" fill="#f5ece6" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#1c1512</text>
+</g>
+<g transform="translate(24,638)">
+<rect width="560" height="250" rx="18" fill="url(#bg4)"/>
+<rect width="560" height="250" rx="18" fill="url(#gl4)"/>
+<rect x=".5" y=".5" width="559" height="249" rx="18" fill="none" stroke="#fff" stroke-opacity=".12"/>
+<rect x="14" y="14" width="150" height="222" rx="12" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".1"/>
+<rect x="24" y="28" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="41" r="5" fill="#e4f2f7" fill-opacity="0.5"/>
+<rect x="54" y="38" width="70" height="6" rx="3" fill="#e4f2f7" fill-opacity="0.45"/>
+<rect x="24" y="62" width="130" height="26" rx="8" fill="#4cc9f0" fill-opacity=".22" stroke="#4cc9f0" stroke-opacity=".75"/>
+<rect x="27" y="69" width="3" height="12" rx="1.5" fill="#4cc9f0"/>
+<circle cx="42" cy="75" r="5" fill="#e4f2f7" fill-opacity="1"/>
+<rect x="54" y="72" width="62" height="6" rx="3" fill="#e4f2f7" fill-opacity="0.9"/>
+<rect x="24" y="96" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="109" r="5" fill="#e4f2f7" fill-opacity="0.5"/>
+<rect x="54" y="106" width="54" height="6" rx="3" fill="#e4f2f7" fill-opacity="0.45"/>
+<rect x="24" y="130" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="143" r="5" fill="#e4f2f7" fill-opacity="0.5"/>
+<rect x="54" y="140" width="46" height="6" rx="3" fill="#e4f2f7" fill-opacity="0.45"/>
+<text x="186" y="44" fill="#e4f2f7" font-size="17" font-weight="600">Deep Sea</text>
+<text x="184" y="112" fill="url(#ck4)" font-size="62" font-weight="300" letter-spacing="-1">21:56</text>
+<rect x="186" y="128" width="350" height="30" rx="10" fill="#fff" fill-opacity=".06" stroke="#4cc9f0" stroke-opacity=".55"/>
+<text x="200" y="148" fill="#e4f2f7" fill-opacity=".6" font-size="12">Search with Google or enter address</text>
+<rect x="186" y="172" width="60" height="30" rx="8" fill="#4cc9f0" stroke="#fff" stroke-opacity=".18"/>
+<text x="216" y="218" text-anchor="middle" fill="#e4f2f7" fill-opacity=".7" font-size="10">Accent</text>
+<text x="216" y="232" text-anchor="middle" fill="#e4f2f7" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#4cc9f0</text>
+<rect x="258" y="172" width="60" height="30" rx="8" fill="#7b8cff" stroke="#fff" stroke-opacity=".18"/>
+<text x="288" y="218" text-anchor="middle" fill="#e4f2f7" fill-opacity=".7" font-size="10">2nd color</text>
+<text x="288" y="232" text-anchor="middle" fill="#e4f2f7" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#7b8cff</text>
+<rect x="330" y="172" width="60" height="30" rx="8" fill="#e4f2f7" stroke="#fff" stroke-opacity=".18"/>
+<text x="360" y="218" text-anchor="middle" fill="#e4f2f7" fill-opacity=".7" font-size="10">Text</text>
+<text x="360" y="232" text-anchor="middle" fill="#e4f2f7" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#e4f2f7</text>
+<rect x="402" y="172" width="60" height="30" rx="8" fill="#0f1d24" stroke="#fff" stroke-opacity=".18"/>
+<text x="432" y="218" text-anchor="middle" fill="#e4f2f7" fill-opacity=".7" font-size="10">Panel</text>
+<text x="432" y="232" text-anchor="middle" fill="#e4f2f7" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#0f1d24</text>
+<rect x="474" y="172" width="60" height="30" rx="8" fill="#0a1418" stroke="#fff" stroke-opacity=".18"/>
+<text x="504" y="218" text-anchor="middle" fill="#e4f2f7" fill-opacity=".7" font-size="10">Background</text>
+<text x="504" y="232" text-anchor="middle" fill="#e4f2f7" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#0a1418</text>
+</g>
+<g transform="translate(608,638)">
+<rect width="560" height="250" rx="18" fill="url(#bg5)"/>
+<rect width="560" height="250" rx="18" fill="url(#gl5)"/>
+<rect x=".5" y=".5" width="559" height="249" rx="18" fill="none" stroke="#fff" stroke-opacity=".12"/>
+<rect x="14" y="14" width="150" height="222" rx="12" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".1"/>
+<rect x="24" y="28" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="41" r="5" fill="#f6edf2" fill-opacity="0.5"/>
+<rect x="54" y="38" width="70" height="6" rx="3" fill="#f6edf2" fill-opacity="0.45"/>
+<rect x="24" y="62" width="130" height="26" rx="8" fill="#ffa3c4" fill-opacity=".22" stroke="#ffa3c4" stroke-opacity=".75"/>
+<rect x="27" y="69" width="3" height="12" rx="1.5" fill="#ffa3c4"/>
+<circle cx="42" cy="75" r="5" fill="#f6edf2" fill-opacity="1"/>
+<rect x="54" y="72" width="62" height="6" rx="3" fill="#f6edf2" fill-opacity="0.9"/>
+<rect x="24" y="96" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="109" r="5" fill="#f6edf2" fill-opacity="0.5"/>
+<rect x="54" y="106" width="54" height="6" rx="3" fill="#f6edf2" fill-opacity="0.45"/>
+<rect x="24" y="130" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="143" r="5" fill="#f6edf2" fill-opacity="0.5"/>
+<rect x="54" y="140" width="46" height="6" rx="3" fill="#f6edf2" fill-opacity="0.45"/>
+<text x="186" y="44" fill="#f6edf2" font-size="17" font-weight="600">Cherry Blossom</text>
+<text x="184" y="112" fill="url(#ck5)" font-size="62" font-weight="300" letter-spacing="-1">21:56</text>
+<rect x="186" y="128" width="350" height="30" rx="10" fill="#fff" fill-opacity=".06" stroke="#ffa3c4" stroke-opacity=".55"/>
+<text x="200" y="148" fill="#f6edf2" fill-opacity=".6" font-size="12">Search with Google or enter address</text>
+<rect x="186" y="172" width="60" height="30" rx="8" fill="#ffa3c4" stroke="#fff" stroke-opacity=".18"/>
+<text x="216" y="218" text-anchor="middle" fill="#f6edf2" fill-opacity=".7" font-size="10">Accent</text>
+<text x="216" y="232" text-anchor="middle" fill="#f6edf2" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#ffa3c4</text>
+<rect x="258" y="172" width="60" height="30" rx="8" fill="#a8e6cf" stroke="#fff" stroke-opacity=".18"/>
+<text x="288" y="218" text-anchor="middle" fill="#f6edf2" fill-opacity=".7" font-size="10">2nd color</text>
+<text x="288" y="232" text-anchor="middle" fill="#f6edf2" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#a8e6cf</text>
+<rect x="330" y="172" width="60" height="30" rx="8" fill="#f6edf2" stroke="#fff" stroke-opacity=".18"/>
+<text x="360" y="218" text-anchor="middle" fill="#f6edf2" fill-opacity=".7" font-size="10">Text</text>
+<text x="360" y="232" text-anchor="middle" fill="#f6edf2" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#f6edf2</text>
+<rect x="402" y="172" width="60" height="30" rx="8" fill="#22192a" stroke="#fff" stroke-opacity=".18"/>
+<text x="432" y="218" text-anchor="middle" fill="#f6edf2" fill-opacity=".7" font-size="10">Panel</text>
+<text x="432" y="232" text-anchor="middle" fill="#f6edf2" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#22192a</text>
+<rect x="474" y="172" width="60" height="30" rx="8" fill="#1d1622" stroke="#fff" stroke-opacity=".18"/>
+<text x="504" y="218" text-anchor="middle" fill="#f6edf2" fill-opacity=".7" font-size="10">Background</text>
+<text x="504" y="232" text-anchor="middle" fill="#f6edf2" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#1d1622</text>
+</g>
+<g transform="translate(24,912)">
+<rect width="560" height="250" rx="18" fill="url(#bg6)"/>
+<rect width="560" height="250" rx="18" fill="url(#gl6)"/>
+<rect x=".5" y=".5" width="559" height="249" rx="18" fill="none" stroke="#fff" stroke-opacity=".12"/>
+<rect x="14" y="14" width="150" height="222" rx="12" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".1"/>
+<rect x="24" y="28" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="41" r="5" fill="#eceef1" fill-opacity="0.5"/>
+<rect x="54" y="38" width="70" height="6" rx="3" fill="#eceef1" fill-opacity="0.45"/>
+<rect x="24" y="62" width="130" height="26" rx="8" fill="#7aa2ff" fill-opacity=".22" stroke="#7aa2ff" stroke-opacity=".75"/>
+<rect x="27" y="69" width="3" height="12" rx="1.5" fill="#7aa2ff"/>
+<circle cx="42" cy="75" r="5" fill="#eceef1" fill-opacity="1"/>
+<rect x="54" y="72" width="62" height="6" rx="3" fill="#eceef1" fill-opacity="0.9"/>
+<rect x="24" y="96" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="109" r="5" fill="#eceef1" fill-opacity="0.5"/>
+<rect x="54" y="106" width="54" height="6" rx="3" fill="#eceef1" fill-opacity="0.45"/>
+<rect x="24" y="130" width="130" height="26" rx="8" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".12"/>
+<circle cx="42" cy="143" r="5" fill="#eceef1" fill-opacity="0.5"/>
+<rect x="54" y="140" width="46" height="6" rx="3" fill="#eceef1" fill-opacity="0.45"/>
+<text x="186" y="44" fill="#eceef1" font-size="17" font-weight="600">Graphite</text>
+<text x="184" y="112" fill="url(#ck6)" font-size="62" font-weight="300" letter-spacing="-1">21:56</text>
+<rect x="186" y="128" width="350" height="30" rx="10" fill="#fff" fill-opacity=".06" stroke="#7aa2ff" stroke-opacity=".55"/>
+<text x="200" y="148" fill="#eceef1" fill-opacity=".6" font-size="12">Search with Google or enter address</text>
+<rect x="186" y="172" width="60" height="30" rx="8" fill="#7aa2ff" stroke="#fff" stroke-opacity=".18"/>
+<text x="216" y="218" text-anchor="middle" fill="#eceef1" fill-opacity=".7" font-size="10">Accent</text>
+<text x="216" y="232" text-anchor="middle" fill="#eceef1" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#7aa2ff</text>
+<rect x="258" y="172" width="60" height="30" rx="8" fill="#c6a0ff" stroke="#fff" stroke-opacity=".18"/>
+<text x="288" y="218" text-anchor="middle" fill="#eceef1" fill-opacity=".7" font-size="10">2nd color</text>
+<text x="288" y="232" text-anchor="middle" fill="#eceef1" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#c6a0ff</text>
+<rect x="330" y="172" width="60" height="30" rx="8" fill="#eceef1" stroke="#fff" stroke-opacity=".18"/>
+<text x="360" y="218" text-anchor="middle" fill="#eceef1" fill-opacity=".7" font-size="10">Text</text>
+<text x="360" y="232" text-anchor="middle" fill="#eceef1" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#eceef1</text>
+<rect x="402" y="172" width="60" height="30" rx="8" fill="#1a1d20" stroke="#fff" stroke-opacity=".18"/>
+<text x="432" y="218" text-anchor="middle" fill="#eceef1" fill-opacity=".7" font-size="10">Panel</text>
+<text x="432" y="232" text-anchor="middle" fill="#eceef1" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#1a1d20</text>
+<rect x="474" y="172" width="60" height="30" rx="8" fill="#141618" stroke="#fff" stroke-opacity=".18"/>
+<text x="504" y="218" text-anchor="middle" fill="#eceef1" fill-opacity=".7" font-size="10">Background</text>
+<text x="504" y="232" text-anchor="middle" fill="#eceef1" fill-opacity=".9" font-size="10" font-family="Consolas, monospace">#141618</text>
+</g>
+</svg>
