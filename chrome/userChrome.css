@@ -1,0 +1,1765 @@
+/* =====================================================================
+   Windrad – userChrome.css for Firefox Nova (157+)
+   Zen/Vivaldi style: compact bars, floating content, redesigned
+   vertical tab bar, freely adjustable colors.
+
+   Requirement: about:config ->
+   toolkit.legacyUserProfileCustomizations.stylesheets = true
+   ===================================================================== */
+
+
+/* ---------------------------------------------------------------------
+   1) COLORS & SIZES
+   Default: colors come straight from the Nova design.
+   Own color? Just replace the var(...) part with a hex value,
+   e.g.  --en-accent: #9b6bff;
+   --------------------------------------------------------------------- */
+:root {
+  --en-bg:            var(--toolbar-bgcolor);
+  --en-surface:       color-mix(in srgb, var(--toolbar-color) 7%, transparent);
+  --en-surface-hover: color-mix(in srgb, var(--toolbar-color) 12%, transparent);
+  --en-border:        color-mix(in srgb, var(--toolbar-color) 12%, transparent);
+  --en-accent:        var(--color-accent-primary, AccentColor);
+  --en-accent-2:      var(--color-accent-primary, AccentColor);
+  --en-accent-soft:   color-mix(in srgb, var(--en-accent) 22%, transparent);
+  --en-text:          var(--toolbar-color);
+  --en-text-muted:    color-mix(in srgb, var(--toolbar-color) 65%, transparent);
+
+  --en-radius:        8px;
+  --en-radius-big:    12px;
+  --en-urlbar-radius: 10px;   /* rounding of the address bar */
+  --en-tab-height:    28px;
+  --en-vtab-height:   32px;
+  --en-gap:           6px;
+  --en-sidebar-width: 210px;
+  --en-tab-max-width: 170px;  /* Firefox default: 225px */
+
+  /* glass effect (no blur -> no performance cost) */
+  /* active tab: light outline (more white = brighter) */
+  --en-active-border: color-mix(in srgb, var(--en-accent) 45%, white);
+  --en-active-bg:     color-mix(in srgb, var(--en-accent) 22%, var(--en-glass-hover));
+  --en-glass:         color-mix(in srgb, white 6%, transparent);
+  --en-glass-hover:   color-mix(in srgb, white 10%, transparent);
+  --en-glass-border:  color-mix(in srgb, white 14%, transparent);
+  /* dropdowns/popups: "Apple glass" = strongly tinted + blur + saturation */
+  --en-popup-bg:      color-mix(in srgb, var(--arrowpanel-background, #1c1b22) 82%, transparent);
+  --en-popup-blur:    blur(24px) saturate(160%);
+  --en-glass-shine:   inset 0 1px 0 color-mix(in srgb, white 12%, transparent);
+}
+
+/* do NOT override backgrounds -> Nova gradient stays visible */
+#navigator-toolbox,
+#TabsToolbar,
+#nav-bar {
+  border: none !important;
+}
+#nav-bar {
+  background: transparent !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   3) COMPACT HORIZONTAL TAB BAR
+   --------------------------------------------------------------------- */
+:root {
+  --tab-min-height: var(--en-tab-height) !important;
+  --tab-block-margin: 3px !important;
+  --toolbarbutton-inner-padding: 6px !important;
+  --tab-border-radius: var(--en-radius) !important;
+}
+
+#TabsToolbar .tabbrowser-tab {
+  min-height: var(--en-tab-height) !important;
+  font-size: 12px !important;
+}
+
+/* all tabs visible as subtle "pills" */
+/* width via Firefox's own variable -> close animation, placeholder
+   and "+" button use the same width: no gap, no jumping */
+#tabbrowser-tabs {
+  --tab-max-width: var(--en-tab-max-width) !important;
+}
+
+#TabsToolbar .tabbrowser-tab {
+  padding-inline: 2px !important;
+}
+
+#TabsToolbar .tab-background {
+  border-radius: var(--en-radius) !important;
+  border: 1px solid var(--en-glass-border) !important;
+  background: var(--en-glass) !important;
+  box-shadow: var(--en-glass-shine) !important;
+}
+
+#TabsToolbar .tabbrowser-tab:not([selected]):hover .tab-background {
+  background: var(--en-glass-hover) !important;
+}
+
+#TabsToolbar .tabbrowser-tab:not([selected]) .tab-label {
+  opacity: 0.75;
+}
+
+/* active tab: Nova color as border + slight glow */
+#TabsToolbar .tabbrowser-tab[selected] .tab-background {
+  background: var(--en-active-bg) !important;
+  border-color: var(--en-active-border) !important;
+  box-shadow: 0 0 0 1px var(--en-active-border), var(--en-glass-shine) !important;
+}
+
+/* close button only on hover / active tab */
+#TabsToolbar .tabbrowser-tab:not([selected]):not(:hover) .tab-close-button {
+  opacity: 0 !important;
+}
+
+/* window buttons & bar a bit flatter */
+#TabsToolbar .titlebar-button {
+  padding-block: 6px !important;
+}
+
+/* navigation bar more compact */
+#nav-bar {
+  padding-block: 2px !important;
+}
+
+#urlbar-container {
+  --urlbar-container-height: 32px !important;
+}
+
+#urlbar {
+  --urlbar-height: 28px !important;
+  --urlbar-toolbar-height: 32px !important;
+}
+
+/* Nova paints the bar through variables -> set those to glass too */
+:root {
+  --toolbar-field-background-color: var(--en-glass) !important;
+  --toolbar-field-focus-background-color: var(--en-glass-hover) !important;
+  --toolbar-field-border-color: var(--en-glass-border) !important;
+}
+
+#urlbar,
+#urlbar-input-container,
+#searchbar {
+  background: transparent !important;
+}
+
+.urlbar-background,
+#searchbar,
+#urlbar-background {
+  border-radius: var(--en-urlbar-radius) !important;
+  border: 1px solid var(--en-glass-border) !important;
+  background: var(--en-glass) !important;
+  box-shadow: var(--en-glass-shine) !important;
+}
+
+/* open suggestion list: Apple principle – barely transparent,
+   but with a blurred background. Blur only runs while it is open. */
+#urlbar[open] > #urlbar-background,
+#urlbar[open] > .urlbar-background {
+  border-radius: var(--en-urlbar-radius) !important;
+  background: var(--en-popup-bg) !important;
+  backdrop-filter: var(--en-popup-blur) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), var(--en-glass-shine) !important;
+}
+
+/* glass for buttons, search/identity chips and sidebar as well */
+#nav-bar toolbarbutton:not([disabled]):hover > .toolbarbutton-icon,
+#nav-bar toolbarbutton:not([disabled]):hover > .toolbarbutton-badge-stack,
+#nav-bar toolbarbutton:not([disabled]):hover > .toolbarbutton-text {
+  background: var(--en-glass-hover) !important;
+  box-shadow: var(--en-glass-shine) !important;
+}
+
+/* chips in the address bar (search engine picker, identity etc.)
+   Firefox sets some of these variables directly on #urlbar -> override there */
+:root, #nav-bar, #urlbar, #urlbar-input-container {
+  --urlbar-box-bgcolor: var(--en-glass) !important;
+  --urlbar-box-hover-bgcolor: var(--en-glass-hover) !important;
+  --urlbar-box-active-bgcolor: var(--en-glass-hover) !important;
+  --urlbar-box-focus-bgcolor: var(--en-glass) !important;
+}
+
+#urlbar-searchmode-switcher,
+.searchmode-switcher,
+[id*="searchmode-switcher"] {
+  --button-background-color: var(--en-glass) !important;
+  --button-background-color-hover: var(--en-glass-hover) !important;
+  --button-background-color-active: var(--en-glass-hover) !important;
+  background-color: var(--en-glass) !important;
+  background-image: none !important;
+}
+/* the search engine chip is a <moz-button> (shadow DOM, inside
+   span.button-background). Only styleable from outside via variables + ::part. */
+moz-button.searchmode-switcher,
+#urlbar moz-button,
+#urlbar-input-container moz-button,
+.urlbar-input-container moz-button {
+  --button-background-color: var(--en-glass) !important;
+  --button-background-color-hover: var(--en-glass-hover) !important;
+  --button-background-color-active: var(--en-glass-hover) !important;
+  --button-background-color-ghost: var(--en-glass) !important;
+  --button-background-color-ghost-hover: var(--en-glass-hover) !important;
+  --button-background-color-ghost-active: var(--en-glass-hover) !important;
+  --button-border-color: var(--en-glass-border) !important;
+  --button-border-color-hover: var(--en-glass-border) !important;
+  --button-border-radius: calc(var(--en-urlbar-radius) - 3px) !important;
+}
+moz-button.searchmode-switcher::part(button),
+moz-button.searchmode-switcher::part(button-background),
+#urlbar moz-button::part(button) {
+  background-color: var(--en-glass) !important;
+  border: 1px solid var(--en-glass-border) !important;
+  box-shadow: var(--en-glass-shine) !important;
+}
+moz-button.searchmode-switcher:hover::part(button),
+#urlbar moz-button:hover::part(button) {
+  background-color: var(--en-glass-hover) !important;
+}
+
+/* fallback regardless of the name: first element in the input = chip */
+#urlbar-input-container > :first-child:not(#urlbar-input, .urlbar-input-box),
+.urlbar-input-container > :first-child:not(#urlbar-input, .urlbar-input-box),
+#urlbar-input-container > :first-child:not(#urlbar-input, .urlbar-input-box) > *,
+.urlbar-input-container > :first-child:not(#urlbar-input, .urlbar-input-box) > * {
+  background-color: var(--en-glass) !important;
+  background-image: none !important;
+}
+#urlbar-input-container > :first-child:not(#urlbar-input, .urlbar-input-box) {
+  border: 1px solid var(--en-glass-border) !important;
+  box-shadow: var(--en-glass-shine) !important;
+  border-radius: calc(var(--en-urlbar-radius) - 3px) !important;
+}
+#urlbar-input-container > :first-child:not(#urlbar-input, .urlbar-input-box) > * {
+  background-color: transparent !important;
+  border: none !important;
+}
+[id*="searchmode-switcher"]:hover {
+  background-color: var(--en-glass-hover) !important;
+}
+
+#identity-box > box,
+#searchmode-switcher,
+#urlbar-searchmode-switcher,
+.searchmode-switcher,
+[id*="searchmode-switcher"],
+#tracking-protection-icon-container {
+  border: 1px solid var(--en-glass-border) !important;
+  box-shadow: var(--en-glass-shine) !important;
+  background: var(--en-glass) !important;
+  border-radius: calc(var(--en-radius) - 2px) !important;
+}
+
+
+#urlbar[focused] .urlbar-background,
+#urlbar[focused] #urlbar-background {
+  border-color: var(--en-accent) !important;
+  box-shadow: 0 0 0 2px var(--en-accent-soft) !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   4) "Extension (B...ew Tab Page)" -> icon only
+   --------------------------------------------------------------------- */
+#identity-box.extensionPage #identity-icon-label,
+#identity-box[pageproxystate="valid"].extensionPage #identity-icon-label {
+  display: none !important;
+}
+
+#identity-box.extensionPage #identity-icon-box {
+  padding-inline: 6px !important;
+  background: transparent !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   5) VERTICAL TAB BAR
+   Width/size is handled by Nova itself (draggable) – appearance only here.
+   --------------------------------------------------------------------- */
+#sidebar-main {
+  background: var(--en-glass) !important;
+  border-inline-end: 1px solid var(--en-glass-border) !important;
+}
+
+#tabbrowser-tabs[orient="vertical"] {
+  border: none !important;
+}
+
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab {
+  min-height: var(--en-vtab-height) !important;
+  padding-block: 2px !important;
+}
+
+#tabbrowser-tabs[orient="vertical"] .tab-background {
+  border-radius: var(--en-radius) !important;
+  border: 1px solid var(--en-glass-border) !important;
+  background: var(--en-glass) !important;
+  box-shadow: var(--en-glass-shine) !important;
+}
+
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:not([selected]):hover .tab-background {
+  background: var(--en-glass-hover) !important;
+}
+
+/* active tab: same style as above – accent border */
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[selected] .tab-background {
+  background: var(--en-active-bg) !important;
+  border-color: var(--en-active-border) !important;
+  box-shadow: 0 0 0 1px var(--en-active-border), var(--en-glass-shine) !important;
+}
+
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:not([selected]) .tab-label {
+  opacity: 0.75;
+}
+
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:not([selected]):not(:hover) .tab-close-button {
+  opacity: 0 !important;
+}
+
+#vertical-tabs-newtab-button {
+  border-radius: var(--en-radius) !important;
+  opacity: 0.7;
+}
+#vertical-tabs-newtab-button:hover {
+  opacity: 1;
+  background: var(--en-glass-hover) !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   6) FLOATING CONTENT AREA (Zen look)
+   Only spacing + a fine outline, no clipping -> no stutter.
+   Rounded page corners cost performance; if you want them anyway,
+   uncomment the block at the very bottom.
+   --------------------------------------------------------------------- */
+#tabbrowser-tabbox {
+  margin: 0 var(--en-gap) var(--en-gap) var(--en-gap) !important;
+}
+
+#sidebar-main:not([hidden]) ~ #tabbrowser-tabbox {
+  margin-inline-start: 0 !important;
+}
+
+/* rounded corners of the web page (Zen/Edge/Vivaldi style).
+   Applied to the page element instead of the whole area -> much cheaper.
+   If it stutters again: comment out this block. */
+/* frame around the window in toolbar color -> corners look "cut out"
+   instead of something dark shining through behind them */
+:root {
+  --tabpanel-background-color: transparent !important;
+}
+#browser,
+#tabbrowser-tabbox,
+#tabbrowser-tabpanels,
+.browserSidebarContainer,
+.browserContainer,
+.browserStack {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+#tabbrowser-tabbox {
+  border-radius: var(--en-radius-big) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* remove the line under the bar + Nova's own shadow/border around the
+   content -> the bar flows seamlessly into the rounded corners */
+:root {
+  --chrome-content-separator-color: transparent !important;
+  --toolbox-bottom-border: none !important;
+}
+#navigator-toolbox,
+#nav-bar,
+#TabsToolbar {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+#tabbrowser-tabbox,
+#tabbrowser-tabpanels,
+.browserSidebarContainer,
+.browserContainer,
+.browserStack,
+#appcontent {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.browserStack,
+.browserStack > browser {
+  border-radius: var(--en-radius-big) !important;
+}
+.browserStack > browser {
+  clip-path: inset(0 round var(--en-radius-big)) !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   8) HELIUM LAYOUT: everything in ONE bar
+   On/off: about:config -> "userchrome.helium-layout" (Boolean)
+
+   Layout:  [buttons + address bar] [ tabs ... ] [icons] [_ □ X]
+   The navigation bar lies over the whole tab row, but is "click-through"
+   in the middle, so the tabs below stay usable.
+   All icons AFTER the address bar move to the right automatically.
+   --------------------------------------------------------------------- */
+@media -moz-pref("userchrome.helium-layout") and (not -moz-pref("sidebar.verticalTabs")) {
+
+  :root {
+    --en-left-buttons: 120px;   /* space for back/forward/reload (+ home)     */
+    --en-urlbar-width: 420px;   /* width of the address bar                   */
+    --en-right-width:  190px;   /* space for icons on the right (more icons = more) */
+    --en-winctrl-width: 138px;  /* Windows buttons _ □ X                      */
+    --en-row-height: calc(var(--en-tab-height) + 8px);
+  }
+
+  /* tab row: space for the address bar on the left, space for the
+     icons before the window buttons */
+  :root:not([customizing]) #TabsToolbar {
+    padding-inline-start: calc(var(--en-left-buttons) + var(--en-urlbar-width)) !important;
+    box-sizing: border-box !important;
+    min-height: var(--en-row-height) !important;
+    max-height: var(--en-row-height) !important;
+  }
+  :root:not([customizing]) #TabsToolbar .titlebar-buttonbox-container {
+    margin-inline-start: var(--en-right-width) !important;
+  }
+
+  /* lay the navigation bar over the tab row, middle click-through */
+  :root:not([customizing]) #nav-bar {
+    margin-top: calc(-1 * var(--en-row-height)) !important;
+    height: var(--en-row-height) !important;
+    min-height: 0 !important;
+    padding-block: 0 !important;
+    padding-inline-end: var(--en-winctrl-width) !important;
+    background: transparent !important;
+    position: relative !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+  }
+  :root:not([customizing]) #nav-bar > *,
+  :root:not([customizing]) #nav-bar-customization-target > * {
+    pointer-events: auto !important;
+  }
+  :root:not([customizing]) #nav-bar-customization-target {
+    pointer-events: none !important;
+  }
+
+  /* address bar with fixed width, everything after it is pushed right */
+  :root:not([customizing]) #nav-bar #urlbar-container {
+    flex: 0 0 var(--en-urlbar-width) !important;
+    width: var(--en-urlbar-width) !important;
+    min-width: var(--en-urlbar-width) !important;
+    max-width: var(--en-urlbar-width) !important;
+    margin-inline-end: auto !important;
+  }
+  :root:not([customizing]) #nav-bar .springs,
+  :root:not([customizing]) #nav-bar toolbarspring {
+    display: none !important;
+  }
+
+  #nav-bar #urlbar {
+    --urlbar-height: var(--en-tab-height) !important;
+    --urlbar-toolbar-height: var(--en-row-height) !important;
+  }
+
+  #nav-bar toolbarbutton,
+  #TabsToolbar toolbarbutton:not(.titlebar-button) {
+    --toolbarbutton-inner-padding: 5px !important;
+  }
+
+  /* dropdown: compact instead of across the whole window */
+  #urlbar[open] {
+    width: max(var(--en-urlbar-width), 640px) !important;
+  }
+
+  /* keep the dropdown inside the window: Firefox pulls the opened bar
+     upwards ("breakout") -> move it back down */
+  #urlbar[breakout][breakout-extend],
+  #urlbar[open] {
+    top: var(--en-dropdown-offset, 10px) !important;
+  }
+
+  /* tabs exactly as tall as the address bar and centered the same:
+     both sit in the middle of the same row height */
+  :root:not([customizing]) #TabsToolbar #tabbrowser-tabs {
+    padding-top: 0 !important;
+    --tab-block-margin: 0px !important;
+  }
+  :root:not([customizing]) #TabsToolbar .tabbrowser-tab {
+    height: var(--en-row-height) !important;
+    min-height: var(--en-row-height) !important;
+    max-height: var(--en-row-height) !important;
+    padding-block: calc((var(--en-row-height) - var(--en-tab-height)) / 2) !important;
+  }
+  :root:not([customizing]) #TabsToolbar .tab-background {
+    margin-block: 0 !important;
+    height: var(--en-tab-height) !important;
+    min-height: var(--en-tab-height) !important;
+  }
+  :root:not([customizing]) #TabsToolbar .tab-stack {
+    min-height: var(--en-tab-height) !important;
+  }
+  :root:not([customizing]) #TabsToolbar #tabs-newtab-button {
+    align-self: center !important;
+  }
+
+  /* fine-tuning: in Nova the tab row sits a few px higher than the
+     address bar -> push it down without changing the layout */
+  :root:not([customizing]) #TabsToolbar #tabbrowser-tabs {
+    transform: translateY(var(--en-tabs-offset, 4px)) !important;
+  }
+
+  /* "+" button has its own offset (otherwise too low) */
+  :root:not([customizing]) #TabsToolbar #tabs-newtab-button,
+  :root:not([customizing]) #TabsToolbar #new-tab-button {
+    transform: translateY(var(--en-plus-offset, 0px)) !important;
+  }
+
+  /* "List all tabs" would otherwise sit under the icons on the right */
+  :root:not([customizing]) #TabsToolbar #alltabs-button,
+  :root:not([customizing]) toolbarbutton.tabs-alltabs-button {
+    display: none !important;
+    visibility: collapse !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .titlebar-spacer[type="pre-tabs"],
+  .titlebar-spacer[type="post-tabs"] {
+    display: none !important;
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   9) COLOR THEME "WINDRAD DUSK" (replaces the .xpi theme)
+   On/off: about:config -> create a new Boolean
+   "userchrome.windrad-theme" and set it to true.
+   The gradient covers the whole window -> bar and frame around the
+   web page are one continuous piece, no edges, no lines.
+   --------------------------------------------------------------------- */
+@media -moz-pref("userchrome.windrad-theme") {
+
+  :root {
+    /* palette – change it here (more palettes below) */
+    --wd-night:   #0f2a3a;   /* sky, left            */
+    --wd-blue:    #1d2a4a;   /* transition           */
+    --wd-violet:  #2c2144;   /* hills                */
+    --wd-wine:    #321f3c;   /* clouds, right        */
+    --wd-glow-top:    rgba(224, 80, 106, 0.04);  /* evening glow top right (last number = strength) */
+    --wd-glow-bottom: rgba(224, 80, 106, 0.04);  /* evening glow bottom right */
+    --wd-accent:  #ff7a95;   /* active tab, focus    */
+    --wd-text:    #eee7f6;   /* text                 */
+    --wd-panel:   #142636;   /* popups & menus       */
+
+    /* ---------------------------------------------------------------
+       More palettes: copy one block over the values above.
+       "2nd color" = where the scrollbar fades to (section 12 and
+       userContent.css).
+
+       Windrad (default)            2nd color: #4fe3e0
+       --wd-night:   #0f2a3a;  --wd-blue:   #1d2a4a;
+       --wd-violet:  #2c2144;  --wd-wine:   #321f3c;
+       --wd-glow-top:    rgba(224, 80, 106, 0.04);
+       --wd-glow-bottom: rgba(224, 80, 106, 0.04);
+       --wd-accent:  #ff7a95;  --wd-text:   #eee7f6;  --wd-panel: #142636;
+
+       Aurora                       2nd color: #8b9cff
+       --wd-night:   #0b1f2a;  --wd-blue:   #0f2a33;
+       --wd-violet:  #12303a;  --wd-wine:   #1a2f3f;
+       --wd-glow-top:    rgba(80, 230, 170, 0.05);
+       --wd-glow-bottom: rgba(120, 140, 255, 0.05);
+       --wd-accent:  #5fe0a8;  --wd-text:   #e6f4ef;  --wd-panel: #10262a;
+
+       Lavender Night               2nd color: #ff9ccf
+       --wd-night:   #16142b;  --wd-blue:   #1e1a3a;
+       --wd-violet:  #2a2048;  --wd-wine:   #32213f;
+       --wd-glow-top:    rgba(170, 130, 255, 0.05);
+       --wd-glow-bottom: rgba(255, 140, 200, 0.04);
+       --wd-accent:  #b18cff;  --wd-text:   #eeeaf8;  --wd-panel: #1c1932;
+
+       Ember                        2nd color: #ffd166
+       --wd-night:   #1c1512;  --wd-blue:   #251a16;
+       --wd-violet:  #2e1d18;  --wd-wine:   #351f1a;
+       --wd-glow-top:    rgba(255, 140, 60, 0.05);
+       --wd-glow-bottom: rgba(255, 90, 80, 0.04);
+       --wd-accent:  #ff9a5c;  --wd-text:   #f5ece6;  --wd-panel: #241a16;
+
+       Deep Sea                     2nd color: #7b8cff
+       --wd-night:   #0a1418;  --wd-blue:   #0c1b22;
+       --wd-violet:  #0e212b;  --wd-wine:   #112432;
+       --wd-glow-top:    rgba(60, 200, 255, 0.05);
+       --wd-glow-bottom: rgba(60, 200, 255, 0.03);
+       --wd-accent:  #4cc9f0;  --wd-text:   #e4f2f7;  --wd-panel: #0f1d24;
+
+       Cherry Blossom               2nd color: #a8e6cf
+       --wd-night:   #1d1622;  --wd-blue:   #251a2a;
+       --wd-violet:  #2e1d31;  --wd-wine:   #361f33;
+       --wd-glow-top:    rgba(255, 170, 200, 0.05);
+       --wd-glow-bottom: rgba(255, 170, 200, 0.04);
+       --wd-accent:  #ffa3c4;  --wd-text:   #f6edf2;  --wd-panel: #22192a;
+
+       Graphite                     2nd color: #c6a0ff
+       --wd-night:   #141618;  --wd-blue:   #181b1e;
+       --wd-violet:  #1c1f23;  --wd-wine:   #202327;
+       --wd-glow-top:    rgba(255, 255, 255, 0.03);
+       --wd-glow-bottom: rgba(255, 255, 255, 0.02);
+       --wd-accent:  #7aa2ff;  --wd-text:   #eceef1;  --wd-panel: #1a1d20;
+       --------------------------------------------------------------- */
+    --en-popup-bg: color-mix(in srgb, var(--wd-panel) 88%, transparent) !important;
+
+    --wd-gradient:
+      radial-gradient(ellipse 45% 60% at 95% 0%,   var(--wd-glow-top),    transparent 70%),
+      radial-gradient(ellipse 45% 60% at 95% 100%, var(--wd-glow-bottom), transparent 70%),
+      linear-gradient(90deg, var(--wd-night) 0%, var(--wd-blue) 45%,
+                             var(--wd-violet) 80%, var(--wd-wine) 100%);
+
+    /* map Nova/Firefox variables to the palette */
+    --color-accent-primary: var(--wd-accent) !important;
+    --toolbox-background-image: none !important;
+    --toolbar-bgcolor: transparent !important;
+    --toolbar-color: var(--wd-text) !important;
+    --lwt-text-color: var(--wd-text) !important;
+    --toolbar-field-color: var(--wd-text) !important;
+    --toolbar-field-focus-color: #ffffff !important;
+    --arrowpanel-background: var(--wd-panel) !important;
+    --arrowpanel-color: var(--wd-text) !important;
+    --arrowpanel-border-color: rgba(255, 255, 255, 0.12) !important;
+    --sidebar-background-color: transparent !important;
+    --sidebar-text-color: var(--wd-text) !important;
+    --chrome-content-separator-color: transparent !important;
+    --toolbarseparator-color: transparent !important;
+    --focus-outline-color: var(--wd-accent) !important;
+  }
+
+  /* ONE gradient for the whole window */
+  :root,
+  #main-window,
+  body {
+    background: var(--wd-gradient) !important;
+    background-color: var(--wd-night) !important;
+    background-attachment: fixed !important;
+    background-size: 100% 100% !important;
+  }
+
+  /* all layers above it transparent -> no edges/lines */
+  #navigator-toolbox,
+  #titlebar,
+  #TabsToolbar,
+  #nav-bar,
+  #PersonalToolbar,
+  #sidebar-main,
+  #sidebar-box {
+    background: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  #navigator-toolbox::after,
+  #nav-bar::after,
+  #TabsToolbar::after {
+    display: none !important;
+  }
+
+  /* inactive window: only slightly darker instead of grey */
+  :root:-moz-window-inactive #navigator-toolbox {
+    opacity: 0.92;
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   10) LOADING BAR IN THE ADDRESS BAR (Helium style)
+   Glowing bar at the bottom of the address bar while the active tab
+   is loading. Only transform/opacity animated -> runs on the GPU.
+   --------------------------------------------------------------------- */
+:root {
+  --en-load-color:  var(--en-accent);   /* color of the bar             */
+  --en-load-height: 2px;                /* thickness                    */
+  --en-load-speed:  1.1s;               /* duration of one pass         */
+}
+
+#urlbar-background,
+.urlbar-background {
+  overflow: hidden !important;
+}
+
+#urlbar-background::after,
+.urlbar-background::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--en-load-height);
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--en-load-color) 35%,
+    color-mix(in srgb, var(--en-load-color) 40%, white) 50%,
+    var(--en-load-color) 65%,
+    transparent 100%);
+  box-shadow: 0 0 6px var(--en-load-color), 0 0 12px var(--en-load-color);
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.25s ease;
+}
+
+/* active tab is loading -> bar runs
+   (turn off with userchrome.no-loadbar, see section 11) */
+:root:has(#tabbrowser-tabs .tabbrowser-tab[selected][busy]) #urlbar-background::after,
+:root:has(#tabbrowser-tabs .tabbrowser-tab[selected][busy]) .urlbar-background::after {
+  opacity: 1;
+  animation: en-loadbar var(--en-load-speed) ease-in-out infinite;
+}
+
+/* not while the dropdown is open */
+#urlbar[open] #urlbar-background::after,
+#urlbar[open] .urlbar-background::after {
+  display: none;
+}
+
+@keyframes en-loadbar {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root:has(#tabbrowser-tabs .tabbrowser-tab[selected][busy]) #urlbar-background::after,
+  :root:has(#tabbrowser-tabs .tabbrowser-tab[selected][busy]) .urlbar-background::after {
+    animation: none;
+    transform: none;
+    opacity: 0.8;
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   11) PERFORMANCE MODE
+   about:config -> Boolean "userchrome.performance" = true
+   Turns off the most expensive effects (everything else stays the same):
+   - rounded corners of the web page (clip-path on the page content)
+   - blur behind the address bar dropdown
+   - loading bar (uses :has(), checked on every tab change)
+   Test them one by one: create only the matching Boolean:
+   "userchrome.no-rounded", "userchrome.no-blur", "userchrome.no-loadbar"
+   --------------------------------------------------------------------- */
+@media -moz-pref("userchrome.performance") {
+  .browserStack > browser {
+    clip-path: none !important;
+  }
+  .browserStack,
+  .browserStack > browser,
+  #tabbrowser-tabbox {
+    border-radius: 0 !important;
+  }
+}
+
+@media -moz-pref("userchrome.no-rounded") {
+  .browserStack > browser {
+    clip-path: none !important;
+  }
+  .browserStack,
+  .browserStack > browser,
+  #tabbrowser-tabbox {
+    border-radius: 0 !important;
+  }
+}
+
+@media -moz-pref("userchrome.performance") {
+  #urlbar[open] > #urlbar-background,
+  #urlbar[open] > .urlbar-background {
+    backdrop-filter: none !important;
+    background: var(--arrowpanel-background, #142636) !important;
+  }
+}
+
+@media -moz-pref("userchrome.no-blur") {
+  #urlbar[open] > #urlbar-background,
+  #urlbar[open] > .urlbar-background {
+    backdrop-filter: none !important;
+    background: var(--arrowpanel-background, #142636) !important;
+  }
+}
+
+@media -moz-pref("userchrome.performance") {
+  #urlbar-background::after,
+  .urlbar-background::after {
+    display: none !important;
+    animation: none !important;
+  }
+}
+
+@media -moz-pref("userchrome.no-loadbar") {
+  #urlbar-background::after,
+  .urlbar-background::after {
+    display: none !important;
+    animation: none !important;
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   12) SCROLLBARS OF THE BROWSER UI (tab sidebar, menus, dropdown)
+   Pink at the top, the further you scroll down, the more teal.
+   Uses "scroll-driven animations": the animation follows the scroll
+   position instead of time -> practically free.
+   Web page scrollbars: see userContent.css
+   --------------------------------------------------------------------- */
+:root {
+  --en-scroll-top:    rgba(255, 122, 149, 0.75);  /* pink (top)                */
+  --en-scroll-bottom: rgba(79, 227, 224, 0.75);   /* teal (bottom)             */
+  --en-scroll-thumb:  var(--en-scroll-top);
+  scrollbar-color: var(--en-scroll-thumb) transparent !important;
+}
+
+@keyframes en-scroll-fade {
+  from { scrollbar-color: var(--en-scroll-top)    transparent; }
+  to   { scrollbar-color: var(--en-scroll-bottom) transparent; }
+}
+
+/* all scrollable areas of the UI (tab sidebar, menus) */
+arrowscrollbox::part(scrollbox),
+#tabbrowser-arrowscrollbox::part(scrollbox),
+.urlbarView-body-inner,
+#sidebar-box {
+  animation: en-scroll-fade linear both;
+  animation-timeline: scroll(self);
+}
+
+
+/* ---------------------------------------------------------------------
+   13) ZEN LAYOUT for vertical tabs
+   about:config -> Boolean "userchrome.zen-layout" = true
+   Only active when vertical tabs are turned on.
+
+   Top bar stays (compact, narrow centered address bar),
+   sidebar in Zen style: pinned tabs as a tile grid,
+   normal tabs plain, active tab with a light outline.
+   --------------------------------------------------------------------- */
+@media -moz-pref("userchrome.zen-layout") {
+@media -moz-pref("sidebar.verticalTabs") {
+
+  :root {
+    --zen-urlbar-width:  560px;   /* width of the address bar at the top */
+    --zen-tile-height:   44px;    /* height of the tiles (pinned tabs)   */
+    --zen-tile-columns:  3;       /* tiles per row                       */
+  }
+
+  /* --- top bar stays, but compact and with a narrow address bar */
+  :root:not([customizing]) #nav-bar {
+    padding-block: 3px !important;
+  }
+
+  :root:not([customizing]) #nav-bar #urlbar-container {
+    flex: 0 1 var(--zen-urlbar-width) !important;
+    width: var(--zen-urlbar-width) !important;
+    max-width: var(--zen-urlbar-width) !important;
+    min-width: 200px !important;
+    margin-inline: 4px auto !important;   /* right next to reload, icons stay on the right */
+  }
+
+  /* don't pull the dropdown over the top edge */
+  #urlbar[breakout][breakout-extend],
+  #urlbar[open] {
+    top: var(--zen-dropdown-offset, 10px) !important;
+  }
+
+  #nav-bar #urlbar {
+    --urlbar-height: var(--en-tab-height) !important;
+    --urlbar-toolbar-height: calc(var(--en-tab-height) + 6px) !important;
+  }
+
+  #nav-bar toolbarbutton {
+    --toolbarbutton-inner-padding: 6px !important;
+  }
+
+  /* --- pinned tabs as a tile grid (Zen "Essentials") ------------- */
+  #vertical-pinned-tabs-container {
+    display: grid !important;
+    grid-template-columns: repeat(var(--zen-tile-columns), 1fr) !important;
+    gap: 6px !important;
+    padding: 4px 8px 8px !important;
+  }
+
+  #vertical-pinned-tabs-container .tabbrowser-tab {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: var(--zen-tile-height) !important;
+    padding: 0 !important;
+  }
+
+  #vertical-pinned-tabs-container .tab-background {
+    border-radius: 10px !important;
+    background: var(--en-glass) !important;
+    border: 1px solid var(--en-glass-border) !important;
+    box-shadow: var(--en-glass-shine) !important;
+  }
+
+  #vertical-pinned-tabs-container .tabbrowser-tab[selected] .tab-background {
+    background: var(--en-active-bg) !important;
+    border-color: var(--en-active-border) !important;
+  }
+
+  #vertical-pinned-tabs-container .tab-content {
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  #vertical-pinned-tabs-container .tab-label-container,
+  #vertical-pinned-tabs-container .tab-close-button {
+    display: none !important;
+  }
+
+  /* --- normal tabs: plain, Zen style ------------------------------ */
+  #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:not([pinned]) .tab-background {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+  #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:not([pinned]):hover .tab-background {
+    background: var(--en-glass) !important;
+  }
+  #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:not([pinned])[selected] .tab-background {
+    background: var(--en-active-bg) !important;
+    border-color: var(--en-active-border) !important;
+    box-shadow: var(--en-glass-shine) !important;
+  }
+
+}
+}
+
+
+/* ---------------------------------------------------------------------
+   14) LINE ABOVE THE SIDEBAR ICONS (settings / star)
+   --------------------------------------------------------------------- */
+:root {
+  /* color of the line, e.g. teal: rgba(79, 227, 224, 0.45) */
+  --en-splitter-color: var(--en-glass-border);
+}
+
+#sidebar-tools-and-extensions-splitter {
+  appearance: none !important;
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid var(--en-splitter-color) !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+#sidebar-tools-and-extensions-splitter:hover {
+  border-top-color: var(--en-accent) !important;   /* highlight while dragging */
+}
+
+
+/* ---------------------------------------------------------------------
+   15) COLOR THE DOMAIN IN THE ADDRESS BAR (e.g. "youtube.com")
+   Firefox highlights the domain and draws the rest (www., path)
+   semi-transparent in the same color automatically. When clicking /
+   typing it is shown in normal white again.
+   --------------------------------------------------------------------- */
+:root {
+  --en-domain-color: color-mix(in srgb, var(--en-accent) 80%, white);
+}
+
+#urlbar:not([focused]) #urlbar-input,
+#urlbar:not([focused]) .urlbar-input {
+  color: var(--en-domain-color) !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   16) SPLIT VIEW: tab pair must not shift the tab row
+   Inspector: <tab-split-view-wrapper> (grid) = 40px high, because the
+   tabs inside already have the full row height (36px) + border/spacing.
+   Fix: frame exactly row height, tabs inside correspondingly smaller.
+   --------------------------------------------------------------------- */
+#tabbrowser-tabs:not([orient="vertical"]) tab-split-view-wrapper {
+  height: var(--en-row-height, calc(var(--en-tab-height) + 8px)) !important;
+  min-height: 0 !important;
+  max-height: var(--en-row-height, calc(var(--en-tab-height) + 8px)) !important;
+  padding-block: 0 !important;
+  margin-block: 0 !important;
+  box-sizing: border-box !important;
+  align-self: center !important;
+  align-items: center !important;
+}
+
+#tabbrowser-tabs:not([orient="vertical"]) tab-split-view-wrapper > .tabbrowser-tab {
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: 100% !important;
+  margin-block: 0 !important;
+  padding-block: calc((var(--en-row-height, calc(var(--en-tab-height) + 8px)) - var(--en-tab-height)) / 2 - 2px) !important;
+}
+
+/* center all tabs in the bar, in case something gets taller */
+#tabbrowser-tabs:not([orient="vertical"]) #tabbrowser-arrowscrollbox {
+  align-items: center !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   17) ADAPTIVE BACKGROUND (color follows the web page)
+   Requirement: install the extension "Adaptive Tab Bar Colour".
+   It reads the color of the current page and passes it to Firefox
+   (--lwt-accent-color). This turns it into a dark gradient so the
+   light text always stays readable.
+   On/off: about:config -> Boolean "userchrome.adaptive" = true
+   --------------------------------------------------------------------- */
+@media -moz-pref("userchrome.adaptive") {
+
+  :root {
+    /* page color (fallback: night blue from the Windrad theme) */
+    --ad-page: var(--lwt-accent-color, var(--wd-night, #0f2a3a));
+
+    /* how much it is darkened (more = darker, more readable) */
+    --ad-dark-left:  55%;   /* darkening on the left (the right side mixes in violet) */
+
+    --ad-gradient: linear-gradient(90deg,
+      color-mix(in srgb, var(--ad-page), black var(--ad-dark-left)) 0%,
+      color-mix(in srgb, var(--ad-page), var(--wd-violet, #2c2144) 40%) 100%);
+
+    --toolbar-color: #f2ecf8 !important;
+    --lwt-text-color: #f2ecf8 !important;
+  }
+
+  :root,
+  #main-window,
+  body {
+    background: var(--ad-gradient) !important;
+    background-color: color-mix(in srgb, var(--ad-page), black var(--ad-dark-left)) !important;
+  }
+
+  /* bars transparent so the adaptive gradient is visible everywhere */
+  #navigator-toolbox,
+  #titlebar,
+  #TabsToolbar,
+  #nav-bar,
+  #sidebar-main {
+    background: transparent !important;
+    background-image: none !important;
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   18) VERTICAL TABS: clean rounded corners on the active tab
+   Nova puts its own outline with a different rounding on the active
+   tab + our outer ring -> corners look square/doubled.
+   Here: only ONE border, same rounding on all layers.
+   --------------------------------------------------------------------- */
+#tabbrowser-tabs[orient="vertical"] {
+  --tab-border-radius: var(--en-radius) !important;
+}
+
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab,
+#tabbrowser-tabs[orient="vertical"] .tab-stack,
+#tabbrowser-tabs[orient="vertical"] .tab-background,
+#tabbrowser-tabs[orient="vertical"] .tab-background::before,
+#tabbrowser-tabs[orient="vertical"] .tab-background::after {
+  border-radius: var(--en-radius) !important;
+}
+
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab,
+#tabbrowser-tabs[orient="vertical"] .tab-background {
+  outline: none !important;
+}
+
+/* active tab: 1px lighter border instead of border + outer ring */
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[selected] .tab-background {
+  border: 1px solid var(--en-active-border) !important;
+  box-shadow: var(--en-glass-shine) !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   19) STATUS PANEL BOTTOM LEFT (link URL on hover)
+   Glass look like the address bar dropdown: tinted + blur,
+   rounded, with some distance from the edge.
+   --------------------------------------------------------------------- */
+#statuspanel {
+  margin: 0 0 10px 10px !important;   /* distance from the rounded corners */
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+#statuspanel[mirror] {
+  margin: 0 10px 10px 0 !important;   /* when it moves to the right */
+}
+
+#statuspanel-label {
+  padding: 5px 12px !important;
+  border-radius: var(--en-radius) !important;
+  border: 1px solid var(--en-glass-border) !important;
+  background: var(--en-popup-bg) !important;
+  backdrop-filter: var(--en-popup-blur) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), var(--en-glass-shine) !important;
+  color: var(--en-text) !important;
+  font-size: 12px !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   20) FULLSCREEN: no borders, no rounded corners
+   (video fullscreen = inDOMFullscreen, F11 = inFullscreen)
+   --------------------------------------------------------------------- */
+:root[inDOMFullscreen] #tabbrowser-tabbox,
+:root[inFullscreen] #tabbrowser-tabbox {
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+:root[inDOMFullscreen] .browserStack,
+:root[inDOMFullscreen] .browserStack > browser,
+:root[inFullscreen] .browserStack,
+:root[inFullscreen] .browserStack > browser {
+  border-radius: 0 !important;
+  clip-path: none !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   21) TAB GROUPS: group label must not shift the tab row
+   (same problem as split view: the label brings its own height)
+   --------------------------------------------------------------------- */
+#tabbrowser-tabs:not([orient="vertical"]) tab-group,
+#tabbrowser-tabs:not([orient="vertical"]) .tab-group-label-container {
+  align-self: center !important;
+  align-items: center !important;
+  margin-block: 0 !important;
+  padding-block: 0 !important;
+  max-height: var(--en-row-height, calc(var(--en-tab-height) + 8px)) !important;
+}
+
+#tabbrowser-tabs:not([orient="vertical"]) .tab-group-label {
+  height: var(--en-tab-height) !important;
+  min-height: 0 !important;
+  line-height: var(--en-tab-height) !important;
+  margin-block: 0 !important;
+  padding-block: 0 !important;
+  border-radius: var(--en-radius) !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   22) HOVER EFFECT ON THE ADDRESS BAR (Helium style)
+   On hover the glass gets a bit lighter and the edge glows.
+   --------------------------------------------------------------------- */
+#urlbar-background,
+.urlbar-background {
+  transition: background-color 150ms ease, border-color 150ms ease !important;
+}
+
+#urlbar:not([focused], [open]):hover #urlbar-background,
+#urlbar:not([focused], [open]):hover .urlbar-background {
+  background: var(--en-glass-hover) !important;
+  border-color: color-mix(in srgb, var(--en-accent) 45%, var(--en-glass-border)) !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   23) ADDRESS BAR DROPDOWN: one surface in your colors
+   The open bar consists of two parts: the input row (top) and
+   div.urlbarView-background (the list below). Both get the same
+   color and border, joined seamlessly -> one single surface.
+   --------------------------------------------------------------------- */
+:root {
+  --en-open-border: color-mix(in srgb, var(--en-accent) 55%, var(--en-glass-border));
+}
+
+/* remove Nova's own focus outline around the input row */
+#urlbar #urlbar-input-container,
+#urlbar .urlbar-input-container {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* open input row = TOP part of the surface:
+   color + border top/sides, rounded top, straight bottom */
+#urlbar[open] > #urlbar-background,
+#urlbar[open] > .urlbar-background,
+#urlbar[open][focused] > #urlbar-background,
+#urlbar[open][focused] > .urlbar-background {
+  background: var(--en-popup-bg) !important;
+  border: 1px solid var(--en-open-border) !important;
+  border-bottom: none !important;
+  border-radius: var(--en-urlbar-radius) var(--en-urlbar-radius) 0 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  backdrop-filter: none !important;
+}
+
+/* list = BOTTOM part: same color, border sides/bottom,
+   rounded bottom, straight top -> seamless transition */
+#urlbar[open] .urlbarView-background {
+  background-color: var(--en-popup-bg) !important;
+  background-image: none !important;
+  border: 1px solid var(--en-open-border) !important;
+  border-top: none !important;
+  border-radius: 0 0 var(--en-urlbar-radius) var(--en-urlbar-radius) !important;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* inner list layers transparent, so nothing black lies on top */
+#urlbar[open] .urlbarView,
+#urlbar[open] .urlbarView-body-outer,
+#urlbar[open] .urlbarView-body-inner,
+#urlbar[open] .urlbarView-results {
+  background-color: transparent !important;
+}
+
+/* remove the line between input and results */
+:root {
+  --urlbarView-separator-color: transparent !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   24) OPENING ANIMATION OF THE ADDRESS BAR
+   The list unfolds from the top and fades in, the entries follow
+   slightly staggered. The list grows from its top edge
+   -> stays seamlessly attached to the input row.
+   Only transform/opacity -> runs on the GPU.
+   --------------------------------------------------------------------- */
+:root {
+  --en-open-speed: 220ms;   /* animation duration */
+}
+
+#urlbar[open] .urlbarView,
+#urlbar[open] .urlbarView-background {
+  transform-origin: top center;
+  animation: en-url-open var(--en-open-speed) cubic-bezier(.2, .9, .3, 1.05);
+}
+
+/* entries one after another (staggered) */
+#urlbar[open] .urlbarView-row {
+  animation: en-url-row calc(var(--en-open-speed) + 60ms) ease-out both;
+}
+#urlbar[open] .urlbarView-row:nth-child(2) { animation-delay: 20ms; }
+#urlbar[open] .urlbarView-row:nth-child(3) { animation-delay: 40ms; }
+#urlbar[open] .urlbarView-row:nth-child(4) { animation-delay: 60ms; }
+#urlbar[open] .urlbarView-row:nth-child(5) { animation-delay: 80ms; }
+#urlbar[open] .urlbarView-row:nth-child(n+6) { animation-delay: 100ms; }
+
+@keyframes en-url-open {
+  from { opacity: 0; transform: scaleY(0.96); }
+  to   { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes en-url-row {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #urlbar[open] .urlbarView,
+  #urlbar[open] .urlbarView-background,
+  #urlbar[open] .urlbarView-row {
+    animation: none !important;
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   25) DOWNLOAD ANIMATION (Zen style)
+   When a download starts, the download button bounces and glows
+   in the accent color; while downloading it pulses gently.
+   --------------------------------------------------------------------- */
+#downloads-button[notification="start"] .toolbarbutton-icon,
+#downloads-button[notification="start"] .toolbarbutton-badge-stack,
+#downloads-button[attention] .toolbarbutton-badge-stack {
+  animation: en-dl-drop 700ms cubic-bezier(.3, 1.6, .5, 1) 1;
+}
+
+#downloads-button[notification="start"] > .toolbarbutton-badge-stack,
+#downloads-button[notification="start"] > .toolbarbutton-icon {
+  border-radius: 8px !important;
+  box-shadow: 0 0 0 1px var(--en-accent), 0 0 14px var(--en-accent) !important;
+}
+
+/* a download is running -> gentle pulse */
+#downloads-button[progress] > .toolbarbutton-badge-stack {
+  border-radius: 8px !important;
+  animation: en-dl-pulse 1.6s ease-in-out infinite;
+}
+
+/* finished -> short glow */
+#downloads-button[attention="success"] > .toolbarbutton-badge-stack {
+  border-radius: 8px !important;
+  animation: en-dl-done 900ms ease-out 1;
+}
+
+@keyframes en-dl-drop {
+  0%   { transform: translateY(-14px) scale(1.25); opacity: 0.3; }
+  60%  { transform: translateY(2px)   scale(0.95); opacity: 1; }
+  100% { transform: translateY(0)     scale(1); }
+}
+
+@keyframes en-dl-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 transparent; }
+  50%      { box-shadow: 0 0 0 1px var(--en-accent), 0 0 10px var(--en-accent-soft); }
+}
+
+@keyframes en-dl-done {
+  0%   { box-shadow: 0 0 0 1px #4fe3e0, 0 0 16px #4fe3e0; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #downloads-button * { animation: none !important; }
+}
+
+
+/* ---------------------------------------------------------------------
+   26) TAB PREVIEW ON HOVER in your colors
+   (card with title, address and "Add Note", also for tab groups)
+   --------------------------------------------------------------------- */
+#tab-preview-panel,
+#tabgroup-preview-panel,
+.tab-preview-panel {
+  --panel-background: var(--en-popup-bg) !important;
+  --panel-background-color: var(--en-popup-bg) !important;
+  --arrowpanel-background: var(--en-popup-bg) !important;
+  --panel-border-color: var(--en-open-border, var(--en-glass-border)) !important;
+  --arrowpanel-border-color: var(--en-open-border, var(--en-glass-border)) !important;
+  --panel-color: var(--en-text) !important;
+  --panel-border-radius: var(--en-radius-big) !important;
+}
+
+#tab-preview-panel::part(content),
+#tabgroup-preview-panel::part(content),
+.tab-preview-panel::part(content) {
+  background: var(--en-popup-bg) !important;
+  border: 1px solid var(--en-open-border, var(--en-glass-border)) !important;
+  border-radius: var(--en-radius-big) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), var(--en-glass-shine) !important;
+  color: var(--en-text) !important;
+}
+
+/* address in the preview: subtle */
+#tab-preview-panel .tab-preview-uri,
+.tab-preview-panel .tab-preview-uri {
+  color: var(--en-text-muted) !important;
+}
+
+/* "Add Note" row: hover in glass style */
+#tab-preview-panel toolbarbutton:hover,
+#tab-preview-panel button:hover,
+#tab-preview-panel [role="button"]:hover {
+  background: var(--en-glass-hover) !important;
+  border-radius: var(--en-radius) !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   27) TAB ANIMATIONS (vertical + horizontal)
+   a) New tab: space opens smoothly (the other tabs slide aside
+      instead of jumping), then the tab slides in and briefly
+      glows in the accent color
+   b) Close: tab fades out and shrinks
+   c) Tab switch: background and border cross-fade smoothly
+   d) Small "press" effect on click
+   e) Pinned tabs pop in when pinned
+
+   Note: Firefox marks tabs as "faded in" permanently. That's why (a)
+   also plays once on browser start and after moving a tab with
+   drag & drop.
+   If animations are turned off in Windows (Settings -> Accessibility
+   -> Animation effects), Firefox turns off all animations – these too.
+   --------------------------------------------------------------------- */
+:root {
+  --en-newtab-speed: 280ms;                        /* new tab duration   */
+  --en-tab-ease: cubic-bezier(.2, .9, .3, 1.15);   /* slight spring     */
+}
+
+/* a) NEW TAB – vertical: space opens from top to bottom.
+      The tab starts with a negative margin (lies "under" the previous
+      one) and pushes the tabs below it down smoothly. */
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[fadein]:not([pinned]) {
+  animation: en-vtab-room var(--en-newtab-speed) cubic-bezier(.3, .8, .3, 1);
+}
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[fadein]:not([pinned]) .tab-stack {
+  animation: en-vtab-in var(--en-newtab-speed) var(--en-tab-ease) 60ms both;
+}
+@keyframes en-vtab-room {
+  from { margin-top: calc(-1 * var(--en-vtab-height) - 4px); }
+  to   { margin-top: 0; }
+}
+@keyframes en-vtab-in {
+  from { opacity: 0; transform: translateX(-16px) scale(0.96); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* a) NEW TAB – horizontal: tab pops up from the center */
+#tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab[fadein]:not([pinned]) .tab-stack {
+  animation: en-htab-in var(--en-newtab-speed) var(--en-tab-ease) both;
+}
+@keyframes en-htab-in {
+  from { opacity: 0; transform: translateY(4px) scale(0.86); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* a) short glow (both directions) */
+.tabbrowser-tab[fadein]:not([pinned]) .tab-background {
+  animation: en-tab-glow 700ms ease-out;
+}
+@keyframes en-tab-glow {
+  0%   { filter: brightness(1.35) drop-shadow(0 0 6px var(--en-accent)); }
+  100% { filter: none; }
+}
+
+/* b) CLOSE: fade out + shrink (as long as Firefox keeps the tab
+      around briefly while closing) */
+.tabbrowser-tab[closing] .tab-stack {
+  opacity: 0 !important;
+  transform: scale(0.9);
+  transition: opacity 150ms ease, transform 150ms ease !important;
+}
+
+/* c) TAB SWITCH: surface, border and glow cross-fade smoothly */
+.tabbrowser-tab .tab-background {
+  transition: background-color 180ms ease, border-color 180ms ease,
+              box-shadow 220ms ease, filter 220ms ease !important;
+}
+.tabbrowser-tab .tab-label {
+  transition: opacity 180ms ease;
+}
+
+/* d) press in very slightly on click */
+.tabbrowser-tab:active:not([pinned]) .tab-stack,
+#vertical-tabs-newtab-button:active,
+#tabs-newtab-button:active,
+#new-tab-button:active {
+  transform: scale(0.97);
+  transition: transform 80ms ease;
+}
+
+/* e) PINNED: small pop of the tile */
+.tabbrowser-tab[pinned][fadein] .tab-stack {
+  animation: en-pin-in 320ms var(--en-tab-ease) both;
+}
+@keyframes en-pin-in {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tabbrowser-tab,
+  .tabbrowser-tab .tab-stack,
+  .tabbrowser-tab .tab-background {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   28) VERTICAL TABS: FINISHING TOUCHES
+   a) accent stripe on the left of the active tab
+   b) long titles fade out softly instead of being cut off
+   c) hover: tab moves slightly right, favicon gets a bit bigger
+   d) unloaded (sleeping) tabs dimmed
+   e) "New Tab" as a dashed pill
+   f) round close buttons, reddish on hover
+   g) icons at the bottom (settings / star) in glass style
+   --------------------------------------------------------------------- */
+:root {
+  --en-stripe-width: 3px;                 /* thickness of the accent stripe */
+  --en-close-hover:  #ff8a9c;             /* color of the X on hover        */
+}
+
+/* a) accent stripe: grows from the center when activated */
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab .tab-stack {
+  position: relative !important;
+}
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:not([pinned]) .tab-stack::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 25%;
+  bottom: 25%;
+  width: var(--en-stripe-width);
+  border-radius: 99px;
+  background: var(--en-accent);
+  box-shadow: 0 0 8px var(--en-accent);
+  opacity: 0;
+  transform: scaleY(0);
+  transition: transform 220ms cubic-bezier(.2, .9, .3, 1.2), opacity 180ms ease;
+  pointer-events: none;
+  z-index: 1;
+}
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[selected]:not([pinned]) .tab-stack::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+/* room for the stripe */
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:not([pinned]) .tab-content {
+  padding-inline-start: 12px !important;
+}
+
+/* b) soft title fade-out */
+#tabbrowser-tabs[orient="vertical"] .tab-label {
+  text-overflow: clip !important;
+}
+#tabbrowser-tabs[orient="vertical"] .tab-label-container {
+  mask-image: linear-gradient(to left, transparent 0, black 28px) !important;
+}
+
+/* c) hover movement */
+#tabbrowser-tabs[orient="vertical"] .tab-content,
+#tabbrowser-tabs[orient="vertical"] .tab-icon-image {
+  transition: transform 160ms ease !important;
+}
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:not([selected]):hover .tab-content {
+  transform: translateX(3px);
+}
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:hover .tab-icon-image {
+  transform: scale(1.1);
+}
+
+/* d) unloaded tabs dimmed (hover brings them back) */
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:is([pending], [discarded]):not(:hover) .tab-icon-stack,
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:is([pending], [discarded]):not(:hover) .tab-label-container {
+  opacity: 0.45 !important;
+  filter: grayscale(0.6);
+  transition: opacity 150ms ease;
+}
+
+/* e) "New Tab" as a dashed pill */
+#vertical-tabs-newtab-button {
+  border: 1px dashed var(--en-glass-border) !important;
+  border-radius: var(--en-radius) !important;
+  background: transparent !important;
+  opacity: 0.75 !important;
+  transition: border-color 150ms ease, box-shadow 150ms ease, opacity 150ms ease !important;
+}
+#vertical-tabs-newtab-button:hover {
+  opacity: 1 !important;
+  border-style: solid !important;
+  border-color: var(--en-open-border, var(--en-accent)) !important;
+  background: var(--en-glass-hover) !important;
+  box-shadow: 0 0 10px var(--en-accent-soft) !important;
+}
+
+/* f) round close buttons */
+#tabbrowser-tabs[orient="vertical"] .tab-close-button {
+  width: 20px !important;
+  height: 20px !important;
+  padding: 4px !important;
+  border-radius: 50% !important;
+  transition: background-color 150ms ease, color 150ms ease, opacity 150ms ease !important;
+}
+#tabbrowser-tabs[orient="vertical"] .tab-close-button:hover {
+  background-color: color-mix(in srgb, var(--en-close-hover) 22%, transparent) !important;
+  color: var(--en-close-hover) !important;
+  fill: var(--en-close-hover) !important;
+}
+
+/* g) icons at the bottom in glass style
+   The buttons live in the shadow DOM of <sidebar-main>; only variables
+   get in from outside -> every button becomes a small glass tile. */
+#sidebar-main {
+  --button-background-color: var(--en-glass) !important;
+  --button-background-color-hover: var(--en-glass-hover) !important;
+  --button-background-color-active: var(--en-active-bg) !important;
+  --button-background-color-ghost: var(--en-glass) !important;
+  --button-background-color-ghost-hover: var(--en-glass-hover) !important;
+  --button-background-color-ghost-active: var(--en-active-bg) !important;
+  --button-border-color: var(--en-glass-border) !important;
+  --button-border-color-hover: var(--en-open-border, var(--en-glass-border)) !important;
+  --button-border-radius: var(--en-radius) !important;
+}
+/* line above as a soft gradient instead of a hard line */
+#sidebar-tools-and-extensions-splitter {
+  border-top: none !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, var(--en-splitter-color), transparent) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #tabbrowser-tabs[orient="vertical"] .tab-content,
+  #tabbrowser-tabs[orient="vertical"] .tab-icon-image,
+  #tabbrowser-tabs[orient="vertical"] .tab-stack::before {
+    transition: none !important;
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   29) CLOSE BUTTON ONLY ON HOVER (all tabs, active one too)
+   Not hovered: the button is gone AND not clickable, the title gets
+   the space. Closing always works with the middle mouse button too.
+
+   Hide it completely like in Zen (middle mouse button only):
+   about:config -> Boolean "userchrome.no-close-button" = true
+   --------------------------------------------------------------------- */
+#tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
+  transition: opacity 150ms ease, width 150ms ease,
+              background-color 150ms ease, color 150ms ease !important;
+}
+
+#tabbrowser-tabs .tabbrowser-tab:not([pinned]):not(:hover) .tab-close-button {
+  opacity: 0 !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  padding-inline: 0 !important;
+  margin-inline: 0 !important;
+  pointer-events: none !important;
+}
+
+@media -moz-pref("userchrome.no-close-button") {
+  .tabbrowser-tab .tab-close-button {
+    display: none !important;
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   30) HORIZONTAL TABS LIKE THE VERTICAL ONES
+   Same look and behavior, just adapted to the direction:
+   - active tab: 1px light border (no outer ring) +
+     accent stripe at the BOTTOM instead of the left
+   - soft title fade-out
+   - hover: tab lifts slightly, favicon gets bigger
+   - sleeping tabs dimmed
+   - "+" as a dashed pill, round close buttons
+   --------------------------------------------------------------------- */
+#tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab[selected] .tab-background {
+  border: 1px solid var(--en-active-border) !important;
+  box-shadow: var(--en-glass-shine) !important;
+  outline: none !important;
+}
+
+/* accent stripe at the bottom */
+#tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab .tab-stack {
+  position: relative !important;
+}
+#tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab:not([pinned]) .tab-stack::before {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 30%;
+  right: 30%;
+  height: var(--en-stripe-width);
+  border-radius: 99px;
+  background: var(--en-accent);
+  box-shadow: 0 0 8px var(--en-accent);
+  opacity: 0;
+  transform: scaleX(0);
+  transition: transform 220ms cubic-bezier(.2, .9, .3, 1.2), opacity 180ms ease;
+  pointer-events: none;
+  z-index: 1;
+}
+#tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab[selected]:not([pinned]) .tab-stack::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* soft title fade-out */
+#tabbrowser-tabs:not([orient="vertical"]) .tab-label {
+  text-overflow: clip !important;
+}
+#tabbrowser-tabs:not([orient="vertical"]) .tab-label-container {
+  mask-image: linear-gradient(to left, transparent 0, black 22px) !important;
+}
+
+/* hover: lift slightly, bigger favicon */
+#tabbrowser-tabs:not([orient="vertical"]) .tab-content,
+#tabbrowser-tabs:not([orient="vertical"]) .tab-icon-image {
+  transition: transform 160ms ease !important;
+}
+#tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab:not([selected]):hover .tab-content {
+  transform: translateY(-1px);
+}
+#tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab:hover .tab-icon-image {
+  transform: scale(1.1);
+}
+
+/* sleeping tabs dimmed */
+#tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab:is([pending], [discarded]):not(:hover) .tab-icon-stack,
+#tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab:is([pending], [discarded]):not(:hover) .tab-label-container {
+  opacity: 0.45 !important;
+  filter: grayscale(0.6);
+  transition: opacity 150ms ease;
+}
+
+/* round close buttons */
+#tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab:hover .tab-close-button {
+  width: 20px !important;
+  height: 20px !important;
+  padding: 4px !important;
+  border-radius: 50% !important;
+}
+#tabbrowser-tabs:not([orient="vertical"]) .tab-close-button:hover {
+  background-color: color-mix(in srgb, var(--en-close-hover) 22%, transparent) !important;
+  color: var(--en-close-hover) !important;
+  fill: var(--en-close-hover) !important;
+}
+
+/* "+" as a dashed pill */
+#TabsToolbar #tabs-newtab-button > .toolbarbutton-icon,
+#TabsToolbar #new-tab-button > .toolbarbutton-icon {
+  border: 1px dashed var(--en-glass-border) !important;
+  border-radius: var(--en-radius) !important;
+  background: transparent !important;
+  opacity: 0.75;
+  transition: border-color 150ms ease, box-shadow 150ms ease, opacity 150ms ease !important;
+}
+#TabsToolbar #tabs-newtab-button:hover > .toolbarbutton-icon,
+#TabsToolbar #new-tab-button:hover > .toolbarbutton-icon {
+  opacity: 1;
+  border-style: solid !important;
+  border-color: var(--en-open-border, var(--en-accent)) !important;
+  background: var(--en-glass-hover) !important;
+  box-shadow: 0 0 10px var(--en-accent-soft) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tabbrowser-tab .tab-content,
+  .tabbrowser-tab .tab-icon-image,
+  .tabbrowser-tab .tab-stack::before,
+  .tabbrowser-tab .tab-close-button {
+    transition: none !important;
+  }
+}
+/* ---------------------------------------------------------------------
+   31) SIDEBAR ICONS AT THE BOTTOM (settings / star) in glass style
+   The buttons are Firefox "moz-button"s in the shadow DOM of
+   <sidebar-main>. They can only be reached from outside through
+   variables -> all states (normal, hover, pressed, active/selected)
+   are switched to glass here. Otherwise the active button is filled
+   with Firefox's default purple.
+   --------------------------------------------------------------------- */
+#sidebar-main,
+sidebar-main {
+  /* normal / hover / pressed */
+  --button-background-color-ghost:        transparent !important;
+  --button-background-color-ghost-hover:  var(--en-glass-hover) !important;
+  --button-background-color-ghost-active: var(--en-glass-hover) !important;
+  --button-border-radius:                 var(--en-radius) !important;
+
+  /* active / selected (e.g. settings open) -> glass instead of purple */
+  --button-background-color-checked:          var(--en-active-bg) !important;
+  --button-background-color-ghost-checked:    var(--en-active-bg) !important;
+  --button-background-color-selected:         var(--en-active-bg) !important;
+  --button-background-color-ghost-selected:   var(--en-active-bg) !important;
+  --button-text-color-checked:                var(--en-text) !important;
+  --button-text-color-ghost-checked:          var(--en-text) !important;
+  --button-border-color-checked:              var(--en-active-border) !important;
+
+  /* some states use the "primary" colors (= accent) */
+  --button-background-color-primary:          var(--en-active-bg) !important;
+  --button-background-color-primary-hover:    color-mix(in srgb, var(--en-accent) 28%, var(--en-glass-hover)) !important;
+  --button-background-color-primary-active:   var(--en-active-bg) !important;
+  --button-text-color-primary:                var(--en-text) !important;
+  --button-text-color-primary-hover:          var(--en-text) !important;
+  --button-text-color-primary-active:         var(--en-text) !important;
+  --button-border-color-primary:              var(--en-active-border) !important;
+}

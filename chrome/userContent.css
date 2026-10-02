@@ -1,0 +1,48 @@
+/* =====================================================================
+   userContent.css – scrollbar on web pages (Windrad theme)
+   Pink at the top, the further you scroll down, the more teal.
+   Goes into the same "chrome" folder as userChrome.css.
+
+   Trick: the animation does NOT change scrollbar-color itself, but a
+   custom color variable. That way scrollbar-color can stay !important
+   -> websites with their own scrollbar color can't override it, and
+   the animation still works.
+
+   Other palettes (top -> bottom):
+     Aurora          rgba(95, 224, 168, 0.75)  -> rgba(139, 156, 255, 0.75)
+     Lavender Night  rgba(177, 140, 255, 0.75) -> rgba(255, 156, 207, 0.75)
+     Ember           rgba(255, 154, 92, 0.75)  -> rgba(255, 209, 102, 0.75)
+     Deep Sea        rgba(76, 201, 240, 0.75)  -> rgba(123, 140, 255, 0.75)
+     Cherry Blossom  rgba(255, 163, 196, 0.75) -> rgba(168, 230, 207, 0.75)
+     Graphite        rgba(122, 162, 255, 0.75) -> rgba(198, 160, 255, 0.75)
+   Change the color in all three places marked "top" / "bottom".
+   ===================================================================== */
+
+@property --en-sb-thumb {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255, 122, 149, 0.75);   /* pink (top) */
+}
+
+@keyframes en-scroll-fade {
+  from { --en-sb-thumb: rgba(255, 122, 149, 0.75); }  /* pink #ff7a95 (top)    */
+  to   { --en-sb-thumb: rgba(79, 227, 224, 0.75); }   /* teal #4fe3e0 (bottom) */
+}
+
+@-moz-document regexp("https?://.*"), url-prefix("about:"), url-prefix("file:") {
+  :root {
+    scrollbar-color: var(--en-sb-thumb) transparent !important;
+
+    /* thin variant; "auto" = normal width, "none" = invisible */
+    scrollbar-width: thin !important;
+
+    /* color follows the scroll position */
+    animation: en-scroll-fade linear both !important;
+    animation-timeline: scroll(root) !important;
+  }
+
+  /* some pages scroll in body instead of html */
+  body {
+    scrollbar-color: var(--en-sb-thumb) transparent !important;
+  }
+}
