@@ -1,18 +1,18 @@
 /* =====================================================================
-   Windrad – userChrome.css for Firefox Nova (157+)
-   Zen/Vivaldi style: compact bars, floating content, redesigned
-   vertical tab bar, freely adjustable colors.
+   "Nova Compact" – userChrome.css für Firefox Nova (157+)
+   Zen/Vivaldi-Stil: kompakte Leisten, schwebender Inhalt,
+   neu gestaltete vertikale Tab-Leiste, Farben frei anpassbar.
 
-   Requirement: about:config ->
+   Voraussetzung: about:config ->
    toolkit.legacyUserProfileCustomizations.stylesheets = true
    ===================================================================== */
 
 
 /* ---------------------------------------------------------------------
-   1) COLORS & SIZES
-   Default: colors come straight from the Nova design.
-   Own color? Just replace the var(...) part with a hex value,
-   e.g.  --en-accent: #9b6bff;
+   1) FARBEN & MASSE
+   Standard: Farben kommen direkt aus dem Nova-Design.
+   Eigene Farbe? Einfach den var(...)-Teil durch einen Hex-Wert ersetzen,
+   z. B.  --en-accent: #9b6bff;
    --------------------------------------------------------------------- */
 :root {
   --en-bg:            var(--toolbar-bgcolor);
@@ -27,27 +27,27 @@
 
   --en-radius:        8px;
   --en-radius-big:    12px;
-  --en-urlbar-radius: 10px;   /* rounding of the address bar */
+  --en-urlbar-radius: 10px;   /* Rundung der Adressleiste */
   --en-tab-height:    28px;
   --en-vtab-height:   32px;
   --en-gap:           6px;
   --en-sidebar-width: 210px;
-  --en-tab-max-width: 170px;  /* Firefox default: 225px */
+  --en-tab-max-width: 170px;  /* Standard Firefox: 225px */
 
-  /* glass effect (no blur -> no performance cost) */
-  /* active tab: light outline (more white = brighter) */
+  /* Glas-Effekt (ohne Blur -> kein Leistungsverlust) */
+  /* Aktiver Tab: helle Umrandung (mehr weiß = heller) */
   --en-active-border: color-mix(in srgb, var(--en-accent) 45%, white);
   --en-active-bg:     color-mix(in srgb, var(--en-accent) 22%, var(--en-glass-hover));
   --en-glass:         color-mix(in srgb, white 6%, transparent);
   --en-glass-hover:   color-mix(in srgb, white 10%, transparent);
   --en-glass-border:  color-mix(in srgb, white 14%, transparent);
-  /* dropdowns/popups: "Apple glass" = strongly tinted + blur + saturation */
+  /* Dropdowns/Popups: "Apple-Glas" = stark getönt + Blur + Sättigung */
   --en-popup-bg:      color-mix(in srgb, var(--arrowpanel-background, #1c1b22) 82%, transparent);
   --en-popup-blur:    blur(24px) saturate(160%);
   --en-glass-shine:   inset 0 1px 0 color-mix(in srgb, white 12%, transparent);
 }
 
-/* do NOT override backgrounds -> Nova gradient stays visible */
+/* Hintergründe NICHT überschreiben -> Nova-Gradient bleibt sichtbar */
 #navigator-toolbox,
 #TabsToolbar,
 #nav-bar {
@@ -59,7 +59,7 @@
 
 
 /* ---------------------------------------------------------------------
-   3) COMPACT HORIZONTAL TAB BAR
+   3) KOMPAKTE HORIZONTALE TAB-LEISTE
    --------------------------------------------------------------------- */
 :root {
   --tab-min-height: var(--en-tab-height) !important;
@@ -73,9 +73,9 @@
   font-size: 12px !important;
 }
 
-/* all tabs visible as subtle "pills" */
-/* width via Firefox's own variable -> close animation, placeholder
-   and "+" button use the same width: no gap, no jumping */
+/* alle Tabs als dezente "Pillen" sichtbar */
+/* Breite über Firefox' eigene Variable -> Schließ-Animation, Platzhalter
+   und "+"-Button rechnen mit derselben Breite: keine Lücke, kein Springen */
 #tabbrowser-tabs {
   --tab-max-width: var(--en-tab-max-width) !important;
 }
@@ -99,24 +99,24 @@
   opacity: 0.75;
 }
 
-/* active tab: Nova color as border + slight glow */
+/* aktiver Tab: Nova-Farbe als Rahmen + leichter Glow */
 #TabsToolbar .tabbrowser-tab[selected] .tab-background {
   background: var(--en-active-bg) !important;
   border-color: var(--en-active-border) !important;
   box-shadow: 0 0 0 1px var(--en-active-border), var(--en-glass-shine) !important;
 }
 
-/* close button only on hover / active tab */
+/* Schließen-Button nur bei Hover/aktivem Tab */
 #TabsToolbar .tabbrowser-tab:not([selected]):not(:hover) .tab-close-button {
   opacity: 0 !important;
 }
 
-/* window buttons & bar a bit flatter */
+/* Fenster-Buttons & Leiste etwas flacher */
 #TabsToolbar .titlebar-button {
   padding-block: 6px !important;
 }
 
-/* navigation bar more compact */
+/* Navigationsleiste kompakter */
 #nav-bar {
   padding-block: 2px !important;
 }
@@ -130,7 +130,7 @@
   --urlbar-toolbar-height: 32px !important;
 }
 
-/* Nova paints the bar through variables -> set those to glass too */
+/* Nova malt die Leiste über Variablen -> die auch auf Glas setzen */
 :root {
   --toolbar-field-background-color: var(--en-glass) !important;
   --toolbar-field-focus-background-color: var(--en-glass-hover) !important;
@@ -152,8 +152,8 @@
   box-shadow: var(--en-glass-shine) !important;
 }
 
-/* open suggestion list: Apple principle – barely transparent,
-   but with a blurred background. Blur only runs while it is open. */
+/* geöffnete Vorschlagsliste: Apple-Prinzip – kaum durchsichtig,
+   dafür unscharfer Hintergrund. Blur läuft nur solange sie offen ist. */
 #urlbar[open] > #urlbar-background,
 #urlbar[open] > .urlbar-background {
   border-radius: var(--en-urlbar-radius) !important;
@@ -162,7 +162,7 @@
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), var(--en-glass-shine) !important;
 }
 
-/* glass for buttons, search/identity chips and sidebar as well */
+/* Glas auch für Buttons, Such-/Identity-Chips und Sidebar */
 #nav-bar toolbarbutton:not([disabled]):hover > .toolbarbutton-icon,
 #nav-bar toolbarbutton:not([disabled]):hover > .toolbarbutton-badge-stack,
 #nav-bar toolbarbutton:not([disabled]):hover > .toolbarbutton-text {
@@ -170,8 +170,8 @@
   box-shadow: var(--en-glass-shine) !important;
 }
 
-/* chips in the address bar (search engine picker, identity etc.)
-   Firefox sets some of these variables directly on #urlbar -> override there */
+/* Chips in der Adressleiste (Suchmaschinen-Auswahl, Identity usw.)
+   Firefox setzt diese Variablen teils direkt auf #urlbar -> dort überschreiben */
 :root, #nav-bar, #urlbar, #urlbar-input-container {
   --urlbar-box-bgcolor: var(--en-glass) !important;
   --urlbar-box-hover-bgcolor: var(--en-glass-hover) !important;
@@ -188,8 +188,8 @@
   background-color: var(--en-glass) !important;
   background-image: none !important;
 }
-/* the search engine chip is a <moz-button> (shadow DOM, inside
-   span.button-background). Only styleable from outside via variables + ::part. */
+/* Suchmaschinen-Chip ist ein <moz-button> (Shadow-DOM, innen
+   span.button-background). Von außen nur per Variablen + ::part stylbar. */
 moz-button.searchmode-switcher,
 #urlbar moz-button,
 #urlbar-input-container moz-button,
@@ -216,7 +216,7 @@ moz-button.searchmode-switcher:hover::part(button),
   background-color: var(--en-glass-hover) !important;
 }
 
-/* fallback regardless of the name: first element in the input = chip */
+/* Fallback unabhängig vom Namen: erstes Element im Eingabefeld = Chip */
 #urlbar-input-container > :first-child:not(#urlbar-input, .urlbar-input-box),
 .urlbar-input-container > :first-child:not(#urlbar-input, .urlbar-input-box),
 #urlbar-input-container > :first-child:not(#urlbar-input, .urlbar-input-box) > *,
@@ -258,7 +258,7 @@ moz-button.searchmode-switcher:hover::part(button),
 
 
 /* ---------------------------------------------------------------------
-   4) "Extension (B...ew Tab Page)" -> icon only
+   4) "Extension (B...ew Tab Page)" -> nur das Icon
    --------------------------------------------------------------------- */
 #identity-box.extensionPage #identity-icon-label,
 #identity-box[pageproxystate="valid"].extensionPage #identity-icon-label {
@@ -272,8 +272,8 @@ moz-button.searchmode-switcher:hover::part(button),
 
 
 /* ---------------------------------------------------------------------
-   5) VERTICAL TAB BAR
-   Width/size is handled by Nova itself (draggable) – appearance only here.
+   5) VERTIKALE TAB-LEISTE
+   Breite/Größe steuert Nova selbst (per Maus ziehbar) – hier nur Optik.
    --------------------------------------------------------------------- */
 #sidebar-main {
   background: var(--en-glass) !important;
@@ -300,7 +300,7 @@ moz-button.searchmode-switcher:hover::part(button),
   background: var(--en-glass-hover) !important;
 }
 
-/* active tab: same style as above – accent border */
+/* aktiver Tab: gleicher Stil wie oben – Akzent-Rahmen */
 #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[selected] .tab-background {
   background: var(--en-active-bg) !important;
   border-color: var(--en-active-border) !important;
@@ -326,10 +326,10 @@ moz-button.searchmode-switcher:hover::part(button),
 
 
 /* ---------------------------------------------------------------------
-   6) FLOATING CONTENT AREA (Zen look)
-   Only spacing + a fine outline, no clipping -> no stutter.
-   Rounded page corners cost performance; if you want them anyway,
-   uncomment the block at the very bottom.
+   6) SCHWEBENDER INHALTSBEREICH (Zen-Look)
+   Nur Abstand + feine Kontur, kein Clipping -> keine Ruckler.
+   Abgerundete Ecken der Webseite kosten Leistung; wer sie trotzdem
+   will, kann den Block ganz unten einkommentieren.
    --------------------------------------------------------------------- */
 #tabbrowser-tabbox {
   margin: 0 var(--en-gap) var(--en-gap) var(--en-gap) !important;
@@ -339,11 +339,11 @@ moz-button.searchmode-switcher:hover::part(button),
   margin-inline-start: 0 !important;
 }
 
-/* rounded corners of the web page (Zen/Edge/Vivaldi style).
-   Applied to the page element instead of the whole area -> much cheaper.
-   If it stutters again: comment out this block. */
-/* frame around the window in toolbar color -> corners look "cut out"
-   instead of something dark shining through behind them */
+/* Abgerundete Ecken der Webseite (Zen/Edge/Vivaldi-Stil).
+   Direkt am Seiten-Element statt am ganzen Bereich -> deutlich günstiger.
+   Falls es wieder ruckelt: diesen Block auskommentieren. */
+/* Rahmen ums Fenster in Toolbar-Farbe -> Ecken wirken "ausgeschnitten"
+   statt dass dahinter etwas Dunkles durchscheint */
 :root {
   --tabpanel-background-color: transparent !important;
 }
@@ -362,8 +362,8 @@ moz-button.searchmode-switcher:hover::part(button),
   box-shadow: none !important;
 }
 
-/* remove the line under the bar + Nova's own shadow/border around the
-   content -> the bar flows seamlessly into the rounded corners */
+/* Trennlinie unter der Leiste + Novas eigene Schatten/Rahmen um den
+   Inhalt entfernen -> Leiste geht fließend in die runden Ecken über */
 :root {
   --chrome-content-separator-color: transparent !important;
   --toolbox-bottom-border: none !important;
@@ -394,26 +394,26 @@ moz-button.searchmode-switcher:hover::part(button),
 
 
 /* ---------------------------------------------------------------------
-   8) HELIUM LAYOUT: everything in ONE bar
-   On/off: about:config -> "userchrome.helium-layout" (Boolean)
+   8) HELIUM-LAYOUT: alles in EINER Leiste
+   Ein-/Ausschalten: about:config -> "userchrome.helium-layout" (Boolean)
 
-   Layout:  [buttons + address bar] [ tabs ... ] [icons] [_ □ X]
-   The navigation bar lies over the whole tab row, but is "click-through"
-   in the middle, so the tabs below stay usable.
-   All icons AFTER the address bar move to the right automatically.
+   Aufbau:  [Buttons + Adressleiste] [ Tabs ... ] [Icons] [_ □ X]
+   Die Navigationsleiste liegt über der ganzen Tab-Zeile, ist aber in der
+   Mitte "durchklickbar", sodass die Tabs darunter bedienbar bleiben.
+   Alle Icons NACH der Adressleiste wandern automatisch nach rechts.
    --------------------------------------------------------------------- */
 @media -moz-pref("userchrome.helium-layout") and (not -moz-pref("sidebar.verticalTabs")) {
 
   :root {
-    --en-left-buttons: 120px;   /* space for back/forward/reload (+ home)     */
-    --en-urlbar-width: 420px;   /* width of the address bar                   */
-    --en-right-width:  190px;   /* space for icons on the right (more icons = more) */
-    --en-winctrl-width: 138px;  /* Windows buttons _ □ X                      */
+    --en-left-buttons: 120px;   /* Platz für Zurück/Vor/Neu laden (+ ggf. Home) */
+    --en-urlbar-width: 420px;   /* Breite der Adressleiste                     */
+    --en-right-width:  190px;   /* Platz für Icons rechts (mehr Icons = mehr)  */
+    --en-winctrl-width: 138px;  /* Windows-Knöpfe _ □ X                        */
     --en-row-height: calc(var(--en-tab-height) + 8px);
   }
 
-  /* tab row: space for the address bar on the left, space for the
-     icons before the window buttons */
+  /* Tab-Zeile: links Platz für Adressleiste, vor den Fensterknöpfen
+     Platz für die Icons */
   :root:not([customizing]) #TabsToolbar {
     padding-inline-start: calc(var(--en-left-buttons) + var(--en-urlbar-width)) !important;
     box-sizing: border-box !important;
@@ -424,7 +424,7 @@ moz-button.searchmode-switcher:hover::part(button),
     margin-inline-start: var(--en-right-width) !important;
   }
 
-  /* lay the navigation bar over the tab row, middle click-through */
+  /* Navigationsleiste über die Tab-Zeile legen, Mitte durchklickbar */
   :root:not([customizing]) #nav-bar {
     margin-top: calc(-1 * var(--en-row-height)) !important;
     height: var(--en-row-height) !important;
@@ -444,7 +444,7 @@ moz-button.searchmode-switcher:hover::part(button),
     pointer-events: none !important;
   }
 
-  /* address bar with fixed width, everything after it is pushed right */
+  /* Adressleiste feste Breite, alles danach wird nach rechts geschoben */
   :root:not([customizing]) #nav-bar #urlbar-container {
     flex: 0 0 var(--en-urlbar-width) !important;
     width: var(--en-urlbar-width) !important;
@@ -467,20 +467,20 @@ moz-button.searchmode-switcher:hover::part(button),
     --toolbarbutton-inner-padding: 5px !important;
   }
 
-  /* dropdown: compact instead of across the whole window */
+  /* Dropdown: nicht übers ganze Fenster, sondern kompakt */
   #urlbar[open] {
     width: max(var(--en-urlbar-width), 640px) !important;
   }
 
-  /* keep the dropdown inside the window: Firefox pulls the opened bar
-     upwards ("breakout") -> move it back down */
+  /* Dropdown nicht über den Fensterrand hinaus: Firefox zieht die
+     aufgeklappte Leiste nach oben ("Breakout") -> wieder nach unten setzen */
   #urlbar[breakout][breakout-extend],
   #urlbar[open] {
     top: var(--en-dropdown-offset, 10px) !important;
   }
 
-  /* tabs exactly as tall as the address bar and centered the same:
-     both sit in the middle of the same row height */
+  /* Tabs exakt so hoch wie die Adressleiste und gleich zentriert:
+     beide sitzen mittig in derselben Zeilenhöhe */
   :root:not([customizing]) #TabsToolbar #tabbrowser-tabs {
     padding-top: 0 !important;
     --tab-block-margin: 0px !important;
@@ -503,19 +503,19 @@ moz-button.searchmode-switcher:hover::part(button),
     align-self: center !important;
   }
 
-  /* fine-tuning: in Nova the tab row sits a few px higher than the
-     address bar -> push it down without changing the layout */
+  /* Feinjustierung: Tab-Zeile sitzt bei Nova ein paar px höher als die
+     Adressleiste -> ohne Layout-Änderung nach unten schieben */
   :root:not([customizing]) #TabsToolbar #tabbrowser-tabs {
     transform: translateY(var(--en-tabs-offset, 4px)) !important;
   }
 
-  /* "+" button has its own offset (otherwise too low) */
+  /* "+"-Button eigener Versatz (liegt sonst zu tief) */
   :root:not([customizing]) #TabsToolbar #tabs-newtab-button,
   :root:not([customizing]) #TabsToolbar #new-tab-button {
     transform: translateY(var(--en-plus-offset, 0px)) !important;
   }
 
-  /* "List all tabs" would otherwise sit under the icons on the right */
+  /* "Alle Tabs auflisten" liegt sonst unter den Icons rechts */
   :root:not([customizing]) #TabsToolbar #alltabs-button,
   :root:not([customizing]) toolbarbutton.tabs-alltabs-button {
     display: none !important;
@@ -534,80 +534,260 @@ moz-button.searchmode-switcher:hover::part(button),
 
 
 /* ---------------------------------------------------------------------
-   9) COLOR THEME "WINDRAD DUSK" (replaces the .xpi theme)
-   On/off: about:config -> create a new Boolean
-   "userchrome.windrad-theme" and set it to true.
-   The gradient covers the whole window -> bar and frame around the
-   web page are one continuous piece, no edges, no lines.
+   9) FARBTHEMA "WINDRAD DÄMMERUNG" (ersetzt das .xpi-Theme)
+   Ein-/Ausschalten: about:config -> neuen Boolean
+   "userchrome.windrad-theme" anlegen und auf true setzen.
+   Der Verlauf liegt auf dem ganzen Fenster -> Leiste und Rahmen um die
+   Webseite sind ein durchgehendes Stück, keine Kanten, keine Linien.
    --------------------------------------------------------------------- */
 @media -moz-pref("userchrome.windrad-theme") {
 
   :root {
-    /* palette – change it here (more palettes below) */
-    --wd-night:   #0f2a3a;   /* sky, left            */
-    --wd-blue:    #1d2a4a;   /* transition           */
-    --wd-violet:  #2c2144;   /* hills                */
-    --wd-wine:    #321f3c;   /* clouds, right        */
-    --wd-glow-top:    rgba(224, 80, 106, 0.04);  /* evening glow top right (last number = strength) */
-    --wd-glow-bottom: rgba(224, 80, 106, 0.04);  /* evening glow bottom right */
-    --wd-accent:  #ff7a95;   /* active tab, focus    */
-    --wd-text:    #eee7f6;   /* text                 */
-    --wd-panel:   #142636;   /* popups & menus       */
+    /* Palette – hier anpassen */
+--wd-night:   #170e12;
+--wd-blue:    #1e1016;
+--wd-violet:  #26121a;
+--wd-wine:    #2d131d;
+--wd-glow-top:    rgba(255, 70, 100, 0.05);
+--wd-glow-bottom: rgba(255, 120, 140, 0.04);
+--wd-accent:  #ff5c7a;
+--wd-text:    #f6e9ec;
+--wd-panel:   #1d1116;
 
-    /* ---------------------------------------------------------------
-       More palettes: copy one block over the values above.
-       "2nd color" = where the scrollbar fades to (section 12 and
-       userContent.css).
+/* Alle Farben:
+Polarlight:
+--wd-night:   #0b1f2a;
+--wd-blue:    #0f2a33;
+--wd-violet:  #12303a;
+--wd-wine:    #1a2f3f;
+--wd-glow-top:    rgba(80, 230, 170, 0.05);
+--wd-glow-bottom: rgba(120, 140, 255, 0.05);
+--wd-accent:  #5fe0a8;
+--wd-text:    #e6f4ef;
+--wd-panel:   #10262a;
 
-       Windrad (default)            2nd color: #4fe3e0
-       --wd-night:   #0f2a3a;  --wd-blue:   #1d2a4a;
-       --wd-violet:  #2c2144;  --wd-wine:   #321f3c;
-       --wd-glow-top:    rgba(224, 80, 106, 0.04);
-       --wd-glow-bottom: rgba(224, 80, 106, 0.04);
-       --wd-accent:  #ff7a95;  --wd-text:   #eee7f6;  --wd-panel: #142636;
+Lavendel:
+--wd-night:   #16142b;
+--wd-blue:    #1e1a3a;
+--wd-violet:  #2a2048;
+--wd-wine:    #32213f;
+--wd-glow-top:    rgba(170, 130, 255, 0.05);
+--wd-glow-bottom: rgba(255, 140, 200, 0.04);
+--wd-accent:  #b18cff;
+--wd-text:    #eeeaf8;
+--wd-panel:   #1c1932;
 
-       Aurora                       2nd color: #8b9cff
-       --wd-night:   #0b1f2a;  --wd-blue:   #0f2a33;
-       --wd-violet:  #12303a;  --wd-wine:   #1a2f3f;
-       --wd-glow-top:    rgba(80, 230, 170, 0.05);
-       --wd-glow-bottom: rgba(120, 140, 255, 0.05);
-       --wd-accent:  #5fe0a8;  --wd-text:   #e6f4ef;  --wd-panel: #10262a;
+Glut:
+--wd-night:   #1c1512;
+--wd-blue:    #251a16;
+--wd-violet:  #2e1d18;
+--wd-wine:    #351f1a;
+--wd-glow-top:    rgba(255, 140, 60, 0.05);
+--wd-glow-bottom: rgba(255, 90, 80, 0.04);
+--wd-accent:  #ff9a5c;
+--wd-text:    #f5ece6;
+--wd-panel:   #241a16;
 
-       Lavender Night               2nd color: #ff9ccf
-       --wd-night:   #16142b;  --wd-blue:   #1e1a3a;
-       --wd-violet:  #2a2048;  --wd-wine:   #32213f;
-       --wd-glow-top:    rgba(170, 130, 255, 0.05);
-       --wd-glow-bottom: rgba(255, 140, 200, 0.04);
-       --wd-accent:  #b18cff;  --wd-text:   #eeeaf8;  --wd-panel: #1c1932;
+Tiefsee:
+--wd-night:   #0a1418;
+--wd-blue:    #0c1b22;
+--wd-violet:  #0e212b;
+--wd-wine:    #112432;
+--wd-glow-top:    rgba(60, 200, 255, 0.05);
+--wd-glow-bottom: rgba(60, 200, 255, 0.03);
+--wd-accent:  #4cc9f0;
+--wd-text:    #e4f2f7;
+--wd-panel:   #0f1d24;
 
-       Ember                        2nd color: #ffd166
-       --wd-night:   #1c1512;  --wd-blue:   #251a16;
-       --wd-violet:  #2e1d18;  --wd-wine:   #351f1a;
-       --wd-glow-top:    rgba(255, 140, 60, 0.05);
-       --wd-glow-bottom: rgba(255, 90, 80, 0.04);
-       --wd-accent:  #ff9a5c;  --wd-text:   #f5ece6;  --wd-panel: #241a16;
+Kirschblüten:
+--wd-night:   #1d1622;
+--wd-blue:    #251a2a;
+--wd-violet:  #2e1d31;
+--wd-wine:    #361f33;
+--wd-glow-top:    rgba(255, 170, 200, 0.05);
+--wd-glow-bottom: rgba(255, 170, 200, 0.04);
+--wd-accent:  #ffa3c4;
+--wd-text:    #f6edf2;
+--wd-panel:   #22192a;
 
-       Deep Sea                     2nd color: #7b8cff
-       --wd-night:   #0a1418;  --wd-blue:   #0c1b22;
-       --wd-violet:  #0e212b;  --wd-wine:   #112432;
-       --wd-glow-top:    rgba(60, 200, 255, 0.05);
-       --wd-glow-bottom: rgba(60, 200, 255, 0.03);
-       --wd-accent:  #4cc9f0;  --wd-text:   #e4f2f7;  --wd-panel: #0f1d24;
+Graphit:
+--wd-night:   #141618;
+--wd-blue:    #181b1e;
+--wd-violet:  #1c1f23;
+--wd-wine:    #202327;
+--wd-glow-top:    rgba(255, 255, 255, 0.03);
+--wd-glow-bottom: rgba(255, 255, 255, 0.02);
+--wd-accent:  #7aa2ff;
+--wd-text:    #eceef1;
+--wd-panel:   #1a1d20;
 
-       Cherry Blossom               2nd color: #a8e6cf
-       --wd-night:   #1d1622;  --wd-blue:   #251a2a;
-       --wd-violet:  #2e1d31;  --wd-wine:   #361f33;
-       --wd-glow-top:    rgba(255, 170, 200, 0.05);
-       --wd-glow-bottom: rgba(255, 170, 200, 0.04);
-       --wd-accent:  #ffa3c4;  --wd-text:   #f6edf2;  --wd-panel: #22192a;
+Aurora:
+--wd-night:   #0d1424;
+--wd-blue:    #111d33;
+--wd-violet:  #1b1f3f;
+--wd-wine:    #261c3d;
+--wd-glow-top:    rgba(90, 255, 200, 0.06);
+--wd-glow-bottom: rgba(170, 110, 255, 0.05);
+--wd-accent:  #7cf5c8;
+--wd-text:    #e8f3f6;
+--wd-panel:   #121a2e;
 
-       Graphite                     2nd color: #c6a0ff
-       --wd-night:   #141618;  --wd-blue:   #181b1e;
-       --wd-violet:  #1c1f23;  --wd-wine:   #202327;
-       --wd-glow-top:    rgba(255, 255, 255, 0.03);
-       --wd-glow-bottom: rgba(255, 255, 255, 0.02);
-       --wd-accent:  #7aa2ff;  --wd-text:   #eceef1;  --wd-panel: #1a1d20;
-       --------------------------------------------------------------- */
+Sonnenuntergang:
+--wd-night:   #1a1424;
+--wd-blue:    #24162b;
+--wd-violet:  #311a2c;
+--wd-wine:    #3a1d27;
+--wd-glow-top:    rgba(255, 120, 90, 0.06);
+--wd-glow-bottom: rgba(255, 180, 90, 0.05);
+--wd-accent:  #ff8a65;
+--wd-text:    #f8ece8;
+--wd-panel:   #221729;
+
+Wald:
+--wd-night:   #0f1a14;
+--wd-blue:    #132019;
+--wd-violet:  #17271e;
+--wd-wine:    #1c2c22;
+--wd-glow-top:    rgba(120, 220, 140, 0.05);
+--wd-glow-bottom: rgba(200, 230, 120, 0.04);
+--wd-accent:  #8fd694;
+--wd-text:    #e9f3ea;
+--wd-panel:   #13201a;
+
+Mokka:
+--wd-night:   #1a1613;
+--wd-blue:    #211b17;
+--wd-violet:  #29211b;
+--wd-wine:    #2f251e;
+--wd-glow-top:    rgba(210, 160, 110, 0.05);
+--wd-glow-bottom: rgba(200, 140, 90, 0.04);
+--wd-accent:  #d9a46c;
+--wd-text:    #f3ebe3;
+--wd-panel:   #201a16;
+
+Nord:
+--wd-night:   #1b212b;
+--wd-blue:    #1f2632;
+--wd-violet:  #232b38;
+--wd-wine:    #262e3d;
+--wd-glow-top:    rgba(136, 192, 208, 0.04);
+--wd-glow-bottom: rgba(129, 161, 193, 0.04);
+--wd-accent:  #88c0d0;
+--wd-text:    #e5e9f0;
+--wd-panel:   #222834;
+
+Mitternacht & Gold:
+--wd-night:   #0e0f17;
+--wd-blue:    #13141f;
+--wd-violet:  #181a28;
+--wd-wine:    #1c1c2b;
+--wd-glow-top:    rgba(255, 210, 120, 0.05);
+--wd-glow-bottom: rgba(255, 190, 90, 0.03);
+--wd-accent:  #f2c76e;
+--wd-text:    #f1eee6;
+--wd-panel:   #151622;
+
+Cyber:
+--wd-night:   #0d0b1a;
+--wd-blue:    #140f26;
+--wd-violet:  #1c1033;
+--wd-wine:    #24103a;
+--wd-glow-top:    rgba(0, 240, 255, 0.06);
+--wd-glow-bottom: rgba(255, 0, 170, 0.05);
+--wd-accent:  #00e5ff;
+--wd-text:    #eae6ff;
+--wd-panel:   #140f24;
+
+Crimson:
+--wd-night:   #170e12;
+--wd-blue:    #1e1016;
+--wd-violet:  #26121a;
+--wd-wine:    #2d131d;
+--wd-glow-top:    rgba(255, 70, 100, 0.05);
+--wd-glow-bottom: rgba(255, 120, 140, 0.04);
+--wd-accent:  #ff5c7a;
+--wd-text:    #f6e9ec;
+--wd-panel:   #1d1116;
+
+Ozean:
+--wd-night:   #08161c;
+--wd-blue:    #0a1e27;
+--wd-violet:  #0c2433;
+--wd-wine:    #10263d;
+--wd-glow-top:    rgba(40, 220, 200, 0.06);
+--wd-glow-bottom: rgba(70, 130, 255, 0.05);
+--wd-accent:  #3ee0c8;
+--wd-text:    #e2f4f5;
+--wd-panel:   #0d1e26;
+
+Matcha:
+--wd-night:   #141814;
+--wd-blue:    #191e19;
+--wd-violet:  #1e241d;
+--wd-wine:    #232820;
+--wd-glow-top:    rgba(190, 220, 160, 0.04);
+--wd-glow-bottom: rgba(230, 220, 170, 0.03);
+--wd-accent:  #b7d68a;
+--wd-text:    #eef2e6;
+--wd-panel:   #191e18;
+
+OLED:
+--wd-night:   #000000;
+--wd-blue:    #040405;
+--wd-violet:  #08080a;
+--wd-wine:    #0c0c0f;
+--wd-glow-top:    rgba(255, 255, 255, 0.02);
+--wd-glow-bottom: rgba(255, 255, 255, 0.015);
+--wd-accent:  #c8c8d4;
+--wd-text:    #ececf0;
+--wd-panel:   #0b0b0d;
+
+Warm Dark:
+--wd-night:   #1a1816;
+--wd-blue:    #1f1d1b;
+--wd-violet:  #24211e;
+--wd-wine:    #292623;
+--wd-glow-top:    rgba(215, 166, 95, 0.04);
+--wd-glow-bottom: rgba(143, 179, 154, 0.03);
+--wd-accent:  #d7a65f;
+--wd-text:    #e3dccf;
+--wd-panel:   #211f1c;
+
+Soft Night:
+--wd-night:   #181c21;
+--wd-blue:    #1c2026;
+--wd-violet:  #20252c;
+--wd-wine:    #242a32;
+--wd-glow-top:    rgba(143, 184, 216, 0.04);
+--wd-glow-bottom: rgba(200, 162, 200, 0.03);
+--wd-accent:  #8fb8d8;
+--wd-text:    #d8dee6;
+--wd-panel:   #1f242b;
+
+Lavender Mist:
+--wd-night:   #191722;
+--wd-blue:    #1d1b26;
+--wd-violet:  #221f2d;
+--wd-wine:    #262333;
+--wd-glow-top:    rgba(184, 161, 232, 0.04);
+--wd-glow-bottom: rgba(232, 168, 196, 0.03);
+--wd-accent:  #b8a1e8;
+--wd-text:    #e2ddef;
+--wd-panel:   #211e2b;
+
+Paper:
+--wd-night:   #f4efe6;
+--wd-blue:    #f1ebe1;
+--wd-violet:  #eee7dc;
+--wd-wine:    #ebe4d7;
+--wd-glow-top:    rgba(143, 85, 48, 0.04);
+--wd-glow-bottom: rgba(63, 107, 85, 0.03);
+--wd-accent:  #8f5530;
+--wd-text:    #3b3631;
+--wd-panel:   #efe9df;
+(Paper = hell: am besten per Schalter userchrome.palette.paper nutzen,
+ dort sind zusätzlich Glas- und Feldfarben für hell angepasst.)
+*/
     --en-popup-bg: color-mix(in srgb, var(--wd-panel) 88%, transparent) !important;
 
     --wd-gradient:
@@ -616,7 +796,7 @@ moz-button.searchmode-switcher:hover::part(button),
       linear-gradient(90deg, var(--wd-night) 0%, var(--wd-blue) 45%,
                              var(--wd-violet) 80%, var(--wd-wine) 100%);
 
-    /* map Nova/Firefox variables to the palette */
+    /* Nova/Firefox-Variablen auf die Palette umbiegen */
     --color-accent-primary: var(--wd-accent) !important;
     --toolbox-background-image: none !important;
     --toolbar-bgcolor: transparent !important;
@@ -634,7 +814,196 @@ moz-button.searchmode-switcher:hover::part(button),
     --focus-outline-color: var(--wd-accent) !important;
   }
 
-  /* ONE gradient for the whole window */
+  /* -------------------------------------------------------------------
+     9b) FARBKOMBINATIONEN PER SCHALTER
+     about:config -> neuen Boolean anlegen und auf true setzen.
+     Immer nur EINEN auf true lassen (sonst gewinnt der letzte in der Liste).
+     Alle auf false (oder nicht vorhanden) = Palette oben aus Abschnitt 9.
+     Änderungen wirken sofort, kein Neustart nötig.
+
+     userchrome.palette.polarlight     Polarlight
+     userchrome.palette.lavendel       Lavendel
+     userchrome.palette.glut           Glut
+     userchrome.palette.tiefsee        Tiefsee
+     userchrome.palette.kirschblueten  Kirschblüten
+     userchrome.palette.graphit        Graphit
+     userchrome.palette.aurora         Aurora (Nordlicht: Mint -> Violett)
+     userchrome.palette.sunset         Sonnenuntergang (Pflaume -> Koralle)
+     userchrome.palette.wald           Wald (tiefes Grün)
+     userchrome.palette.mokka          Mokka (warmes Braun)
+     userchrome.palette.nord           Nord (kühles Blaugrau)
+     userchrome.palette.gold           Mitternacht & Gold
+     userchrome.palette.cyber          Cyber (Neon Cyan & Magenta)
+     userchrome.palette.crimson        Crimson (dunkles Rot)
+     userchrome.palette.ozean          Ozean (Petrol -> Tiefblau)
+     userchrome.palette.matcha         Matcha (Salbei & Creme)
+     userchrome.palette.oled           OLED (echtes Schwarz)
+     userchrome.palette.warmdark       Warm Dark (augenschonend, warm)
+     userchrome.palette.softnight      Soft Night (augenschonend, kühl)
+     userchrome.palette.mist           Lavender Mist (augenschonend, Lavendel)
+     userchrome.palette.paper          Paper (hell, wie Papier)
+     ------------------------------------------------------------------- */
+  @media -moz-pref("userchrome.palette.polarlight") { /* Polarlight */
+    :root {
+      --wd-night: #0b1f2a; --wd-blue: #0f2a33; --wd-violet: #12303a; --wd-wine: #1a2f3f;
+      --wd-glow-top: rgba(80, 230, 170, 0.05); --wd-glow-bottom: rgba(120, 140, 255, 0.05);
+      --wd-accent: #5fe0a8; --wd-text: #e6f4ef; --wd-panel: #10262a;
+    }
+  }
+  @media -moz-pref("userchrome.palette.lavendel") { /* Lavendel */
+    :root {
+      --wd-night: #16142b; --wd-blue: #1e1a3a; --wd-violet: #2a2048; --wd-wine: #32213f;
+      --wd-glow-top: rgba(170, 130, 255, 0.05); --wd-glow-bottom: rgba(255, 140, 200, 0.04);
+      --wd-accent: #b18cff; --wd-text: #eeeaf8; --wd-panel: #1c1932;
+    }
+  }
+  @media -moz-pref("userchrome.palette.glut") { /* Glut */
+    :root {
+      --wd-night: #1c1512; --wd-blue: #251a16; --wd-violet: #2e1d18; --wd-wine: #351f1a;
+      --wd-glow-top: rgba(255, 140, 60, 0.05); --wd-glow-bottom: rgba(255, 90, 80, 0.04);
+      --wd-accent: #ff9a5c; --wd-text: #f5ece6; --wd-panel: #241a16;
+    }
+  }
+  @media -moz-pref("userchrome.palette.tiefsee") { /* Tiefsee */
+    :root {
+      --wd-night: #0a1418; --wd-blue: #0c1b22; --wd-violet: #0e212b; --wd-wine: #112432;
+      --wd-glow-top: rgba(60, 200, 255, 0.05); --wd-glow-bottom: rgba(60, 200, 255, 0.03);
+      --wd-accent: #4cc9f0; --wd-text: #e4f2f7; --wd-panel: #0f1d24;
+    }
+  }
+  @media -moz-pref("userchrome.palette.kirschblueten") { /* Kirschblüten */
+    :root {
+      --wd-night: #1d1622; --wd-blue: #251a2a; --wd-violet: #2e1d31; --wd-wine: #361f33;
+      --wd-glow-top: rgba(255, 170, 200, 0.05); --wd-glow-bottom: rgba(255, 170, 200, 0.04);
+      --wd-accent: #ffa3c4; --wd-text: #f6edf2; --wd-panel: #22192a;
+    }
+  }
+  @media -moz-pref("userchrome.palette.graphit") { /* Graphit */
+    :root {
+      --wd-night: #141618; --wd-blue: #181b1e; --wd-violet: #1c1f23; --wd-wine: #202327;
+      --wd-glow-top: rgba(255, 255, 255, 0.03); --wd-glow-bottom: rgba(255, 255, 255, 0.02);
+      --wd-accent: #7aa2ff; --wd-text: #eceef1; --wd-panel: #1a1d20;
+    }
+  }
+  @media -moz-pref("userchrome.palette.aurora") { /* Aurora (Nordlicht: Mint -> Violett) */
+    :root {
+      --wd-night: #0d1424; --wd-blue: #111d33; --wd-violet: #1b1f3f; --wd-wine: #261c3d;
+      --wd-glow-top: rgba(90, 255, 200, 0.06); --wd-glow-bottom: rgba(170, 110, 255, 0.05);
+      --wd-accent: #7cf5c8; --wd-text: #e8f3f6; --wd-panel: #121a2e;
+    }
+  }
+  @media -moz-pref("userchrome.palette.sunset") { /* Sonnenuntergang (Pflaume -> Koralle) */
+    :root {
+      --wd-night: #1a1424; --wd-blue: #24162b; --wd-violet: #311a2c; --wd-wine: #3a1d27;
+      --wd-glow-top: rgba(255, 120, 90, 0.06); --wd-glow-bottom: rgba(255, 180, 90, 0.05);
+      --wd-accent: #ff8a65; --wd-text: #f8ece8; --wd-panel: #221729;
+    }
+  }
+  @media -moz-pref("userchrome.palette.wald") { /* Wald (tiefes Grün) */
+    :root {
+      --wd-night: #0f1a14; --wd-blue: #132019; --wd-violet: #17271e; --wd-wine: #1c2c22;
+      --wd-glow-top: rgba(120, 220, 140, 0.05); --wd-glow-bottom: rgba(200, 230, 120, 0.04);
+      --wd-accent: #8fd694; --wd-text: #e9f3ea; --wd-panel: #13201a;
+    }
+  }
+  @media -moz-pref("userchrome.palette.mokka") { /* Mokka (warmes Braun) */
+    :root {
+      --wd-night: #1a1613; --wd-blue: #211b17; --wd-violet: #29211b; --wd-wine: #2f251e;
+      --wd-glow-top: rgba(210, 160, 110, 0.05); --wd-glow-bottom: rgba(200, 140, 90, 0.04);
+      --wd-accent: #d9a46c; --wd-text: #f3ebe3; --wd-panel: #201a16;
+    }
+  }
+  @media -moz-pref("userchrome.palette.nord") { /* Nord (kühles Blaugrau) */
+    :root {
+      --wd-night: #1b212b; --wd-blue: #1f2632; --wd-violet: #232b38; --wd-wine: #262e3d;
+      --wd-glow-top: rgba(136, 192, 208, 0.04); --wd-glow-bottom: rgba(129, 161, 193, 0.04);
+      --wd-accent: #88c0d0; --wd-text: #e5e9f0; --wd-panel: #222834;
+    }
+  }
+  @media -moz-pref("userchrome.palette.gold") { /* Mitternacht & Gold */
+    :root {
+      --wd-night: #0e0f17; --wd-blue: #13141f; --wd-violet: #181a28; --wd-wine: #1c1c2b;
+      --wd-glow-top: rgba(255, 210, 120, 0.05); --wd-glow-bottom: rgba(255, 190, 90, 0.03);
+      --wd-accent: #f2c76e; --wd-text: #f1eee6; --wd-panel: #151622;
+    }
+  }
+  @media -moz-pref("userchrome.palette.cyber") { /* Cyber (Neon Cyan & Magenta) */
+    :root {
+      --wd-night: #0d0b1a; --wd-blue: #140f26; --wd-violet: #1c1033; --wd-wine: #24103a;
+      --wd-glow-top: rgba(0, 240, 255, 0.06); --wd-glow-bottom: rgba(255, 0, 170, 0.05);
+      --wd-accent: #00e5ff; --wd-text: #eae6ff; --wd-panel: #140f24;
+    }
+  }
+  @media -moz-pref("userchrome.palette.crimson") { /* Crimson (dunkles Rot) */
+    :root {
+      --wd-night: #170e12; --wd-blue: #1e1016; --wd-violet: #26121a; --wd-wine: #2d131d;
+      --wd-glow-top: rgba(255, 70, 100, 0.05); --wd-glow-bottom: rgba(255, 120, 140, 0.04);
+      --wd-accent: #ff5c7a; --wd-text: #f6e9ec; --wd-panel: #1d1116;
+    }
+  }
+  @media -moz-pref("userchrome.palette.ozean") { /* Ozean (Petrol -> Tiefblau) */
+    :root {
+      --wd-night: #08161c; --wd-blue: #0a1e27; --wd-violet: #0c2433; --wd-wine: #10263d;
+      --wd-glow-top: rgba(40, 220, 200, 0.06); --wd-glow-bottom: rgba(70, 130, 255, 0.05);
+      --wd-accent: #3ee0c8; --wd-text: #e2f4f5; --wd-panel: #0d1e26;
+    }
+  }
+  @media -moz-pref("userchrome.palette.matcha") { /* Matcha (Salbei & Creme) */
+    :root {
+      --wd-night: #141814; --wd-blue: #191e19; --wd-violet: #1e241d; --wd-wine: #232820;
+      --wd-glow-top: rgba(190, 220, 160, 0.04); --wd-glow-bottom: rgba(230, 220, 170, 0.03);
+      --wd-accent: #b7d68a; --wd-text: #eef2e6; --wd-panel: #191e18;
+    }
+  }
+  @media -moz-pref("userchrome.palette.oled") { /* OLED (echtes Schwarz) */
+    :root {
+      --wd-night: #000000; --wd-blue: #040405; --wd-violet: #08080a; --wd-wine: #0c0c0f;
+      --wd-glow-top: rgba(255, 255, 255, 0.02); --wd-glow-bottom: rgba(255, 255, 255, 0.015);
+      --wd-accent: #c8c8d4; --wd-text: #ececf0; --wd-panel: #0b0b0d;
+    }
+  }
+  @media -moz-pref("userchrome.palette.warmdark") { /* Warm Dark (augenschonend, warm) */
+    :root {
+      --wd-night: #1a1816; --wd-blue: #1f1d1b; --wd-violet: #24211e; --wd-wine: #292623;
+      --wd-glow-top: rgba(215, 166, 95, 0.04); --wd-glow-bottom: rgba(143, 179, 154, 0.03);
+      --wd-accent: #d7a65f; --wd-text: #e3dccf; --wd-panel: #211f1c;
+    }
+  }
+  @media -moz-pref("userchrome.palette.softnight") { /* Soft Night (augenschonend, kühl) */
+    :root {
+      --wd-night: #181c21; --wd-blue: #1c2026; --wd-violet: #20252c; --wd-wine: #242a32;
+      --wd-glow-top: rgba(143, 184, 216, 0.04); --wd-glow-bottom: rgba(200, 162, 200, 0.03);
+      --wd-accent: #8fb8d8; --wd-text: #d8dee6; --wd-panel: #1f242b;
+    }
+  }
+  @media -moz-pref("userchrome.palette.mist") { /* Lavender Mist (augenschonend, Lavendel) */
+    :root {
+      --wd-night: #191722; --wd-blue: #1d1b26; --wd-violet: #221f2d; --wd-wine: #262333;
+      --wd-glow-top: rgba(184, 161, 232, 0.04); --wd-glow-bottom: rgba(232, 168, 196, 0.03);
+      --wd-accent: #b8a1e8; --wd-text: #e2ddef; --wd-panel: #211e2b;
+    }
+  }
+  @media -moz-pref("userchrome.palette.paper") { /* Paper (hell, wie Papier) */
+    :root {
+      --wd-night: #f4efe6; --wd-blue: #f1ebe1; --wd-violet: #eee7dc; --wd-wine: #ebe4d7;
+      --wd-glow-top: rgba(143, 85, 48, 0.04); --wd-glow-bottom: rgba(63, 107, 85, 0.03);
+      --wd-accent: #8f5530; --wd-text: #3b3631; --wd-panel: #efe9df;
+      /* heller Modus: Glas dunkel statt hell, Felder hell */
+      color-scheme: light;
+      --en-glass:        color-mix(in srgb, black 5%, transparent);
+      --en-glass-hover:  color-mix(in srgb, black 8%, transparent);
+      --en-glass-border: color-mix(in srgb, black 12%, transparent);
+      --en-glass-shine:  inset 0 1px 0 color-mix(in srgb, white 60%, transparent);
+      --en-active-border: color-mix(in srgb, var(--wd-accent) 55%, black);
+      --toolbar-field-background-color: #fbf8f2 !important;
+      --toolbar-field-focus-background-color: #ffffff !important;
+      --toolbar-field-focus-color: #2a2622 !important;
+      --toolbar-field-border-color: rgba(0, 0, 0, 0.10) !important;
+      --arrowpanel-border-color: rgba(0, 0, 0, 0.12) !important;
+    }
+  }
+
+  /* EIN Verlauf für das ganze Fenster */
   :root,
   #main-window,
   body {
@@ -644,7 +1013,7 @@ moz-button.searchmode-switcher:hover::part(button),
     background-size: 100% 100% !important;
   }
 
-  /* all layers above it transparent -> no edges/lines */
+  /* alle Ebenen darüber durchsichtig -> keine Kanten/Linien */
   #navigator-toolbox,
   #titlebar,
   #TabsToolbar,
@@ -664,7 +1033,7 @@ moz-button.searchmode-switcher:hover::part(button),
     display: none !important;
   }
 
-  /* inactive window: only slightly darker instead of grey */
+  /* inaktives Fenster: nur leicht abdunkeln statt grau */
   :root:-moz-window-inactive #navigator-toolbox {
     opacity: 0.92;
   }
@@ -672,14 +1041,14 @@ moz-button.searchmode-switcher:hover::part(button),
 
 
 /* ---------------------------------------------------------------------
-   10) LOADING BAR IN THE ADDRESS BAR (Helium style)
-   Glowing bar at the bottom of the address bar while the active tab
-   is loading. Only transform/opacity animated -> runs on the GPU.
+   10) LADEBALKEN IN DER ADRESSLEISTE (Helium-Stil)
+   Leuchtender Balken unten in der Adressleiste, solange der aktive Tab
+   lädt. Nur transform/opacity animiert -> läuft auf der Grafikkarte.
    --------------------------------------------------------------------- */
 :root {
-  --en-load-color:  var(--en-accent);   /* color of the bar             */
-  --en-load-height: 2px;                /* thickness                    */
-  --en-load-speed:  1.1s;               /* duration of one pass         */
+  --en-load-color:  var(--en-accent);   /* Farbe des Balkens            */
+  --en-load-height: 2px;                /* Dicke                        */
+  --en-load-speed:  1.1s;               /* Dauer eines Durchlaufs        */
 }
 
 #urlbar-background,
@@ -708,15 +1077,15 @@ moz-button.searchmode-switcher:hover::part(button),
   transition: opacity 0.25s ease;
 }
 
-/* active tab is loading -> bar runs
-   (turn off with userchrome.no-loadbar, see section 11) */
+/* aktiver Tab lädt -> Balken läuft
+   (Abschalten über userchrome.no-loadbar, siehe Abschnitt 11) */
 :root:has(#tabbrowser-tabs .tabbrowser-tab[selected][busy]) #urlbar-background::after,
 :root:has(#tabbrowser-tabs .tabbrowser-tab[selected][busy]) .urlbar-background::after {
   opacity: 1;
   animation: en-loadbar var(--en-load-speed) ease-in-out infinite;
 }
 
-/* not while the dropdown is open */
+/* nicht beim geöffneten Dropdown */
 #urlbar[open] #urlbar-background::after,
 #urlbar[open] .urlbar-background::after {
   display: none;
@@ -738,13 +1107,13 @@ moz-button.searchmode-switcher:hover::part(button),
 
 
 /* ---------------------------------------------------------------------
-   11) PERFORMANCE MODE
+   11) LEISTUNGSMODUS
    about:config -> Boolean "userchrome.performance" = true
-   Turns off the most expensive effects (everything else stays the same):
-   - rounded corners of the web page (clip-path on the page content)
-   - blur behind the address bar dropdown
-   - loading bar (uses :has(), checked on every tab change)
-   Test them one by one: create only the matching Boolean:
+   Schaltet die drei teuersten Effekte ab (Rest bleibt gleich):
+   - abgerundete Ecken der Webseite (clip-path auf dem Seiteninhalt)
+   - Blur hinter dem Adressleisten-Dropdown
+   - Ladebalken (nutzt :has(), wird bei jeder Tab-Änderung geprüft)
+   Einzeln testen: jeweils nur den passenden Boolean anlegen:
    "userchrome.no-rounded", "userchrome.no-blur", "userchrome.no-loadbar"
    --------------------------------------------------------------------- */
 @media -moz-pref("userchrome.performance") {
@@ -803,15 +1172,15 @@ moz-button.searchmode-switcher:hover::part(button),
 
 
 /* ---------------------------------------------------------------------
-   12) SCROLLBARS OF THE BROWSER UI (tab sidebar, menus, dropdown)
-   Pink at the top, the further you scroll down, the more teal.
-   Uses "scroll-driven animations": the animation follows the scroll
-   position instead of time -> practically free.
-   Web page scrollbars: see userContent.css
+   12) SCROLLBARS DER BROWSER-OBERFLÄCHE (Tabs-Sidebar, Menüs, Dropdown)
+   Oben pink, je weiter man runterscrollt, desto mehr teal.
+   Läuft über "scroll-driven animations": die Animation hängt an der
+   Scroll-Position statt an der Zeit -> kostet quasi nichts.
+   Webseiten-Scrollbars: siehe userContent.css
    --------------------------------------------------------------------- */
 :root {
-  --en-scroll-top:    rgba(255, 122, 149, 0.75);  /* pink (top)                */
-  --en-scroll-bottom: rgba(79, 227, 224, 0.75);   /* teal (bottom)             */
+  --en-scroll-top:    rgba(255, 122, 149, 0.75);  /* Pink (oben)          */
+  --en-scroll-bottom: rgba(79, 227, 224, 0.75);   /* Teal (ganz unten)    */
   --en-scroll-thumb:  var(--en-scroll-top);
   scrollbar-color: var(--en-scroll-thumb) transparent !important;
 }
@@ -821,7 +1190,7 @@ moz-button.searchmode-switcher:hover::part(button),
   to   { scrollbar-color: var(--en-scroll-bottom) transparent; }
 }
 
-/* all scrollable areas of the UI (tab sidebar, menus) */
+/* alle scrollbaren Bereiche der Oberfläche (Tabs-Sidebar, Menüs) */
 arrowscrollbox::part(scrollbox),
 #tabbrowser-arrowscrollbox::part(scrollbox),
 .urlbarView-body-inner,
@@ -832,24 +1201,24 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   13) ZEN LAYOUT for vertical tabs
+   13) ZEN-LAYOUT für vertikale Tabs
    about:config -> Boolean "userchrome.zen-layout" = true
-   Only active when vertical tabs are turned on.
+   Aktiv nur, wenn vertikale Tabs eingeschaltet sind.
 
-   Top bar stays (compact, narrow centered address bar),
-   sidebar in Zen style: pinned tabs as a tile grid,
-   normal tabs plain, active tab with a light outline.
+   Obere Leiste bleibt (kompakt, Adressleiste schmal & mittig),
+   Sidebar im Zen-Stil: angepinnte Tabs als Kachel-Raster,
+   normale Tabs schlicht, aktiver Tab hell umrandet.
    --------------------------------------------------------------------- */
 @media -moz-pref("userchrome.zen-layout") {
 @media -moz-pref("sidebar.verticalTabs") {
 
   :root {
-    --zen-urlbar-width:  560px;   /* width of the address bar at the top */
-    --zen-tile-height:   44px;    /* height of the tiles (pinned tabs)   */
-    --zen-tile-columns:  3;       /* tiles per row                       */
+    --zen-urlbar-width:  560px;   /* Breite der Adressleiste oben          */
+    --zen-tile-height:   44px;    /* Höhe der Kacheln (angepinnte Tabs)    */
+    --zen-tile-columns:  3;       /* Kacheln pro Zeile                     */
   }
 
-  /* --- top bar stays, but compact and with a narrow address bar */
+  /* --- Obere Leiste bleibt, aber kompakt und mit schmaler Adressleiste */
   :root:not([customizing]) #nav-bar {
     padding-block: 3px !important;
   }
@@ -859,10 +1228,10 @@ arrowscrollbox::part(scrollbox),
     width: var(--zen-urlbar-width) !important;
     max-width: var(--zen-urlbar-width) !important;
     min-width: 200px !important;
-    margin-inline: 4px auto !important;   /* right next to reload, icons stay on the right */
+    margin-inline: 4px auto !important;   /* direkt neben Neu laden, Icons bleiben rechts */
   }
 
-  /* don't pull the dropdown over the top edge */
+  /* Dropdown nicht über den oberen Rand ziehen */
   #urlbar[breakout][breakout-extend],
   #urlbar[open] {
     top: var(--zen-dropdown-offset, 10px) !important;
@@ -877,7 +1246,7 @@ arrowscrollbox::part(scrollbox),
     --toolbarbutton-inner-padding: 6px !important;
   }
 
-  /* --- pinned tabs as a tile grid (Zen "Essentials") ------------- */
+  /* --- Angepinnte Tabs als Kachel-Raster (Zen "Essentials") --------- */
   #vertical-pinned-tabs-container {
     display: grid !important;
     grid-template-columns: repeat(var(--zen-tile-columns), 1fr) !important;
@@ -915,7 +1284,7 @@ arrowscrollbox::part(scrollbox),
     display: none !important;
   }
 
-  /* --- normal tabs: plain, Zen style ------------------------------ */
+  /* --- Normale Tabs: Zen-typisch schlicht ---------------------------- */
   #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:not([pinned]) .tab-background {
     background: transparent !important;
     border-color: transparent !important;
@@ -935,10 +1304,10 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   14) LINE ABOVE THE SIDEBAR ICONS (settings / star)
+   14) TRENNLINIE ÜBER DEN SIDEBAR-ICONS (Einstellungen / Stern)
    --------------------------------------------------------------------- */
 :root {
-  /* color of the line, e.g. teal: rgba(79, 227, 224, 0.45) */
+  /* Farbe der Linie, z. B. Teal: rgba(79, 227, 224, 0.45) */
   --en-splitter-color: var(--en-glass-border);
 }
 
@@ -952,15 +1321,15 @@ arrowscrollbox::part(scrollbox),
 }
 
 #sidebar-tools-and-extensions-splitter:hover {
-  border-top-color: var(--en-accent) !important;   /* highlight while dragging */
+  border-top-color: var(--en-accent) !important;   /* beim Ziehen hervorheben */
 }
 
 
 /* ---------------------------------------------------------------------
-   15) COLOR THE DOMAIN IN THE ADDRESS BAR (e.g. "youtube.com")
-   Firefox highlights the domain and draws the rest (www., path)
-   semi-transparent in the same color automatically. When clicking /
-   typing it is shown in normal white again.
+   15) DOMAIN IN DER ADRESSLEISTE EINFÄRBEN (z. B. "youtube.com")
+   Firefox hebt die Domain hervor und zeichnet den Rest (www., Pfad)
+   automatisch halbtransparent in derselben Farbe. Beim Anklicken /
+   Tippen wird wieder normal weiß angezeigt.
    --------------------------------------------------------------------- */
 :root {
   --en-domain-color: color-mix(in srgb, var(--en-accent) 80%, white);
@@ -973,10 +1342,10 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   16) SPLIT VIEW: tab pair must not shift the tab row
-   Inspector: <tab-split-view-wrapper> (grid) = 40px high, because the
-   tabs inside already have the full row height (36px) + border/spacing.
-   Fix: frame exactly row height, tabs inside correspondingly smaller.
+   16) SPLIT VIEW: Tab-Paar darf die Tab-Zeile nicht verschieben
+   Laut Inspektor: <tab-split-view-wrapper> (Grid) = 40px hoch, weil die
+   Tabs darin schon volle Zeilenhöhe (36px) haben + Rahmen/Abstand.
+   Fix: Rahmen genau Zeilenhöhe, Tabs darin entsprechend kleiner.
    --------------------------------------------------------------------- */
 #tabbrowser-tabs:not([orient="vertical"]) tab-split-view-wrapper {
   height: var(--en-row-height, calc(var(--en-tab-height) + 8px)) !important;
@@ -997,28 +1366,28 @@ arrowscrollbox::part(scrollbox),
   padding-block: calc((var(--en-row-height, calc(var(--en-tab-height) + 8px)) - var(--en-tab-height)) / 2 - 2px) !important;
 }
 
-/* center all tabs in the bar, in case something gets taller */
+/* alle Tabs in der Leiste mittig, falls doch etwas höher wird */
 #tabbrowser-tabs:not([orient="vertical"]) #tabbrowser-arrowscrollbox {
   align-items: center !important;
 }
 
 
 /* ---------------------------------------------------------------------
-   17) ADAPTIVE BACKGROUND (color follows the web page)
-   Requirement: install the extension "Adaptive Tab Bar Colour".
-   It reads the color of the current page and passes it to Firefox
-   (--lwt-accent-color). This turns it into a dark gradient so the
-   light text always stays readable.
-   On/off: about:config -> Boolean "userchrome.adaptive" = true
+   17) ADAPTIVER HINTERGRUND (Farbe passt sich der Webseite an)
+   Voraussetzung: Erweiterung "Adaptive Tab Bar Colour" installieren.
+   Sie liest die Farbe der aktuellen Seite und übergibt sie an Firefox
+   (--lwt-accent-color). Hier wird daraus ein dunkler Verlauf gebaut,
+   damit der helle Text immer lesbar bleibt.
+   Ein-/Ausschalten: about:config -> Boolean "userchrome.adaptive" = true
    --------------------------------------------------------------------- */
 @media -moz-pref("userchrome.adaptive") {
 
   :root {
-    /* page color (fallback: night blue from the Windrad theme) */
+    /* Seitenfarbe (Fallback: Nachtblau aus dem Windrad-Theme) */
     --ad-page: var(--lwt-accent-color, var(--wd-night, #0f2a3a));
 
-    /* how much it is darkened (more = darker, more readable) */
-    --ad-dark-left:  55%;   /* darkening on the left (the right side mixes in violet) */
+    /* wie stark abgedunkelt wird (mehr = dunkler, besser lesbar) */
+    --ad-dark-left:  55%;   /* Abdunklung links (rechts mischt Violett rein) */
 
     --ad-gradient: linear-gradient(90deg,
       color-mix(in srgb, var(--ad-page), black var(--ad-dark-left)) 0%,
@@ -1035,7 +1404,7 @@ arrowscrollbox::part(scrollbox),
     background-color: color-mix(in srgb, var(--ad-page), black var(--ad-dark-left)) !important;
   }
 
-  /* bars transparent so the adaptive gradient is visible everywhere */
+  /* Leisten durchsichtig, damit der adaptive Verlauf überall sichtbar ist */
   #navigator-toolbox,
   #titlebar,
   #TabsToolbar,
@@ -1048,10 +1417,10 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   18) VERTICAL TABS: clean rounded corners on the active tab
-   Nova puts its own outline with a different rounding on the active
-   tab + our outer ring -> corners look square/doubled.
-   Here: only ONE border, same rounding on all layers.
+   18) VERTIKALE TABS: saubere runde Ecken beim aktiven Tab
+   Nova legt beim aktiven Tab eine eigene Kontur (outline) mit anderer
+   Rundung darüber + unser äußerer Ring -> Ecken wirken eckig/doppelt.
+   Hier: nur noch EIN Rahmen, gleiche Rundung auf allen Ebenen.
    --------------------------------------------------------------------- */
 #tabbrowser-tabs[orient="vertical"] {
   --tab-border-radius: var(--en-radius) !important;
@@ -1070,7 +1439,7 @@ arrowscrollbox::part(scrollbox),
   outline: none !important;
 }
 
-/* active tab: 1px lighter border instead of border + outer ring */
+/* aktiver Tab: 1px hellerer Rahmen statt Rahmen + äußerem Ring */
 #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[selected] .tab-background {
   border: 1px solid var(--en-active-border) !important;
   box-shadow: var(--en-glass-shine) !important;
@@ -1078,19 +1447,19 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   19) STATUS PANEL BOTTOM LEFT (link URL on hover)
-   Glass look like the address bar dropdown: tinted + blur,
-   rounded, with some distance from the edge.
+   19) STATUS-ANZEIGE UNTEN LINKS (Link-URL beim Drüberfahren)
+   Glas-Look wie das Adressleisten-Dropdown: getönt + Blur,
+   abgerundet, mit Abstand zum Rand.
    --------------------------------------------------------------------- */
 #statuspanel {
-  margin: 0 0 10px 10px !important;   /* distance from the rounded corners */
+  margin: 0 0 10px 10px !important;   /* Abstand zu den runden Ecken */
   padding: 0 !important;
   border: none !important;
   background: transparent !important;
 }
 
 #statuspanel[mirror] {
-  margin: 0 10px 10px 0 !important;   /* when it moves to the right */
+  margin: 0 10px 10px 0 !important;   /* wenn es nach rechts ausweicht */
 }
 
 #statuspanel-label {
@@ -1106,8 +1475,8 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   20) FULLSCREEN: no borders, no rounded corners
-   (video fullscreen = inDOMFullscreen, F11 = inFullscreen)
+   20) VOLLBILD: keine Ränder, keine runden Ecken
+   (Video-Vollbild = inDOMFullscreen, F11 = inFullscreen)
    --------------------------------------------------------------------- */
 :root[inDOMFullscreen] #tabbrowser-tabbox,
 :root[inFullscreen] #tabbrowser-tabbox {
@@ -1125,8 +1494,8 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   21) TAB GROUPS: group label must not shift the tab row
-   (same problem as split view: the label brings its own height)
+   21) TAB-GRUPPEN: Gruppen-Label darf die Tab-Zeile nicht verschieben
+   (gleiches Problem wie bei Split View: Label bringt eigene Höhe mit)
    --------------------------------------------------------------------- */
 #tabbrowser-tabs:not([orient="vertical"]) tab-group,
 #tabbrowser-tabs:not([orient="vertical"]) .tab-group-label-container {
@@ -1148,8 +1517,8 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   22) HOVER EFFECT ON THE ADDRESS BAR (Helium style)
-   On hover the glass gets a bit lighter and the edge glows.
+   22) HOVER-EFFEKT AUF DER ADRESSLEISTE (Helium-Stil)
+   Beim Drüberfahren wird das Glas etwas heller und die Kante leuchtet.
    --------------------------------------------------------------------- */
 #urlbar-background,
 .urlbar-background {
@@ -1164,16 +1533,17 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   23) ADDRESS BAR DROPDOWN: one surface in your colors
-   The open bar consists of two parts: the input row (top) and
-   div.urlbarView-background (the list below). Both get the same
-   color and border, joined seamlessly -> one single surface.
+   23) DROPDOWN DER ADRESSLEISTE: eine Fläche in deinen Farben
+   Laut Inspektor liegt div.urlbarView-background hinter der GANZEN
+   geöffneten Leiste (Eingabezeile + Liste). Deshalb bekommt nur sie
+   Farbe, Rahmen und Rundung; die Eingabezeile wird durchsichtig ->
+   kein zweiter Rahmen innen.
    --------------------------------------------------------------------- */
 :root {
   --en-open-border: color-mix(in srgb, var(--en-accent) 55%, var(--en-glass-border));
 }
 
-/* remove Nova's own focus outline around the input row */
+/* Novas eigene Fokus-Kontur um die Eingabezeile entfernen */
 #urlbar #urlbar-input-container,
 #urlbar .urlbar-input-container {
   outline: none !important;
@@ -1181,8 +1551,8 @@ arrowscrollbox::part(scrollbox),
   box-shadow: none !important;
 }
 
-/* open input row = TOP part of the surface:
-   color + border top/sides, rounded top, straight bottom */
+/* offene Eingabezeile = OBERER Teil der Fläche:
+   Farbe + Rahmen oben/seitlich, oben rund, unten gerade */
 #urlbar[open] > #urlbar-background,
 #urlbar[open] > .urlbar-background,
 #urlbar[open][focused] > #urlbar-background,
@@ -1196,8 +1566,8 @@ arrowscrollbox::part(scrollbox),
   backdrop-filter: none !important;
 }
 
-/* list = BOTTOM part: same color, border sides/bottom,
-   rounded bottom, straight top -> seamless transition */
+/* Liste = UNTERER Teil: gleiche Farbe, Rahmen seitlich/unten,
+   unten rund, oben gerade -> nahtloser Übergang */
 #urlbar[open] .urlbarView-background {
   background-color: var(--en-popup-bg) !important;
   background-image: none !important;
@@ -1207,7 +1577,7 @@ arrowscrollbox::part(scrollbox),
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45) !important;
 }
 
-/* inner list layers transparent, so nothing black lies on top */
+/* innere Listen-Ebenen durchsichtig, damit nichts Schwarzes drüberliegt */
 #urlbar[open] .urlbarView,
 #urlbar[open] .urlbarView-body-outer,
 #urlbar[open] .urlbarView-body-inner,
@@ -1215,21 +1585,21 @@ arrowscrollbox::part(scrollbox),
   background-color: transparent !important;
 }
 
-/* remove the line between input and results */
+/* Trennlinie zwischen Eingabe und Ergebnissen weg */
 :root {
   --urlbarView-separator-color: transparent !important;
 }
 
 
 /* ---------------------------------------------------------------------
-   24) OPENING ANIMATION OF THE ADDRESS BAR
-   The list unfolds from the top and fades in, the entries follow
-   slightly staggered. The list grows from its top edge
-   -> stays seamlessly attached to the input row.
-   Only transform/opacity -> runs on the GPU.
+   24) ÖFFNEN-ANIMATION DER ADRESSLEISTE
+   Liste klappt von oben auf und blendet ein, die Einträge folgen
+   leicht versetzt nacheinander. Die Liste wächst von ihrer Oberkante
+   aus -> bleibt nahtlos an der Eingabezeile.
+   Nur transform/opacity -> läuft auf der Grafikkarte.
    --------------------------------------------------------------------- */
 :root {
-  --en-open-speed: 220ms;   /* animation duration */
+  --en-open-speed: 220ms;   /* Dauer der Animation */
 }
 
 #urlbar[open] .urlbarView,
@@ -1238,7 +1608,7 @@ arrowscrollbox::part(scrollbox),
   animation: en-url-open var(--en-open-speed) cubic-bezier(.2, .9, .3, 1.05);
 }
 
-/* entries one after another (staggered) */
+/* Einträge nacheinander (gestaffelt) */
 #urlbar[open] .urlbarView-row {
   animation: en-url-row calc(var(--en-open-speed) + 60ms) ease-out both;
 }
@@ -1268,9 +1638,9 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   25) DOWNLOAD ANIMATION (Zen style)
-   When a download starts, the download button bounces and glows
-   in the accent color; while downloading it pulses gently.
+   25) DOWNLOAD-ANIMATION (Zen-Stil)
+   Beim Start eines Downloads hüpft der Download-Button und leuchtet
+   in der Akzentfarbe; während des Downloads pulsiert er sanft.
    --------------------------------------------------------------------- */
 #downloads-button[notification="start"] .toolbarbutton-icon,
 #downloads-button[notification="start"] .toolbarbutton-badge-stack,
@@ -1284,13 +1654,13 @@ arrowscrollbox::part(scrollbox),
   box-shadow: 0 0 0 1px var(--en-accent), 0 0 14px var(--en-accent) !important;
 }
 
-/* a download is running -> gentle pulse */
+/* läuft gerade ein Download -> sanftes Pulsieren */
 #downloads-button[progress] > .toolbarbutton-badge-stack {
   border-radius: 8px !important;
   animation: en-dl-pulse 1.6s ease-in-out infinite;
 }
 
-/* finished -> short glow */
+/* fertig -> kurzer Aufleucht-Effekt */
 #downloads-button[attention="success"] > .toolbarbutton-badge-stack {
   border-radius: 8px !important;
   animation: en-dl-done 900ms ease-out 1;
@@ -1318,8 +1688,8 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   26) TAB PREVIEW ON HOVER in your colors
-   (card with title, address and "Add Note", also for tab groups)
+   26) TAB-VORSCHAU BEIM DRÜBERFAHREN in deinen Farben
+   (Karte mit Titel, Adresse und "Add Note", auch für Tab-Gruppen)
    --------------------------------------------------------------------- */
 #tab-preview-panel,
 #tabgroup-preview-panel,
@@ -1343,13 +1713,13 @@ arrowscrollbox::part(scrollbox),
   color: var(--en-text) !important;
 }
 
-/* address in the preview: subtle */
+/* Adresse in der Vorschau dezent */
 #tab-preview-panel .tab-preview-uri,
 .tab-preview-panel .tab-preview-uri {
   color: var(--en-text-muted) !important;
 }
 
-/* "Add Note" row: hover in glass style */
+/* "Add Note"-Zeile: Hover im Glas-Stil */
 #tab-preview-panel toolbarbutton:hover,
 #tab-preview-panel button:hover,
 #tab-preview-panel [role="button"]:hover {
@@ -1359,29 +1729,30 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   27) TAB ANIMATIONS (vertical + horizontal)
-   a) New tab: space opens smoothly (the other tabs slide aside
-      instead of jumping), then the tab slides in and briefly
-      glows in the accent color
-   b) Close: tab fades out and shrinks
-   c) Tab switch: background and border cross-fade smoothly
-   d) Small "press" effect on click
-   e) Pinned tabs pop in when pinned
+   27) TAB-ANIMATIONEN (vertikal + horizontal)
+   a) Neuer Tab: Platz öffnet sich weich (die anderen Tabs rutschen
+      sanft zur Seite statt zu springen), dann gleitet der Tab rein
+      und leuchtet kurz in der Akzentfarbe auf
+   b) Schließen: Tab blendet aus und schrumpft
+   c) Tab-Wechsel: Hintergrund und Rahmen blenden weich über
+   d) Kleines "Eindrücken" beim Klicken
+   e) Angepinnte Tabs ploppen beim Anpinnen auf
 
-   Note: Firefox marks tabs as "faded in" permanently. That's why (a)
-   also plays once on browser start and after moving a tab with
-   drag & drop.
-   If animations are turned off in Windows (Settings -> Accessibility
-   -> Animation effects), Firefox turns off all animations – these too.
+   Hinweis: Firefox markiert Tabs dauerhaft als "eingeblendet". Deshalb
+   spielt (a) auch beim Browser-Start und nach dem Verschieben eines
+   Tabs per Drag & Drop einmal ab.
+   Sind unter Windows die Animationen aus (Einstellungen ->
+   Barrierefreiheit -> Animationseffekte), schaltet Firefox alle
+   Animationen ab – auch diese.
    --------------------------------------------------------------------- */
 :root {
-  --en-newtab-speed: 280ms;                        /* new tab duration   */
-  --en-tab-ease: cubic-bezier(.2, .9, .3, 1.15);   /* slight spring     */
+  --en-newtab-speed: 280ms;                        /* Dauer neuer Tab   */
+  --en-tab-ease: cubic-bezier(.2, .9, .3, 1.15);   /* leichtes Federn   */
 }
 
-/* a) NEW TAB – vertical: space opens from top to bottom.
-      The tab starts with a negative margin (lies "under" the previous
-      one) and pushes the tabs below it down smoothly. */
+/* a) NEUER TAB – vertikal: Platz öffnet sich von oben nach unten.
+      Der Tab startet mit negativem Abstand (liegt "unter" dem vorigen)
+      und schiebt die Tabs darunter weich nach unten. */
 #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[fadein]:not([pinned]) {
   animation: en-vtab-room var(--en-newtab-speed) cubic-bezier(.3, .8, .3, 1);
 }
@@ -1397,7 +1768,7 @@ arrowscrollbox::part(scrollbox),
   to   { opacity: 1; transform: none; }
 }
 
-/* a) NEW TAB – horizontal: tab pops up from the center */
+/* a) NEUER TAB – horizontal: Tab ploppt aus der Mitte auf */
 #tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab[fadein]:not([pinned]) .tab-stack {
   animation: en-htab-in var(--en-newtab-speed) var(--en-tab-ease) both;
 }
@@ -1406,7 +1777,7 @@ arrowscrollbox::part(scrollbox),
   to   { opacity: 1; transform: none; }
 }
 
-/* a) short glow (both directions) */
+/* a) kurzes Aufleuchten (beide Richtungen) */
 .tabbrowser-tab[fadein]:not([pinned]) .tab-background {
   animation: en-tab-glow 700ms ease-out;
 }
@@ -1415,15 +1786,15 @@ arrowscrollbox::part(scrollbox),
   100% { filter: none; }
 }
 
-/* b) CLOSE: fade out + shrink (as long as Firefox keeps the tab
-      around briefly while closing) */
+/* b) SCHLIESSEN: ausblenden + schrumpfen (solange Firefox den Tab
+      beim Schließen noch kurz stehen lässt) */
 .tabbrowser-tab[closing] .tab-stack {
   opacity: 0 !important;
   transform: scale(0.9);
   transition: opacity 150ms ease, transform 150ms ease !important;
 }
 
-/* c) TAB SWITCH: surface, border and glow cross-fade smoothly */
+/* c) TAB-WECHSEL: Fläche, Rahmen und Leuchten blenden weich über */
 .tabbrowser-tab .tab-background {
   transition: background-color 180ms ease, border-color 180ms ease,
               box-shadow 220ms ease, filter 220ms ease !important;
@@ -1432,7 +1803,7 @@ arrowscrollbox::part(scrollbox),
   transition: opacity 180ms ease;
 }
 
-/* d) press in very slightly on click */
+/* d) beim Klicken ganz leicht eindrücken */
 .tabbrowser-tab:active:not([pinned]) .tab-stack,
 #vertical-tabs-newtab-button:active,
 #tabs-newtab-button:active,
@@ -1441,7 +1812,7 @@ arrowscrollbox::part(scrollbox),
   transition: transform 80ms ease;
 }
 
-/* e) PINNED: small pop of the tile */
+/* e) ANGEPINNT: kleines Aufploppen der Kachel */
 .tabbrowser-tab[pinned][fadein] .tab-stack {
   animation: en-pin-in 320ms var(--en-tab-ease) both;
 }
@@ -1461,21 +1832,21 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   28) VERTICAL TABS: FINISHING TOUCHES
-   a) accent stripe on the left of the active tab
-   b) long titles fade out softly instead of being cut off
-   c) hover: tab moves slightly right, favicon gets a bit bigger
-   d) unloaded (sleeping) tabs dimmed
-   e) "New Tab" as a dashed pill
-   f) round close buttons, reddish on hover
-   g) icons at the bottom (settings / star) in glass style
+   28) VERTIKALE TABS: FEINSCHLIFF
+   a) Akzent-Streifen links am aktiven Tab
+   b) Lange Titel laufen weich aus statt hart abgeschnitten
+   c) Hover: Tab rückt leicht nach rechts, Favicon wird etwas größer
+   d) Entladene (schlafende) Tabs gedimmt
+   e) "New Tab" als gestrichelte Pille
+   f) Runde Schließen-Buttons, beim Hover rötlich
+   g) Icons unten (Einstellungen / Stern) im Glas-Stil
    --------------------------------------------------------------------- */
 :root {
-  --en-stripe-width: 3px;                 /* thickness of the accent stripe */
-  --en-close-hover:  #ff8a9c;             /* color of the X on hover        */
+  --en-stripe-width: 3px;                 /* Dicke des Akzent-Streifens   */
+  --en-close-hover:  #ff8a9c;             /* Farbe des X beim Hover        */
 }
 
-/* a) accent stripe: grows from the center when activated */
+/* a) Akzent-Streifen: wächst beim Aktivieren von der Mitte aus */
 #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab .tab-stack {
   position: relative !important;
 }
@@ -1499,12 +1870,12 @@ arrowscrollbox::part(scrollbox),
   opacity: 1;
   transform: scaleY(1);
 }
-/* room for the stripe */
+/* Platz für den Streifen */
 #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:not([pinned]) .tab-content {
   padding-inline-start: 12px !important;
 }
 
-/* b) soft title fade-out */
+/* b) weicher Titel-Auslauf */
 #tabbrowser-tabs[orient="vertical"] .tab-label {
   text-overflow: clip !important;
 }
@@ -1512,7 +1883,7 @@ arrowscrollbox::part(scrollbox),
   mask-image: linear-gradient(to left, transparent 0, black 28px) !important;
 }
 
-/* c) hover movement */
+/* c) Hover-Bewegung */
 #tabbrowser-tabs[orient="vertical"] .tab-content,
 #tabbrowser-tabs[orient="vertical"] .tab-icon-image {
   transition: transform 160ms ease !important;
@@ -1524,7 +1895,7 @@ arrowscrollbox::part(scrollbox),
   transform: scale(1.1);
 }
 
-/* d) unloaded tabs dimmed (hover brings them back) */
+/* d) entladene Tabs gedimmt (Hover holt sie zurück) */
 #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:is([pending], [discarded]):not(:hover) .tab-icon-stack,
 #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab:is([pending], [discarded]):not(:hover) .tab-label-container {
   opacity: 0.45 !important;
@@ -1532,7 +1903,7 @@ arrowscrollbox::part(scrollbox),
   transition: opacity 150ms ease;
 }
 
-/* e) "New Tab" as a dashed pill */
+/* e) "New Tab" als gestrichelte Pille */
 #vertical-tabs-newtab-button {
   border: 1px dashed var(--en-glass-border) !important;
   border-radius: var(--en-radius) !important;
@@ -1548,7 +1919,7 @@ arrowscrollbox::part(scrollbox),
   box-shadow: 0 0 10px var(--en-accent-soft) !important;
 }
 
-/* f) round close buttons */
+/* f) runde Schließen-Buttons */
 #tabbrowser-tabs[orient="vertical"] .tab-close-button {
   width: 20px !important;
   height: 20px !important;
@@ -1562,9 +1933,9 @@ arrowscrollbox::part(scrollbox),
   fill: var(--en-close-hover) !important;
 }
 
-/* g) icons at the bottom in glass style
-   The buttons live in the shadow DOM of <sidebar-main>; only variables
-   get in from outside -> every button becomes a small glass tile. */
+/* g) Icons unten im Glas-Stil
+   Die Knöpfe liegen im Shadow-DOM von <sidebar-main>; von außen gehen
+   nur Variablen rein -> jeder Knopf wird eine kleine Glas-Kachel. */
 #sidebar-main {
   --button-background-color: var(--en-glass) !important;
   --button-background-color-hover: var(--en-glass-hover) !important;
@@ -1576,7 +1947,7 @@ arrowscrollbox::part(scrollbox),
   --button-border-color-hover: var(--en-open-border, var(--en-glass-border)) !important;
   --button-border-radius: var(--en-radius) !important;
 }
-/* line above as a soft gradient instead of a hard line */
+/* Trennlinie darüber als weicher Verlauf statt harter Linie */
 #sidebar-tools-and-extensions-splitter {
   border-top: none !important;
   height: 1px !important;
@@ -1593,11 +1964,11 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   29) CLOSE BUTTON ONLY ON HOVER (all tabs, active one too)
-   Not hovered: the button is gone AND not clickable, the title gets
-   the space. Closing always works with the middle mouse button too.
+   29) SCHLIESSEN-BUTTON NUR BEIM DRÜBERFAHREN (alle Tabs, auch aktiver)
+   Nicht gehovert: Button ist weg UND nicht klickbar, der Titel bekommt
+   den Platz. Schließen geht immer auch per mittlerer Maustaste.
 
-   Hide it completely like in Zen (middle mouse button only):
+   Komplett ausblenden wie bei Zen (nur mittlere Maustaste):
    about:config -> Boolean "userchrome.no-close-button" = true
    --------------------------------------------------------------------- */
 #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
@@ -1622,14 +1993,14 @@ arrowscrollbox::part(scrollbox),
 
 
 /* ---------------------------------------------------------------------
-   30) HORIZONTAL TABS LIKE THE VERTICAL ONES
-   Same look and behavior, just adapted to the direction:
-   - active tab: 1px light border (no outer ring) +
-     accent stripe at the BOTTOM instead of the left
-   - soft title fade-out
-   - hover: tab lifts slightly, favicon gets bigger
-   - sleeping tabs dimmed
-   - "+" as a dashed pill, round close buttons
+   30) HORIZONTALE TABS WIE DIE VERTIKALEN
+   Gleiche Optik und gleiches Verhalten, nur an die Richtung angepasst:
+   - aktiver Tab: 1px heller Rahmen (kein äußerer Ring) +
+     Akzent-Streifen UNTEN statt links
+   - weicher Titel-Auslauf
+   - Hover: Tab hebt sich leicht an, Favicon wird größer
+   - schlafende Tabs gedimmt
+   - "+" als gestrichelte Pille, runde Schließen-Buttons
    --------------------------------------------------------------------- */
 #tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab[selected] .tab-background {
   border: 1px solid var(--en-active-border) !important;
@@ -1637,7 +2008,7 @@ arrowscrollbox::part(scrollbox),
   outline: none !important;
 }
 
-/* accent stripe at the bottom */
+/* Akzent-Streifen unten */
 #tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab .tab-stack {
   position: relative !important;
 }
@@ -1662,7 +2033,7 @@ arrowscrollbox::part(scrollbox),
   transform: scaleX(1);
 }
 
-/* soft title fade-out */
+/* weicher Titel-Auslauf */
 #tabbrowser-tabs:not([orient="vertical"]) .tab-label {
   text-overflow: clip !important;
 }
@@ -1670,7 +2041,7 @@ arrowscrollbox::part(scrollbox),
   mask-image: linear-gradient(to left, transparent 0, black 22px) !important;
 }
 
-/* hover: lift slightly, bigger favicon */
+/* Hover: leicht anheben, Favicon größer */
 #tabbrowser-tabs:not([orient="vertical"]) .tab-content,
 #tabbrowser-tabs:not([orient="vertical"]) .tab-icon-image {
   transition: transform 160ms ease !important;
@@ -1682,7 +2053,7 @@ arrowscrollbox::part(scrollbox),
   transform: scale(1.1);
 }
 
-/* sleeping tabs dimmed */
+/* schlafende Tabs gedimmt */
 #tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab:is([pending], [discarded]):not(:hover) .tab-icon-stack,
 #tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab:is([pending], [discarded]):not(:hover) .tab-label-container {
   opacity: 0.45 !important;
@@ -1690,7 +2061,7 @@ arrowscrollbox::part(scrollbox),
   transition: opacity 150ms ease;
 }
 
-/* round close buttons */
+/* runde Schließen-Buttons */
 #tabbrowser-tabs:not([orient="vertical"]) .tabbrowser-tab:hover .tab-close-button {
   width: 20px !important;
   height: 20px !important;
@@ -1703,7 +2074,7 @@ arrowscrollbox::part(scrollbox),
   fill: var(--en-close-hover) !important;
 }
 
-/* "+" as a dashed pill */
+/* "+" als gestrichelte Pille */
 #TabsToolbar #tabs-newtab-button > .toolbarbutton-icon,
 #TabsToolbar #new-tab-button > .toolbarbutton-icon {
   border: 1px dashed var(--en-glass-border) !important;
@@ -1730,22 +2101,22 @@ arrowscrollbox::part(scrollbox),
   }
 }
 /* ---------------------------------------------------------------------
-   31) SIDEBAR ICONS AT THE BOTTOM (settings / star) in glass style
-   The buttons are Firefox "moz-button"s in the shadow DOM of
-   <sidebar-main>. They can only be reached from outside through
-   variables -> all states (normal, hover, pressed, active/selected)
-   are switched to glass here. Otherwise the active button is filled
-   with Firefox's default purple.
+   32) SIDEBAR-ICONS UNTEN (Einstellungen / Stern) im Glas-Stil
+   Ans ENDE der userChrome.css kopieren.
+   Die Knöpfe sind Firefox-"moz-button"s im Shadow-DOM von <sidebar-main>.
+   Von außen kommt man nur über Variablen ran -> hier werden alle Zustände
+   (normal, Hover, gedrückt, aktiv/ausgewählt) auf Glas umgestellt.
+   Vorher war der aktive Knopf in Firefox' Standard-Lila gefüllt.
    --------------------------------------------------------------------- */
 #sidebar-main,
 sidebar-main {
-  /* normal / hover / pressed */
+  /* normal / Hover / gedrückt */
   --button-background-color-ghost:        transparent !important;
   --button-background-color-ghost-hover:  var(--en-glass-hover) !important;
   --button-background-color-ghost-active: var(--en-glass-hover) !important;
   --button-border-radius:                 var(--en-radius) !important;
 
-  /* active / selected (e.g. settings open) -> glass instead of purple */
+  /* aktiv / ausgewählt (z. B. Einstellungen offen) -> Glas statt Lila */
   --button-background-color-checked:          var(--en-active-bg) !important;
   --button-background-color-ghost-checked:    var(--en-active-bg) !important;
   --button-background-color-selected:         var(--en-active-bg) !important;
@@ -1754,7 +2125,7 @@ sidebar-main {
   --button-text-color-ghost-checked:          var(--en-text) !important;
   --button-border-color-checked:              var(--en-active-border) !important;
 
-  /* some states use the "primary" colors (= accent) */
+  /* manche Zustände nutzen die "primary"-Farben (= Akzent) */
   --button-background-color-primary:          var(--en-active-bg) !important;
   --button-background-color-primary-hover:    color-mix(in srgb, var(--en-accent) 28%, var(--en-glass-hover)) !important;
   --button-background-color-primary-active:   var(--en-active-bg) !important;
@@ -1763,3 +2134,440 @@ sidebar-main {
   --button-text-color-primary-active:         var(--en-text) !important;
   --button-border-color-primary:              var(--en-active-border) !important;
 }
+/* ---------------------------------------------------------------------
+   33) DOWNLOADS – panel and Library window (Windrad / glass)
+   Panel: one glass surface (no box inside a box), compact rows with the
+   file icon in a small tile, name + details, round action button that
+   shows up on hover, progress bar in the theme gradient.
+   Library (Ctrl+Shift+Y → Downloads): slim list rows instead of big cards.
+   --------------------------------------------------------------------- */
+:root {
+  --en-dl-width: 360px;
+  --en-dl-row:   color-mix(in srgb, white 4%, transparent);
+  --en-dl-hover: color-mix(in srgb, white 9%, transparent);
+  --en-dl-line:  color-mix(in srgb, white 10%, transparent);
+  --en-dl-muted: color-mix(in srgb, var(--en-text) 58%, transparent);
+}
+
+/* ---- the panel itself: only the panel draws the glass ----------------- */
+#downloadsPanel {
+  --arrowpanel-padding: 6px !important;
+  --arrowpanel-border-radius: 16px !important;
+  --panel-border-radius: 16px !important;
+}
+#downloadsPanel-mainView,
+#downloadsPanel-blockedSubview {
+  width: var(--en-dl-width) !important;
+  min-width: var(--en-dl-width) !important;
+  max-width: var(--en-dl-width) !important;
+  padding: 6px !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+}
+
+/* ---- list --------------------------------------------------------------- */
+#downloadsPanel #downloadsListBox {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  background: transparent !important;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--en-accent) 55%, transparent) transparent;
+}
+#downloadsPanel #downloadsListBox > richlistitem {
+  min-height: 0 !important;
+  margin: 0 0 4px !important;
+  padding: 6px 6px 6px 8px !important;
+  border: 1px solid transparent !important;
+  border-radius: 12px !important;
+  background: var(--en-dl-row) !important;
+  color: var(--en-text) !important;
+  box-sizing: border-box !important;
+  transition: background-color 150ms ease, border-color 150ms ease !important;
+}
+#downloadsPanel #downloadsListBox > richlistitem:last-child { margin-bottom: 0 !important; }
+#downloadsPanel #downloadsListBox > richlistitem:hover {
+  background: var(--en-dl-hover) !important;
+  border-color: var(--en-dl-line) !important;
+}
+#downloadsPanel #downloadsListBox > richlistitem[selected] {
+  background: color-mix(in srgb, var(--en-accent) 12%, var(--en-dl-row)) !important;
+  border-color: color-mix(in srgb, var(--en-accent) 35%, transparent) !important;
+  outline: none !important;
+}
+
+/* main area: no own background (that made the "card in a card") */
+#downloadsPanel .downloadMainArea {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 8px !important;
+}
+#downloadsPanel .downloadMainArea:hover { background: transparent !important; }
+
+/* file icon in a small glass tile */
+#downloadsPanel .downloadTypeIcon {
+  width: 32px !important;
+  height: 32px !important;
+  padding: 6px !important;
+  margin-inline-end: 10px !important;
+  border-radius: 9px !important;
+  background: color-mix(in srgb, white 7%, transparent) !important;
+  box-sizing: border-box !important;
+}
+
+/* name + details */
+#downloadsPanel .downloadTarget {
+  color: var(--en-text) !important;
+  font-weight: 600 !important;
+  font-size: 0.95em !important;
+}
+#downloadsPanel .downloadDetails {
+  color: var(--en-dl-muted) !important;
+  opacity: 1 !important;
+  font-size: 0.85em !important;
+}
+
+/* progress bar in the theme gradient */
+#downloadsPanel .downloadProgress {
+  height: 4px !important;
+  margin-block: 4px 2px !important;
+  border: none !important;
+  border-radius: 4px !important;
+  background: color-mix(in srgb, white 12%, transparent) !important;
+  appearance: none !important;
+}
+#downloadsPanel .downloadProgress::-moz-progress-bar {
+  border-radius: 4px !important;
+  background: linear-gradient(90deg, var(--en-accent), var(--en-scroll-bottom, var(--en-accent))) !important;
+}
+
+/* action button (folder / retry / cancel): round, appears on hover */
+#downloadsPanel .downloadButton {
+  min-width: 30px !important;
+  width: 30px !important;
+  height: 30px !important;
+  margin: 0 0 0 4px !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  color: var(--en-dl-muted) !important;
+  opacity: 0;
+  transition: opacity 150ms ease, background-color 150ms ease, color 150ms ease !important;
+}
+#downloadsPanel richlistitem:hover .downloadButton,
+#downloadsPanel richlistitem[selected] .downloadButton,
+#downloadsPanel richlistitem:not([state="1"]) .downloadButton { opacity: 1; }
+#downloadsPanel .downloadButton:hover {
+  background: color-mix(in srgb, var(--en-accent) 22%, transparent) !important;
+  color: var(--en-accent) !important;
+}
+#downloadsPanel .downloadButton .button-icon { fill: currentColor !important; }
+
+/* ---- footer: one line, no extra gap / separator ------------------------ */
+#downloadsPanel #downloadsFooter,
+#downloadsPanel #downloadsFooterButtons {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+#downloadsPanel #downloadsFooter toolbarseparator,
+#downloadsPanel #downloadsFooterButtons toolbarseparator { display: none !important; }
+#downloadsPanel #downloadsHistory {
+  min-height: 32px !important;
+  margin: 6px 0 0 !important;
+  padding: 6px 10px !important;
+  border: none !important;
+  border-top: 1px solid var(--en-dl-line) !important;
+  border-radius: 0 0 10px 10px !important;
+  background: transparent !important;
+  color: var(--en-dl-muted) !important;
+  justify-content: center !important;
+  transition: color 150ms ease, background-color 150ms ease !important;
+}
+#downloadsPanel #downloadsHistory:hover {
+  background: var(--en-dl-hover) !important;
+  color: var(--en-accent) !important;
+}
+#emptyDownloads { padding: 22px 16px !important; color: var(--en-dl-muted) !important; text-align: center !important; }
+
+/* opening animation */
+#downloadsPanel-mainView { animation: en-dl-in 200ms cubic-bezier(.2, .8, .2, 1) both; }
+@keyframes en-dl-in { from { opacity: 0; transform: translateY(-4px) scale(.98); } }
+
+/* ---- Library window (Downloads list) ------------------------------------ */
+#places #downloadsListBox,
+#downloadsListBox.allDownloadsView {
+  background: transparent !important;
+  padding: 6px !important;
+}
+#places #downloadsListBox > richlistitem {
+  min-height: 0 !important;
+  margin: 0 0 2px !important;
+  padding: 6px 8px !important;
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+  background: transparent !important;
+  color: var(--en-text) !important;
+  transition: background-color 150ms ease !important;
+}
+#places #downloadsListBox > richlistitem:hover { background: var(--en-dl-hover) !important; }
+#places #downloadsListBox > richlistitem[selected] {
+  background: color-mix(in srgb, var(--en-accent) 14%, transparent) !important;
+  border-color: color-mix(in srgb, var(--en-accent) 35%, transparent) !important;
+}
+#places #downloadsListBox .downloadMainArea { background: transparent !important; }
+#places #downloadsListBox .downloadTypeIcon {
+  width: 32px !important; height: 32px !important; padding: 6px !important; margin-inline-end: 10px !important;
+  border-radius: 9px !important; background: color-mix(in srgb, white 6%, transparent) !important; box-sizing: border-box !important;
+}
+#places #downloadsListBox .downloadDetails { color: var(--en-dl-muted) !important; opacity: 1 !important; }
+#places #downloadsListBox .downloadButton {
+  border: none !important; border-radius: 50% !important; background: transparent !important; color: var(--en-dl-muted) !important;
+}
+#places #downloadsListBox .downloadButton:hover {
+  background: color-mix(in srgb, var(--en-accent) 22%, transparent) !important; color: var(--en-accent) !important;
+}
+#places #downloadsListBox .downloadProgress::-moz-progress-bar {
+  background: linear-gradient(90deg, var(--en-accent), var(--en-scroll-bottom, var(--en-accent))) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #downloadsPanel-mainView { animation: none !important; }
+  #downloadsPanel *, #places #downloadsListBox * { transition: none !important; }
+}
+
+/* ---------------------------------------------------------------------
+   34) LIBRARY WINDOW (Ctrl+Shift+O / Ctrl+Shift+Y) – Windrad glass
+   History, Downloads, Tags, Bookmarks: one gradient for the whole window,
+   glass toolbar, rounded search field, sidebar and lists in theme colors.
+   --------------------------------------------------------------------- */
+#places {
+  /* colors used below */
+  --lib-text:   var(--wd-text, #eee7f6);
+  --lib-muted:  color-mix(in srgb, var(--lib-text) 58%, transparent);
+  --lib-accent: var(--en-accent, var(--wd-accent, #ff7a95));
+  --lib-line:   color-mix(in srgb, white 9%, transparent);
+  --lib-hover:  color-mix(in srgb, white 8%, transparent);
+  --lib-sel:    color-mix(in srgb, var(--lib-accent) 18%, transparent);
+}
+/* the gradient only below the toolbar (the root also sits under the
+   Windows title bar – painting it there breaks the title bar) */
+#places #placesView {
+  background:
+    radial-gradient(ellipse 45% 60% at 95% 0%, color-mix(in srgb, var(--lib-accent) 7%, transparent), transparent 70%),
+    linear-gradient(120deg, var(--wd-night, #0f2a3a) 0%, var(--wd-blue, #1d2a4a) 40%, var(--wd-violet, #2c2144) 70%, var(--wd-wine, #321f3c) 100%) !important;
+  color: var(--lib-text) !important;
+}
+
+/* every area lets the gradient shine through */
+#places #placesList, #places #placeContent, #places #contentView, #places #detailsPane,
+#places #downloadsListBox, #places #infoBox, #places .contentPane {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--lib-text) !important;
+  border-color: var(--lib-line) !important;
+  appearance: none !important;
+}
+
+/* toolbar: keeps Firefox's own background – it is joined to the Windows
+   title bar above it, changing it makes the title bar look broken */
+#places #placesToolbar {
+  padding: 6px 8px !important;
+}
+#places #placesToolbar toolbarbutton, #places #placesToolbar button,
+#places #placesMenu > menu, #places #organizeButton {
+  appearance: none !important;
+  border: 1px solid transparent !important;
+  border-radius: 9px !important;
+  background: transparent !important;
+  color: var(--lib-text) !important;
+  padding: 4px 8px !important;
+  transition: background-color 150ms ease, border-color 150ms ease !important;
+}
+#places #placesToolbar toolbarbutton:not([disabled]):hover, #places #placesToolbar button:not([disabled]):hover,
+#places #placesMenu > menu:hover, #places #placesMenu > menu[open] {
+  background: var(--lib-hover) !important;
+  border-color: var(--lib-line) !important;
+}
+#places #placesToolbar [disabled] { opacity: .4 !important; }
+
+/* search field */
+#places #searchFilter {
+  appearance: none !important;
+  min-height: 32px !important;
+  padding-inline: 10px !important;
+  border: 1px solid var(--lib-line) !important;
+  border-radius: 99px !important;
+  background: color-mix(in srgb, white 6%, transparent) !important;
+  color: var(--lib-text) !important;
+  transition: border-color 150ms ease, box-shadow 150ms ease !important;
+}
+#places #searchFilter[focused] {
+  border-color: var(--lib-accent) !important;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--lib-accent) 45%, transparent), 0 0 12px color-mix(in srgb, var(--lib-accent) 22%, transparent) !important;
+}
+
+/* splitter between sidebar and list */
+#places #splitter, #places splitter {
+  appearance: none !important;
+  background: var(--lib-line) !important;
+  border: none !important;
+  min-width: 1px !important; width: 1px !important;
+}
+
+/* sidebar tree (History / Downloads / Tags / Bookmarks) */
+#places #placesList { padding: 6px 4px !important; }
+#places #placesList treechildren::-moz-tree-row {
+  min-height: 30px !important;
+  border-radius: 8px !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+#places #placesList treechildren::-moz-tree-row(hover) { background-color: var(--lib-hover) !important; }
+#places #placesList treechildren::-moz-tree-row(selected),
+#places #placesList treechildren::-moz-tree-row(selected, focus) {
+  background-color: var(--lib-sel) !important;
+}
+#places #placesList treechildren::-moz-tree-cell-text { color: var(--lib-text) !important; }
+#places #placesList treechildren::-moz-tree-cell-text(selected) { color: var(--lib-text) !important; font-weight: 600 !important; }
+#places #placesList treechildren::-moz-tree-image,
+#places #placesList treechildren::-moz-tree-twisty { fill: var(--lib-muted) !important; -moz-context-properties: fill !important; }
+#places #placesList treechildren::-moz-tree-image(selected) { fill: var(--lib-accent) !important; }
+
+/* content list for History / Bookmarks / Tags */
+#places #placeContent treecols, #places #placeContent treecol {
+  appearance: none !important;
+  background: transparent !important;
+  color: var(--lib-muted) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--lib-line) !important;
+  padding: 6px 8px !important;
+}
+#places #placeContent treecol:hover { color: var(--lib-text) !important; }
+#places #placeContent treechildren::-moz-tree-row { min-height: 28px !important; background-color: transparent !important; border: none !important; }
+#places #placeContent treechildren::-moz-tree-row(hover) { background-color: var(--lib-hover) !important; }
+#places #placeContent treechildren::-moz-tree-row(selected) { background-color: var(--lib-sel) !important; }
+#places #placeContent treechildren::-moz-tree-cell-text { color: var(--lib-text) !important; }
+#places #placeContent treechildren::-moz-tree-cell-text(selected) { color: var(--lib-text) !important; }
+
+/* details of a bookmark (bottom area) */
+#places #detailsPane { border-top: 1px solid var(--lib-line) !important; padding: 8px !important; }
+#places #detailsPane input, #places #detailsPane textarea, #places #detailsPane menulist {
+  appearance: none !important;
+  border: 1px solid var(--lib-line) !important; border-radius: 8px !important;
+  background: color-mix(in srgb, white 6%, transparent) !important; color: var(--lib-text) !important;
+}
+
+/* scrollbars in the accent color */
+#places scrollbar, #places * { scrollbar-color: color-mix(in srgb, var(--lib-accent) 55%, transparent) transparent; }
+/* ---------------------------------------------------------------------
+   35) RECHTSKLICK- & KONTEXTMENÜS in den Farben des aktuellen Themes
+   Gilt für alle Menüs: Rechtsklick auf Seiten, Tabs, Links, Lesezeichen,
+   Toolbar. Farben kommen automatisch aus der gewählten Palette
+   (userchrome.palette.* bzw. Abschnitt 9). Ohne Windrad-Theme werden die
+   Akzentfarbe von Firefox und ein dunkles Glas genommen.
+   --------------------------------------------------------------------- */
+:root {
+  --cm-bg1:    var(--wd-night,  #1c1b22);
+  --cm-bg2:    var(--wd-wine,   #24222c);
+  --cm-panel:  var(--wd-panel,  #1f1e25);
+  --cm-text:   var(--wd-text,   #ecebf0);
+  --cm-accent: var(--wd-accent, var(--en-accent, AccentColor));
+  --cm-line:   color-mix(in srgb, var(--cm-text) 12%, transparent);
+  --cm-hover:  color-mix(in srgb, var(--cm-accent) 20%, transparent);
+}
+ 
+menupopup {
+  --panel-background: var(--cm-panel) !important;
+  --panel-color: var(--cm-text) !important;
+  --panel-border-color: color-mix(in srgb, var(--cm-accent) 22%, var(--cm-line)) !important;
+  --panel-border-radius: 12px !important;
+  --panel-padding: 6px !important;
+  --panel-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+  color: var(--cm-text) !important;
+}
+ 
+/* Hintergrund: leichter Verlauf in den Theme-Farben */
+menupopup::part(content) {
+  background:
+    radial-gradient(ellipse 80% 60% at 100% 0%, color-mix(in srgb, var(--cm-accent) 10%, transparent), transparent 70%),
+    linear-gradient(160deg, var(--cm-bg1) 0%, var(--cm-panel) 55%, var(--cm-bg2) 100%) !important;
+  border: 1px solid color-mix(in srgb, var(--cm-accent) 22%, var(--cm-line)) !important;
+  border-radius: 12px !important;
+  padding: 6px !important;
+}
+ 
+/* Einträge */
+menupopup > menuitem,
+menupopup > menu {
+  color: var(--cm-text) !important;
+  border-radius: 7px !important;
+  padding-block: 5px !important;
+  margin-inline: 0 !important;
+  transition: background-color .12s ease, color .12s ease;
+}
+menupopup > menuitem[_moz-menuactive],
+menupopup > menu[_moz-menuactive],
+menupopup > menu[open] {
+  background-color: var(--cm-hover) !important;
+  color: var(--cm-text) !important;
+}
+menupopup > menuitem[disabled],
+menupopup > menu[disabled] {
+  color: color-mix(in srgb, var(--cm-text) 40%, transparent) !important;
+}
+menupopup > menuitem[disabled][_moz-menuactive] {
+  background-color: transparent !important;
+}
+ 
+/* Tastenkürzel rechts + Unterstrich-Buchstaben */
+menupopup .menu-accel,
+menupopup .menu-iconic-accel {
+  color: color-mix(in srgb, var(--cm-text) 55%, transparent) !important;
+}
+menupopup menuitem[_moz-menuactive] .menu-accel,
+menupopup menuitem[_moz-menuactive] .menu-iconic-accel {
+  color: var(--cm-accent) !important;
+}
+ 
+/* Häkchen / Radio-Punkte / Untermenü-Pfeile in der Akzentfarbe */
+menupopup menuitem[checked="true"] .menu-iconic-left,
+menupopup menuitem[type="checkbox"][checked="true"],
+menupopup menuitem[type="radio"][checked="true"] {
+  --menuitem-icon-color: var(--cm-accent);
+  fill: var(--cm-accent) !important;
+}
+menupopup menu > .menu-right { fill: color-mix(in srgb, var(--cm-text) 60%, transparent) !important; }
+menupopup menu[_moz-menuactive] > .menu-right { fill: var(--cm-accent) !important; }
+ 
+/* Trennlinien */
+menupopup > menuseparator {
+  border-top-color: var(--cm-line) !important;
+  margin-block: 4px !important;
+  padding-block: 0 !important;
+}
+menupopup > menuseparator::before {
+  border-top-color: var(--cm-line) !important;
+}
+ 
+/* Obere Leiste im Seiten-Rechtsklick (Zurück / Vor / Neu laden / Stern) */
+#context-navigation {
+  margin-bottom: 2px !important;
+}
+#context-navigation > .menuitem-iconic {
+  border-radius: 8px !important;
+  fill: var(--cm-text) !important;
+  color: var(--cm-text) !important;
+}
+#context-navigation > .menuitem-iconic[_moz-menuactive] {
+  background-color: var(--cm-hover) !important;
+  fill: var(--cm-accent) !important;
+}
+#context-navigation > .menuitem-iconic[disabled] {
+  fill: color-mix(in srgb, var(--cm-text) 35%, transparent) !important;
+}
+#context-bookmarkpage[starred="true"] {
+  fill: var(--cm-accent) !important;
+}
+ 
