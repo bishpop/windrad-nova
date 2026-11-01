@@ -1,48 +1,64 @@
 /* =====================================================================
-   userContent.css – scrollbar on web pages (Windrad theme)
-   Pink at the top, the further you scroll down, the more teal.
-   Goes into the same "chrome" folder as userChrome.css.
+   userContent.css – Scrollbar auf Webseiten (Dark Forest Theme)
+   Oben helles Grün (Accent), je weiter man runterscrollt, desto mehr Weiß (Text).
+   Liegt im selben "chrome"-Ordner wie die userChrome.css.
 
-   Trick: the animation does NOT change scrollbar-color itself, but a
-   custom color variable. That way scrollbar-color can stay !important
-   -> websites with their own scrollbar color can't override it, and
-   the animation still works.
-
-   Other palettes (top -> bottom):
-     Aurora          rgba(95, 224, 168, 0.75)  -> rgba(139, 156, 255, 0.75)
-     Lavender Night  rgba(177, 140, 255, 0.75) -> rgba(255, 156, 207, 0.75)
-     Ember           rgba(255, 154, 92, 0.75)  -> rgba(255, 209, 102, 0.75)
-     Deep Sea        rgba(76, 201, 240, 0.75)  -> rgba(123, 140, 255, 0.75)
-     Cherry Blossom  rgba(255, 163, 196, 0.75) -> rgba(168, 230, 207, 0.75)
-     Graphite        rgba(122, 162, 255, 0.75) -> rgba(198, 160, 255, 0.75)
-   Change the color in all three places marked "top" / "bottom".
+   Trick: Animiert wird NICHT scrollbar-color selbst, sondern eine
+   eigene Farb-Variable. scrollbar-color darf dadurch !important
+   bleiben -> Webseiten mit eigener Scrollbar-Farbe können sie nicht
+   mehr überschreiben, und die Animation funktioniert trotzdem.
    ===================================================================== */
 
 @property --en-sb-thumb {
   syntax: "<color>";
   inherits: true;
-  initial-value: rgba(255, 122, 149, 0.75);   /* pink (top) */
+  initial-value: rgba(183, 214, 138, 0.75);   /* Hellgrün / Accent (oben) */
 }
 
 @keyframes en-scroll-fade {
-  from { --en-sb-thumb: rgba(255, 122, 149, 0.75); }  /* pink #ff7a95 (top)    */
-  to   { --en-sb-thumb: rgba(79, 227, 224, 0.75); }   /* teal #4fe3e0 (bottom) */
+  from { --en-sb-thumb: rgba(183, 214, 138, 0.75); }  /* Hellgrün / Accent (oben)     */
+  to   { --en-sb-thumb: rgba(238, 242, 230, 0.75); }  /* Weiß / Text (ganz unten)     */
 }
 
 @-moz-document regexp("https?://.*"), url-prefix("about:"), url-prefix("file:") {
   :root {
     scrollbar-color: var(--en-sb-thumb) transparent !important;
 
-    /* thin variant; "auto" = normal width, "none" = invisible */
+    /* dünne Variante; "auto" = normale Breite, "none" = unsichtbar */
     scrollbar-width: thin !important;
 
-    /* color follows the scroll position */
+    /* Farbe folgt der Scroll-Position */
     animation: en-scroll-fade linear both !important;
     animation-timeline: scroll(root) !important;
   }
 
-  /* some pages scroll in body instead of html */
+  /* manche Seiten scrollen im body statt im html */
   body {
     scrollbar-color: var(--en-sb-thumb) transparent !important;
+  }
+}
+
+/* =====================================================================
+   <select>-Dropdowns auf Webseiten lesbar machen
+   Firefox übernimmt die Farben der <option>-Elemente fürs Popup, die
+   Seite setzt dort oft Weiß. Hier wird das an der Quelle überschrieben.
+   Farben anpassen: --en-dd-bg (Hintergrund), --en-dd-text (Schrift),
+   --en-dd-sel (ausgewählter Eintrag).
+   ===================================================================== */
+@-moz-document regexp("https?://.*"), url-prefix("about:"), url-prefix("file:") {
+  :root {
+    --en-dd-bg:   #1b2219;
+    --en-dd-text: #eef2e6;
+    --en-dd-sel:  #2c3a26;
+  }
+
+  select option,
+  select optgroup {
+    background-color: var(--en-dd-bg) !important;
+    color: var(--en-dd-text) !important;
+  }
+  select option:checked {
+    background-color: var(--en-dd-sel) !important;
+    color: #b7d68a !important;
   }
 }

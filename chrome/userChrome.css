@@ -544,250 +544,612 @@ moz-button.searchmode-switcher:hover::part(button),
 
   :root {
     /* Palette – hier anpassen */
---wd-night:   #170e12;
---wd-blue:    #1e1016;
---wd-violet:  #26121a;
---wd-wine:    #2d131d;
---wd-glow-top:    rgba(255, 70, 100, 0.05);
---wd-glow-bottom: rgba(255, 120, 140, 0.04);
---wd-accent:  #ff5c7a;
---wd-text:    #f6e9ec;
---wd-panel:   #1d1116;
+    --wd-night:       #181c21;
+    --wd-blue:        #1c2026;
+    --wd-violet:      #20252c;
+    --wd-wine:        #242a32;
+    --wd-glow-top:    rgba(143, 184, 216, 0.04);
+    --wd-glow-bottom: rgba(200, 162, 200, 0.03);
+    --wd-accent:      #8fb8d8;
+    --wd-accent2:     #c8a2c8;
+    --wd-text:        #d8dee6;
+    --wd-panel:       #1f242b;
 
-/* Alle Farben:
-Polarlight:
---wd-night:   #0b1f2a;
---wd-blue:    #0f2a33;
---wd-violet:  #12303a;
---wd-wine:    #1a2f3f;
---wd-glow-top:    rgba(80, 230, 170, 0.05);
---wd-glow-bottom: rgba(120, 140, 255, 0.05);
---wd-accent:  #5fe0a8;
---wd-text:    #e6f4ef;
---wd-panel:   #10262a;
+    /* ALL COLORS – reference list only (not active CSS).
+    Copy a theme's values into the palette block above or into a
+    userchrome.palette.* switch. CSS comments cannot be nested.
 
-Lavendel:
---wd-night:   #16142b;
---wd-blue:    #1e1a3a;
---wd-violet:  #2a2048;
---wd-wine:    #32213f;
---wd-glow-top:    rgba(170, 130, 255, 0.05);
---wd-glow-bottom: rgba(255, 140, 200, 0.04);
---wd-accent:  #b18cff;
---wd-text:    #eeeaf8;
---wd-panel:   #1c1932;
+    Windrad – all color themes (47), sorted by accent hue (red → orange → yellow → green → teal → blue → violet → pink, neutrals last).
+       Every theme has the full variable set incl. --wd-accent2.
 
-Glut:
---wd-night:   #1c1512;
---wd-blue:    #251a16;
---wd-violet:  #2e1d18;
---wd-wine:    #351f1a;
---wd-glow-top:    rgba(255, 140, 60, 0.05);
---wd-glow-bottom: rgba(255, 90, 80, 0.04);
---wd-accent:  #ff9a5c;
---wd-text:    #f5ece6;
---wd-panel:   #241a16;
+    ===== Red / Crimson =====
 
-Tiefsee:
---wd-night:   #0a1418;
---wd-blue:    #0c1b22;
---wd-violet:  #0e212b;
---wd-wine:    #112432;
---wd-glow-top:    rgba(60, 200, 255, 0.05);
---wd-glow-bottom: rgba(60, 200, 255, 0.03);
---wd-accent:  #4cc9f0;
---wd-text:    #e4f2f7;
---wd-panel:   #0f1d24;
+    Dusty Rose:
+    --wd-night:       #1c1618;
+    --wd-blue:        #221a1d;
+    --wd-violet:      #291f23;
+    --wd-wine:        #302329;
+    --wd-glow-top:    rgba(207, 154, 166, 0.04);
+    --wd-glow-bottom: rgba(201, 169, 138, 0.03);
+    --wd-accent:      #cf9aa6;
+    --wd-accent2:     #c9a98a;
+    --wd-text:        #e6dce0;
+    --wd-panel:       #1f181b;
 
-Kirschblüten:
---wd-night:   #1d1622;
---wd-blue:    #251a2a;
---wd-violet:  #2e1d31;
---wd-wine:    #361f33;
---wd-glow-top:    rgba(255, 170, 200, 0.05);
---wd-glow-bottom: rgba(255, 170, 200, 0.04);
---wd-accent:  #ffa3c4;
---wd-text:    #f6edf2;
---wd-panel:   #22192a;
+    Windrad (default):
+    --wd-night:       #0f2a3a;
+    --wd-blue:        #172b45;
+    --wd-violet:      #2a2a4d;
+    --wd-wine:        #4a2848;
+    --wd-glow-top:    rgba(255, 122, 149, 0.05);
+    --wd-glow-bottom: rgba(79, 227, 224, 0.05);
+    --wd-accent:      #ff7a95;
+    --wd-accent2:     #4fe3e0;
+    --wd-text:        #eee7f6;
+    --wd-panel:       #142636;
 
-Graphit:
---wd-night:   #141618;
---wd-blue:    #181b1e;
---wd-violet:  #1c1f23;
---wd-wine:    #202327;
---wd-glow-top:    rgba(255, 255, 255, 0.03);
---wd-glow-bottom: rgba(255, 255, 255, 0.02);
---wd-accent:  #7aa2ff;
---wd-text:    #eceef1;
---wd-panel:   #1a1d20;
+    Crimson:
+    --wd-night:       #170e12;
+    --wd-blue:        #1e1016;
+    --wd-violet:      #26121a;
+    --wd-wine:        #2d131d;
+    --wd-glow-top:    rgba(255, 70, 100, 0.05);
+    --wd-glow-bottom: rgba(255, 120, 140, 0.04);
+    --wd-accent:      #ff5c7a;
+    --wd-accent2:     #ffa07a;
+    --wd-text:        #f6e9ec;
+    --wd-panel:       #1d1116;
 
-Aurora:
---wd-night:   #0d1424;
---wd-blue:    #111d33;
---wd-violet:  #1b1f3f;
---wd-wine:    #261c3d;
---wd-glow-top:    rgba(90, 255, 200, 0.06);
---wd-glow-bottom: rgba(170, 110, 255, 0.05);
---wd-accent:  #7cf5c8;
---wd-text:    #e8f3f6;
---wd-panel:   #121a2e;
+    Coral:
+    --wd-night:       #1a1315;
+    --wd-blue:        #22171a;
+    --wd-violet:      #2b1b1f;
+    --wd-wine:        #331f24;
+    --wd-glow-top:    rgba(255, 127, 110, 0.05);
+    --wd-glow-bottom: rgba(255, 170, 130, 0.04);
+    --wd-accent:      #ff7f6e;
+    --wd-accent2:     #f7c873;
+    --wd-text:        #f6e9e6;
+    --wd-panel:       #21171a;
 
-Sonnenuntergang:
---wd-night:   #1a1424;
---wd-blue:    #24162b;
---wd-violet:  #311a2c;
---wd-wine:    #3a1d27;
---wd-glow-top:    rgba(255, 120, 90, 0.06);
---wd-glow-bottom: rgba(255, 180, 90, 0.05);
---wd-accent:  #ff8a65;
---wd-text:    #f8ece8;
---wd-panel:   #221729;
+    Terracotta Night:
+    --wd-night:       #1b1514;
+    --wd-blue:        #211a18;
+    --wd-violet:      #281f1c;
+    --wd-wine:        #2f2420;
+    --wd-glow-top:    rgba(217, 143, 120, 0.04);
+    --wd-glow-bottom: rgba(143, 179, 166, 0.03);
+    --wd-accent:      #d98f78;
+    --wd-accent2:     #8fb3a6;
+    --wd-text:        #e6dad3;
+    --wd-panel:       #201917;
 
-Wald:
---wd-night:   #0f1a14;
---wd-blue:    #132019;
---wd-violet:  #17271e;
---wd-wine:    #1c2c22;
---wd-glow-top:    rgba(120, 220, 140, 0.05);
---wd-glow-bottom: rgba(200, 230, 120, 0.04);
---wd-accent:  #8fd694;
---wd-text:    #e9f3ea;
---wd-panel:   #13201a;
+    Sunset:
+    --wd-night:       #1a1424;
+    --wd-blue:        #24162b;
+    --wd-violet:      #311a2c;
+    --wd-wine:        #3a1d27;
+    --wd-glow-top:    rgba(255, 120, 90, 0.06);
+    --wd-glow-bottom: rgba(255, 180, 90, 0.05);
+    --wd-accent:      #ff8a65;
+    --wd-accent2:     #ffc27a;
+    --wd-text:        #f8ece8;
+    --wd-panel:       #221729;
 
-Mokka:
---wd-night:   #1a1613;
---wd-blue:    #211b17;
---wd-violet:  #29211b;
---wd-wine:    #2f251e;
---wd-glow-top:    rgba(210, 160, 110, 0.05);
---wd-glow-bottom: rgba(200, 140, 90, 0.04);
---wd-accent:  #d9a46c;
---wd-text:    #f3ebe3;
---wd-panel:   #201a16;
+    ===== Orange / Amber =====
 
-Nord:
---wd-night:   #1b212b;
---wd-blue:    #1f2632;
---wd-violet:  #232b38;
---wd-wine:    #262e3d;
---wd-glow-top:    rgba(136, 192, 208, 0.04);
---wd-glow-bottom: rgba(129, 161, 193, 0.04);
---wd-accent:  #88c0d0;
---wd-text:    #e5e9f0;
---wd-panel:   #222834;
+    Magma:
+    --wd-night:       #140b0a;
+    --wd-blue:        #1c0f0c;
+    --wd-violet:      #261410;
+    --wd-wine:        #2f1812;
+    --wd-glow-top:    rgba(255, 90, 30, 0.06);
+    --wd-glow-bottom: rgba(255, 170, 40, 0.05);
+    --wd-accent:      #ff6a2b;
+    --wd-accent2:     #ffc233;
+    --wd-text:        #f7e8df;
+    --wd-panel:       #1b0f0c;
 
-Mitternacht & Gold:
---wd-night:   #0e0f17;
---wd-blue:    #13141f;
---wd-violet:  #181a28;
---wd-wine:    #1c1c2b;
---wd-glow-top:    rgba(255, 210, 120, 0.05);
---wd-glow-bottom: rgba(255, 190, 90, 0.03);
---wd-accent:  #f2c76e;
---wd-text:    #f1eee6;
---wd-panel:   #151622;
+    Rust:
+    --wd-night:       #1b1411;
+    --wd-blue:        #231a15;
+    --wd-violet:      #2c201a;
+    --wd-wine:        #35261e;
+    --wd-glow-top:    rgba(200, 110, 70, 0.05);
+    --wd-glow-bottom: rgba(170, 130, 90, 0.04);
+    --wd-accent:      #cf6f45;
+    --wd-accent2:     #d9b36c;
+    --wd-text:        #f2e7df;
+    --wd-panel:       #211813;
 
-Cyber:
---wd-night:   #0d0b1a;
---wd-blue:    #140f26;
---wd-violet:  #1c1033;
---wd-wine:    #24103a;
---wd-glow-top:    rgba(0, 240, 255, 0.06);
---wd-glow-bottom: rgba(255, 0, 170, 0.05);
---wd-accent:  #00e5ff;
---wd-text:    #eae6ff;
---wd-panel:   #140f24;
+    Peach:
+    --wd-night:       #1e1519;
+    --wd-blue:        #261b20;
+    --wd-violet:      #2f2027;
+    --wd-wine:        #38252d;
+    --wd-glow-top:    rgba(255, 190, 150, 0.05);
+    --wd-glow-bottom: rgba(255, 150, 170, 0.04);
+    --wd-accent:      #ffb38a;
+    --wd-accent2:     #ff8fa8;
+    --wd-text:        #f8ece8;
+    --wd-panel:       #241a1f;
 
-Crimson:
---wd-night:   #170e12;
---wd-blue:    #1e1016;
---wd-violet:  #26121a;
---wd-wine:    #2d131d;
---wd-glow-top:    rgba(255, 70, 100, 0.05);
---wd-glow-bottom: rgba(255, 120, 140, 0.04);
---wd-accent:  #ff5c7a;
---wd-text:    #f6e9ec;
---wd-panel:   #1d1116;
+    Ember:
+    --wd-night:       #1c1512;
+    --wd-blue:        #251a16;
+    --wd-violet:      #2e1d18;
+    --wd-wine:        #351f1a;
+    --wd-glow-top:    rgba(255, 140, 60, 0.05);
+    --wd-glow-bottom: rgba(255, 90, 80, 0.04);
+    --wd-accent:      #ff9a5c;
+    --wd-accent2:     #ffd166;
+    --wd-text:        #f5ece6;
+    --wd-panel:       #241a16;
 
-Ozean:
---wd-night:   #08161c;
---wd-blue:    #0a1e27;
---wd-violet:  #0c2433;
---wd-wine:    #10263d;
---wd-glow-top:    rgba(40, 220, 200, 0.06);
---wd-glow-bottom: rgba(70, 130, 255, 0.05);
---wd-accent:  #3ee0c8;
---wd-text:    #e2f4f5;
---wd-panel:   #0d1e26;
+    Paper:
+    --wd-night:       #f4efe6;
+    --wd-blue:        #f1ebe1;
+    --wd-violet:      #eee7dc;
+    --wd-wine:        #ebe4d7;
+    --wd-glow-top:    rgba(143, 85, 48, 0.04);
+    --wd-glow-bottom: rgba(63, 107, 85, 0.03);
+    --wd-accent:      #8f5530;
+    --wd-accent2:     #3f6b55;
+    --wd-text:        #3b3631;
+    --wd-panel:       #efe9df;
 
-Matcha:
---wd-night:   #141814;
---wd-blue:    #191e19;
---wd-violet:  #1e241d;
---wd-wine:    #232820;
---wd-glow-top:    rgba(190, 220, 160, 0.04);
---wd-glow-bottom: rgba(230, 220, 170, 0.03);
---wd-accent:  #b7d68a;
---wd-text:    #eef2e6;
---wd-panel:   #191e18;
+    Mocha:
+    --wd-night:       #1a1613;
+    --wd-blue:        #211b17;
+    --wd-violet:      #29211b;
+    --wd-wine:        #2f251e;
+    --wd-glow-top:    rgba(210, 160, 110, 0.05);
+    --wd-glow-bottom: rgba(200, 140, 90, 0.04);
+    --wd-accent:      #d9a46c;
+    --wd-accent2:     #f0c98e;
+    --wd-text:        #f3ebe3;
+    --wd-panel:       #201a16;
 
-OLED:
---wd-night:   #000000;
---wd-blue:    #040405;
---wd-violet:  #08080a;
---wd-wine:    #0c0c0f;
---wd-glow-top:    rgba(255, 255, 255, 0.02);
---wd-glow-bottom: rgba(255, 255, 255, 0.015);
---wd-accent:  #c8c8d4;
---wd-text:    #ececf0;
---wd-panel:   #0b0b0d;
+    Warm Dark:
+    --wd-night:       #1a1816;
+    --wd-blue:        #1f1d1b;
+    --wd-violet:      #24211e;
+    --wd-wine:        #292623;
+    --wd-glow-top:    rgba(215, 166, 95, 0.04);
+    --wd-glow-bottom: rgba(143, 179, 154, 0.03);
+    --wd-accent:      #d7a65f;
+    --wd-accent2:     #8fb39a;
+    --wd-text:        #e3dccf;
+    --wd-panel:       #211f1c;
 
-Warm Dark:
---wd-night:   #1a1816;
---wd-blue:    #1f1d1b;
---wd-violet:  #24211e;
---wd-wine:    #292623;
---wd-glow-top:    rgba(215, 166, 95, 0.04);
---wd-glow-bottom: rgba(143, 179, 154, 0.03);
---wd-accent:  #d7a65f;
---wd-text:    #e3dccf;
---wd-panel:   #211f1c;
+    ===== Yellow / Gold =====
 
-Soft Night:
---wd-night:   #181c21;
---wd-blue:    #1c2026;
---wd-violet:  #20252c;
---wd-wine:    #242a32;
---wd-glow-top:    rgba(143, 184, 216, 0.04);
---wd-glow-bottom: rgba(200, 162, 200, 0.03);
---wd-accent:  #8fb8d8;
---wd-text:    #d8dee6;
---wd-panel:   #1f242b;
+    Midnight & Gold:
+    --wd-night:       #0e0f17;
+    --wd-blue:        #13141f;
+    --wd-violet:      #181a28;
+    --wd-wine:        #1c1c2b;
+    --wd-glow-top:    rgba(255, 210, 120, 0.05);
+    --wd-glow-bottom: rgba(255, 190, 90, 0.03);
+    --wd-accent:      #f2c76e;
+    --wd-accent2:     #8e9cf0;
+    --wd-text:        #f1eee6;
+    --wd-panel:       #151622;
 
-Lavender Mist:
---wd-night:   #191722;
---wd-blue:    #1d1b26;
---wd-violet:  #221f2d;
---wd-wine:    #262333;
---wd-glow-top:    rgba(184, 161, 232, 0.04);
---wd-glow-bottom: rgba(232, 168, 196, 0.03);
---wd-accent:  #b8a1e8;
---wd-text:    #e2ddef;
---wd-panel:   #211e2b;
+    Citrus:
+    --wd-night:       #14160c;
+    --wd-blue:        #1a1d10;
+    --wd-violet:      #202413;
+    --wd-wine:        #262b16;
+    --wd-glow-top:    rgba(220, 240, 80, 0.05);
+    --wd-glow-bottom: rgba(255, 214, 70, 0.04);
+    --wd-accent:      #d8e84a;
+    --wd-accent2:     #ffb84a;
+    --wd-text:        #f0f2dc;
+    --wd-panel:       #1a1d10;
 
-Paper:
---wd-night:   #f4efe6;
---wd-blue:    #f1ebe1;
---wd-violet:  #eee7dc;
---wd-wine:    #ebe4d7;
---wd-glow-top:    rgba(143, 85, 48, 0.04);
---wd-glow-bottom: rgba(63, 107, 85, 0.03);
---wd-accent:  #8f5530;
---wd-text:    #3b3631;
---wd-panel:   #efe9df;
-(Paper = hell: am besten per Schalter userchrome.palette.paper nutzen,
- dort sind zusätzlich Glas- und Feldfarben für hell angepasst.)
-*/
+    Olive Dusk:
+    --wd-night:       #171913;
+    --wd-blue:        #1c1f17;
+    --wd-violet:      #21251b;
+    --wd-wine:        #262b1f;
+    --wd-glow-top:    rgba(185, 196, 126, 0.04);
+    --wd-glow-bottom: rgba(216, 179, 131, 0.03);
+    --wd-accent:      #b9c47e;
+    --wd-accent2:     #d8b383;
+    --wd-text:        #e0e3d2;
+    --wd-panel:       #1c1e16;
+
+    ===== Lime / Olive =====
+
+    Matcha:
+    --wd-night:       #141814;
+    --wd-blue:        #191e19;
+    --wd-violet:      #1e241d;
+    --wd-wine:        #232820;
+    --wd-glow-top:    rgba(190, 220, 160, 0.04);
+    --wd-glow-bottom: rgba(230, 220, 170, 0.03);
+    --wd-accent:      #b7d68a;
+    --wd-accent2:     #e8dca0;
+    --wd-text:        #eef2e6;
+    --wd-panel:       #191e18;
+
+    ===== Green =====
+
+    Sage Light:
+    --wd-night:       #eef2ea;
+    --wd-blue:        #e9eee4;
+    --wd-violet:      #e3e9dd;
+    --wd-wine:        #dde4d6;
+    --wd-glow-top:    rgba(80, 130, 80, 0.04);
+    --wd-glow-bottom: rgba(150, 160, 70, 0.03);
+    --wd-accent:      #4f7d52;
+    --wd-accent2:     #9a7b3c;
+    --wd-text:        #2c3329;
+    --wd-panel:       #e6ebe0;
+
+    Forest:
+    --wd-night:       #0f1a14;
+    --wd-blue:        #132019;
+    --wd-violet:      #17271e;
+    --wd-wine:        #1c2c22;
+    --wd-glow-top:    rgba(120, 220, 140, 0.05);
+    --wd-glow-bottom: rgba(200, 230, 120, 0.04);
+    --wd-accent:      #8fd694;
+    --wd-accent2:     #d4e58a;
+    --wd-text:        #e9f3ea;
+    --wd-panel:       #13201a;
+
+    Sage Night:
+    --wd-night:       #141a17;
+    --wd-blue:        #18201c;
+    --wd-violet:      #1c2621;
+    --wd-wine:        #1f2c2a;
+    --wd-glow-top:    rgba(156, 202, 163, 0.04);
+    --wd-glow-bottom: rgba(212, 197, 143, 0.03);
+    --wd-accent:      #9ccaa3;
+    --wd-accent2:     #d4c58f;
+    --wd-text:        #dce5de;
+    --wd-panel:       #19211d;
+
+    Aurora:
+    --wd-night:       #0b1f2a;
+    --wd-blue:        #0f2a33;
+    --wd-violet:      #12303a;
+    --wd-wine:        #1a2f3f;
+    --wd-glow-top:    rgba(80, 230, 170, 0.05);
+    --wd-glow-bottom: rgba(120, 140, 255, 0.05);
+    --wd-accent:      #5fe0a8;
+    --wd-accent2:     #8b9cff;
+    --wd-text:        #e6f4ef;
+    --wd-panel:       #10262a;
+
+    Charcoal Mint:
+    --wd-night:       #151918;
+    --wd-blue:        #191e1d;
+    --wd-violet:      #1d2423;
+    --wd-wine:        #222a29;
+    --wd-glow-top:    rgba(143, 205, 181, 0.04);
+    --wd-glow-bottom: rgba(157, 180, 224, 0.03);
+    --wd-accent:      #8fcdb5;
+    --wd-accent2:     #9db4e0;
+    --wd-text:        #d9e4e0;
+    --wd-panel:       #1a1f1e;
+
+    Aurora Borealis:
+    --wd-night:       #0d1424;
+    --wd-blue:        #111d33;
+    --wd-violet:      #1b1f3f;
+    --wd-wine:        #261c3d;
+    --wd-glow-top:    rgba(90, 255, 200, 0.06);
+    --wd-glow-bottom: rgba(170, 110, 255, 0.05);
+    --wd-accent:      #7cf5c8;
+    --wd-accent2:     #b99aff;
+    --wd-text:        #e8f3f6;
+    --wd-panel:       #121a2e;
+
+    Emerald:
+    --wd-night:       #08150f;
+    --wd-blue:        #0b1c14;
+    --wd-violet:      #0e241a;
+    --wd-wine:        #122b1f;
+    --wd-glow-top:    rgba(40, 220, 130, 0.06);
+    --wd-glow-bottom: rgba(20, 170, 150, 0.04);
+    --wd-accent:      #34d399;
+    --wd-accent2:     #5fd0e8;
+    --wd-text:        #e3f5ec;
+    --wd-panel:       #0c1b14;
+
+    ===== Teal / Mint / Cyan =====
+
+    Mint:
+    --wd-night:       #0f1a1b;
+    --wd-blue:        #122223;
+    --wd-violet:      #162b2c;
+    --wd-wine:        #1a3234;
+    --wd-glow-top:    rgba(130, 255, 220, 0.05);
+    --wd-glow-bottom: rgba(100, 210, 255, 0.04);
+    --wd-accent:      #7eeed2;
+    --wd-accent2:     #8ed8ff;
+    --wd-text:        #e4f6f3;
+    --wd-panel:       #112021;
+
+    Ocean:
+    --wd-night:       #08161c;
+    --wd-blue:        #0a1e27;
+    --wd-violet:      #0c2433;
+    --wd-wine:        #10263d;
+    --wd-glow-top:    rgba(40, 220, 200, 0.06);
+    --wd-glow-bottom: rgba(70, 130, 255, 0.05);
+    --wd-accent:      #3ee0c8;
+    --wd-accent2:     #5a9bff;
+    --wd-text:        #e2f4f5;
+    --wd-panel:       #0d1e26;
+
+    Twilight Teal:
+    --wd-night:       #101b1f;
+    --wd-blue:        #132227;
+    --wd-violet:      #17292f;
+    --wd-wine:        #1b2f36;
+    --wd-glow-top:    rgba(124, 198, 196, 0.04);
+    --wd-glow-bottom: rgba(166, 184, 232, 0.03);
+    --wd-accent:      #7cc6c4;
+    --wd-accent2:     #a6b8e8;
+    --wd-text:        #d7e6e8;
+    --wd-panel:       #121f24;
+
+    Cyber:
+    --wd-night:       #0d0b1a;
+    --wd-blue:        #140f26;
+    --wd-violet:      #1c1033;
+    --wd-wine:        #24103a;
+    --wd-glow-top:    rgba(0, 240, 255, 0.06);
+    --wd-glow-bottom: rgba(255, 0, 170, 0.05);
+    --wd-accent:      #00e5ff;
+    --wd-accent2:     #ff4fd8;
+    --wd-text:        #eae6ff;
+    --wd-panel:       #140f24;
+
+    Nord:
+    --wd-night:       #1b212b;
+    --wd-blue:        #1f2632;
+    --wd-violet:      #232b38;
+    --wd-wine:        #262e3d;
+    --wd-glow-top:    rgba(136, 192, 208, 0.04);
+    --wd-glow-bottom: rgba(129, 161, 193, 0.04);
+    --wd-accent:      #88c0d0;
+    --wd-accent2:     #b48ead;
+    --wd-text:        #e5e9f0;
+    --wd-panel:       #222834;
+
+    Deep Sea:
+    --wd-night:       #0a1418;
+    --wd-blue:        #0c1b22;
+    --wd-violet:      #0e212b;
+    --wd-wine:        #112432;
+    --wd-glow-top:    rgba(60, 200, 255, 0.05);
+    --wd-glow-bottom: rgba(60, 200, 255, 0.03);
+    --wd-accent:      #4cc9f0;
+    --wd-accent2:     #7b8cff;
+    --wd-text:        #e4f2f7;
+    --wd-panel:       #0f1d24;
+
+    ===== Blue =====
+
+    Frost:
+    --wd-night:       #121a21;
+    --wd-blue:        #15212b;
+    --wd-violet:      #192936;
+    --wd-wine:        #1d2f3f;
+    --wd-glow-top:    rgba(170, 225, 255, 0.05);
+    --wd-glow-bottom: rgba(130, 190, 255, 0.04);
+    --wd-accent:      #9bdcff;
+    --wd-accent2:     #b7a8ff;
+    --wd-text:        #e6f3fa;
+    --wd-panel:       #131f28;
+
+    Steel Blue:
+    --wd-night:       #12181e;
+    --wd-blue:        #151d25;
+    --wd-violet:      #19232d;
+    --wd-wine:        #1d2a36;
+    --wd-glow-top:    rgba(134, 179, 214, 0.04);
+    --wd-glow-bottom: rgba(143, 207, 196, 0.03);
+    --wd-accent:      #86b3d6;
+    --wd-accent2:     #8fcfc4;
+    --wd-text:        #d6e1ea;
+    --wd-panel:       #141c24;
+
+    Soft Night:
+    --wd-night:       #181c21;
+    --wd-blue:        #1c2026;
+    --wd-violet:      #20252c;
+    --wd-wine:        #242a32;
+    --wd-glow-top:    rgba(143, 184, 216, 0.04);
+    --wd-glow-bottom: rgba(200, 162, 200, 0.03);
+    --wd-accent:      #8fb8d8;
+    --wd-accent2:     #c8a2c8;
+    --wd-text:        #d8dee6;
+    --wd-panel:       #1f242b;
+
+    Cloud:
+    --wd-night:       #eceff3;
+    --wd-blue:        #e7ebf0;
+    --wd-violet:      #e2e7ed;
+    --wd-wine:        #dce2ea;
+    --wd-glow-top:    rgba(74, 111, 165, 0.04);
+    --wd-glow-bottom: rgba(122, 95, 160, 0.03);
+    --wd-accent:      #3f649c;
+    --wd-accent2:     #6f5496;
+    --wd-text:        #2b3340;
+    --wd-panel:       #e5e9ef;
+
+    Snow:
+    --wd-night:       #f3f6fa;
+    --wd-blue:        #eef2f7;
+    --wd-violet:      #e8edf4;
+    --wd-wine:        #e2e8f0;
+    --wd-glow-top:    rgba(70, 120, 220, 0.04);
+    --wd-glow-bottom: rgba(120, 90, 220, 0.03);
+    --wd-accent:      #2f6fdc;
+    --wd-accent2:     #7a5ad6;
+    --wd-text:        #1f2937;
+    --wd-panel:       #eaeff6;
+
+    Moonstone:
+    --wd-night:       #191a1d;
+    --wd-blue:        #1d1f22;
+    --wd-violet:      #222427;
+    --wd-wine:        #27292d;
+    --wd-glow-top:    rgba(180, 190, 210, 0.03);
+    --wd-glow-bottom: rgba(210, 190, 170, 0.025);
+    --wd-accent:      #aab6d0;
+    --wd-accent2:     #d0b8a0;
+    --wd-text:        #dcdee2;
+    --wd-panel:       #1e2023;
+
+    Graphite:
+    --wd-night:       #141618;
+    --wd-blue:        #181b1e;
+    --wd-violet:      #1c1f23;
+    --wd-wine:        #202327;
+    --wd-glow-top:    rgba(255, 255, 255, 0.03);
+    --wd-glow-bottom: rgba(255, 255, 255, 0.02);
+    --wd-accent:      #7aa2ff;
+    --wd-accent2:     #c6a0ff;
+    --wd-text:        #eceef1;
+    --wd-panel:       #1a1d20;
+
+    Sapphire:
+    --wd-night:       #0b1224;
+    --wd-blue:        #0e1830;
+    --wd-violet:      #121f3d;
+    --wd-wine:        #17254a;
+    --wd-glow-top:    rgba(70, 120, 255, 0.06);
+    --wd-glow-bottom: rgba(110, 90, 255, 0.04);
+    --wd-accent:      #5b8cff;
+    --wd-accent2:     #9a8cff;
+    --wd-text:        #e6ecfa;
+    --wd-panel:       #0f172b;
+
+    Dusk Blue:
+    --wd-night:       #151a24;
+    --wd-blue:        #19202c;
+    --wd-violet:      #1e2634;
+    --wd-wine:        #262a3e;
+    --wd-glow-top:    rgba(138, 164, 232, 0.04);
+    --wd-glow-bottom: rgba(183, 154, 224, 0.035);
+    --wd-accent:      #8aa4e8;
+    --wd-accent2:     #b79ae0;
+    --wd-text:        #d9dfec;
+    --wd-panel:       #1a2029;
+
+    Slate Violet:
+    --wd-night:       #171820;
+    --wd-blue:        #1b1c26;
+    --wd-violet:      #20212d;
+    --wd-wine:        #252633;
+    --wd-glow-top:    rgba(169, 166, 230, 0.04);
+    --wd-glow-bottom: rgba(134, 182, 217, 0.03);
+    --wd-accent:      #a9a6e6;
+    --wd-accent2:     #86b6d9;
+    --wd-text:        #dcdde8;
+    --wd-panel:       #1b1c25;
+
+    ===== Violet / Purple =====
+
+    Lavender Night:
+    --wd-night:       #16142b;
+    --wd-blue:        #1e1a3a;
+    --wd-violet:      #2a2048;
+    --wd-wine:        #32213f;
+    --wd-glow-top:    rgba(170, 130, 255, 0.05);
+    --wd-glow-bottom: rgba(255, 140, 200, 0.04);
+    --wd-accent:      #b18cff;
+    --wd-accent2:     #ff9ccf;
+    --wd-text:        #eeeaf8;
+    --wd-panel:       #1c1932;
+
+    Lavender Mist:
+    --wd-night:       #191722;
+    --wd-blue:        #1d1b26;
+    --wd-violet:      #221f2d;
+    --wd-wine:        #262333;
+    --wd-glow-top:    rgba(184, 161, 232, 0.04);
+    --wd-glow-bottom: rgba(232, 168, 196, 0.03);
+    --wd-accent:      #b8a1e8;
+    --wd-accent2:     #e8a8c4;
+    --wd-text:        #e2ddef;
+    --wd-panel:       #211e2b;
+
+    Amethyst:
+    --wd-night:       #170f22;
+    --wd-blue:        #1e1330;
+    --wd-violet:      #271840;
+    --wd-wine:        #2e1a45;
+    --wd-glow-top:    rgba(190, 100, 255, 0.06);
+    --wd-glow-bottom: rgba(120, 100, 255, 0.05);
+    --wd-accent:      #c084fc;
+    --wd-accent2:     #f472b6;
+    --wd-text:        #f0e8fb;
+    --wd-panel:       #1b1229;
+
+    Mauve:
+    --wd-night:       #1a1620;
+    --wd-blue:        #1f1a26;
+    --wd-violet:      #251f2d;
+    --wd-wine:        #2b2334;
+    --wd-glow-top:    rgba(195, 162, 214, 0.04);
+    --wd-glow-bottom: rgba(224, 168, 184, 0.03);
+    --wd-accent:      #c3a2d6;
+    --wd-accent2:     #e0a8b8;
+    --wd-text:        #e3dbe8;
+    --wd-panel:       #1e1925;
+
+    ===== Pink / Magenta =====
+
+    Rose Quartz:
+    --wd-night:       #f8eff1;
+    --wd-blue:        #f5e9ec;
+    --wd-violet:      #f1e2e7;
+    --wd-wine:        #ecdbe1;
+    --wd-glow-top:    rgba(200, 80, 120, 0.04);
+    --wd-glow-bottom: rgba(160, 90, 160, 0.03);
+    --wd-accent:      #c2457a;
+    --wd-accent2:     #8a5aa8;
+    --wd-text:        #3a2a30;
+    --wd-panel:       #f3e6ea;
+
+    Cherry Blossom:
+    --wd-night:       #1d1622;
+    --wd-blue:        #251a2a;
+    --wd-violet:      #2e1d31;
+    --wd-wine:        #361f33;
+    --wd-glow-top:    rgba(255, 170, 200, 0.05);
+    --wd-glow-bottom: rgba(255, 170, 200, 0.04);
+    --wd-accent:      #ffa3c4;
+    --wd-accent2:     #a8e6cf;
+    --wd-text:        #f6edf2;
+    --wd-panel:       #22192a;
+
+    ===== Neutral =====
+
+    OLED:
+    --wd-night:       #000000;
+    --wd-blue:        #040405;
+    --wd-violet:      #08080a;
+    --wd-wine:        #0c0c0f;
+    --wd-glow-top:    rgba(255, 255, 255, 0.02);
+    --wd-glow-bottom: rgba(255, 255, 255, 0.015);
+    --wd-accent:      #c8c8d4;
+    --wd-accent2:     #8fa0b8;
+    --wd-text:        #ececf0;
+    --wd-panel:       #0b0b0d;
+
+    (Paper / Snow / Rose Quartz / Sage Light / Cloud = light themes: best used via a
+     switch like userchrome.palette.paper, which also adjusts glass and field colors for light.)
+    */
+
     --en-popup-bg: color-mix(in srgb, var(--wd-panel) 88%, transparent) !important;
 
     --wd-gradient:
@@ -803,7 +1165,7 @@ Paper:
     --toolbar-color: var(--wd-text) !important;
     --lwt-text-color: var(--wd-text) !important;
     --toolbar-field-color: var(--wd-text) !important;
-    --toolbar-field-focus-color: #ffffff !important;
+    --toolbar-field-focus-color: var(--wd-text) !important;
     --arrowpanel-background: var(--wd-panel) !important;
     --arrowpanel-color: var(--wd-text) !important;
     --arrowpanel-border-color: rgba(255, 255, 255, 0.12) !important;
@@ -842,6 +1204,13 @@ Paper:
      userchrome.palette.softnight      Soft Night (augenschonend, kühl)
      userchrome.palette.mist           Lavender Mist (augenschonend, Lavendel)
      userchrome.palette.paper          Paper (hell, wie Papier)
+     userchrome.palette.snow           Snow (hell, kühles Weiß)
+     userchrome.palette.rosequartz     Rose Quartz (hell, zartes Rosa)
+     userchrome.palette.sagelight      Sage Light (hell, Salbei)
+     userchrome.palette.cloud          Cloud (hell, Wolkengrau)
+
+     Helle Palette selbst in den Palette-Block oben kopiert? Dann zusätzlich
+     Boolean "userchrome.light" = true setzen (siehe Abschnitt 37).
      ------------------------------------------------------------------- */
   @media -moz-pref("userchrome.palette.polarlight") { /* Polarlight */
     :root {
@@ -988,18 +1357,34 @@ Paper:
       --wd-night: #f4efe6; --wd-blue: #f1ebe1; --wd-violet: #eee7dc; --wd-wine: #ebe4d7;
       --wd-glow-top: rgba(143, 85, 48, 0.04); --wd-glow-bottom: rgba(63, 107, 85, 0.03);
       --wd-accent: #8f5530; --wd-text: #3b3631; --wd-panel: #efe9df;
-      /* heller Modus: Glas dunkel statt hell, Felder hell */
-      color-scheme: light;
-      --en-glass:        color-mix(in srgb, black 5%, transparent);
-      --en-glass-hover:  color-mix(in srgb, black 8%, transparent);
-      --en-glass-border: color-mix(in srgb, black 12%, transparent);
-      --en-glass-shine:  inset 0 1px 0 color-mix(in srgb, white 60%, transparent);
-      --en-active-border: color-mix(in srgb, var(--wd-accent) 55%, black);
-      --toolbar-field-background-color: #fbf8f2 !important;
-      --toolbar-field-focus-background-color: #ffffff !important;
-      --toolbar-field-focus-color: #2a2622 !important;
-      --toolbar-field-border-color: rgba(0, 0, 0, 0.10) !important;
-      --arrowpanel-border-color: rgba(0, 0, 0, 0.12) !important;
+    }
+  }
+  @media -moz-pref("userchrome.palette.snow") { /* Snow (hell, kühles Weiß) */
+    :root {
+      --wd-night: #f3f6fa; --wd-blue: #eef2f7; --wd-violet: #e8edf4; --wd-wine: #e2e8f0;
+      --wd-glow-top: rgba(70, 120, 220, 0.04); --wd-glow-bottom: rgba(120, 90, 220, 0.03);
+      --wd-accent: #2f6fdc; --wd-text: #1f2937; --wd-panel: #eaeff6;
+    }
+  }
+  @media -moz-pref("userchrome.palette.rosequartz") { /* Rose Quartz (hell, zartes Rosa) */
+    :root {
+      --wd-night: #f8eff1; --wd-blue: #f5e9ec; --wd-violet: #f1e2e7; --wd-wine: #ecdbe1;
+      --wd-glow-top: rgba(200, 80, 120, 0.04); --wd-glow-bottom: rgba(160, 90, 160, 0.03);
+      --wd-accent: #c2457a; --wd-text: #3a2a30; --wd-panel: #f3e6ea;
+    }
+  }
+  @media -moz-pref("userchrome.palette.sagelight") { /* Sage Light (hell, Salbei) */
+    :root {
+      --wd-night: #eef2ea; --wd-blue: #e9eee4; --wd-violet: #e3e9dd; --wd-wine: #dde4d6;
+      --wd-glow-top: rgba(80, 130, 80, 0.04); --wd-glow-bottom: rgba(150, 160, 70, 0.03);
+      --wd-accent: #4f7d52; --wd-text: #2c3329; --wd-panel: #e6ebe0;
+    }
+  }
+  @media -moz-pref("userchrome.palette.cloud") { /* Cloud (hell, Wolkengrau) */
+    :root {
+      --wd-night: #eceff3; --wd-blue: #e7ebf0; --wd-violet: #e2e7ed; --wd-wine: #dce2ea;
+      --wd-glow-top: rgba(74, 111, 165, 0.04); --wd-glow-bottom: rgba(122, 95, 160, 0.03);
+      --wd-accent: #3f649c; --wd-text: #2b3340; --wd-panel: #e5e9ef;
     }
   }
 
@@ -2100,9 +2485,10 @@ arrowscrollbox::part(scrollbox),
     transition: none !important;
   }
 }
+
+
 /* ---------------------------------------------------------------------
    32) SIDEBAR-ICONS UNTEN (Einstellungen / Stern) im Glas-Stil
-   Ans ENDE der userChrome.css kopieren.
    Die Knöpfe sind Firefox-"moz-button"s im Shadow-DOM von <sidebar-main>.
    Von außen kommt man nur über Variablen ran -> hier werden alle Zustände
    (normal, Hover, gedrückt, aktiv/ausgewählt) auf Glas umgestellt.
@@ -2134,12 +2520,14 @@ sidebar-main {
   --button-text-color-primary-active:         var(--en-text) !important;
   --button-border-color-primary:              var(--en-active-border) !important;
 }
+
+
 /* ---------------------------------------------------------------------
    33) DOWNLOADS – panel and Library window (Windrad / glass)
    Panel: one glass surface (no box inside a box), compact rows with the
    file icon in a small tile, name + details, round action button that
    shows up on hover, progress bar in the theme gradient.
-   Library (Ctrl+Shift+Y → Downloads): slim list rows instead of big cards.
+   Library (Ctrl+Shift+Y -> Downloads): slim list rows instead of big cards.
    --------------------------------------------------------------------- */
 :root {
   --en-dl-width: 360px;
@@ -2337,6 +2725,7 @@ sidebar-main {
   #downloadsPanel *, #places #downloadsListBox * { transition: none !important; }
 }
 
+
 /* ---------------------------------------------------------------------
    34) LIBRARY WINDOW (Ctrl+Shift+O / Ctrl+Shift+Y) – Windrad glass
    History, Downloads, Tags, Bookmarks: one gradient for the whole window,
@@ -2461,6 +2850,8 @@ sidebar-main {
 
 /* scrollbars in the accent color */
 #places scrollbar, #places * { scrollbar-color: color-mix(in srgb, var(--lib-accent) 55%, transparent) transparent; }
+
+
 /* ---------------------------------------------------------------------
    35) RECHTSKLICK- & KONTEXTMENÜS in den Farben des aktuellen Themes
    Gilt für alle Menüs: Rechtsklick auf Seiten, Tabs, Links, Lesezeichen,
@@ -2477,7 +2868,7 @@ sidebar-main {
   --cm-line:   color-mix(in srgb, var(--cm-text) 12%, transparent);
   --cm-hover:  color-mix(in srgb, var(--cm-accent) 20%, transparent);
 }
- 
+
 menupopup {
   --panel-background: var(--cm-panel) !important;
   --panel-color: var(--cm-text) !important;
@@ -2487,7 +2878,7 @@ menupopup {
   --panel-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
   color: var(--cm-text) !important;
 }
- 
+
 /* Hintergrund: leichter Verlauf in den Theme-Farben */
 menupopup::part(content) {
   background:
@@ -2497,7 +2888,7 @@ menupopup::part(content) {
   border-radius: 12px !important;
   padding: 6px !important;
 }
- 
+
 /* Einträge */
 menupopup > menuitem,
 menupopup > menu {
@@ -2520,7 +2911,7 @@ menupopup > menu[disabled] {
 menupopup > menuitem[disabled][_moz-menuactive] {
   background-color: transparent !important;
 }
- 
+
 /* Tastenkürzel rechts + Unterstrich-Buchstaben */
 menupopup .menu-accel,
 menupopup .menu-iconic-accel {
@@ -2530,7 +2921,7 @@ menupopup menuitem[_moz-menuactive] .menu-accel,
 menupopup menuitem[_moz-menuactive] .menu-iconic-accel {
   color: var(--cm-accent) !important;
 }
- 
+
 /* Häkchen / Radio-Punkte / Untermenü-Pfeile in der Akzentfarbe */
 menupopup menuitem[checked="true"] .menu-iconic-left,
 menupopup menuitem[type="checkbox"][checked="true"],
@@ -2540,7 +2931,7 @@ menupopup menuitem[type="radio"][checked="true"] {
 }
 menupopup menu > .menu-right { fill: color-mix(in srgb, var(--cm-text) 60%, transparent) !important; }
 menupopup menu[_moz-menuactive] > .menu-right { fill: var(--cm-accent) !important; }
- 
+
 /* Trennlinien */
 menupopup > menuseparator {
   border-top-color: var(--cm-line) !important;
@@ -2550,7 +2941,7 @@ menupopup > menuseparator {
 menupopup > menuseparator::before {
   border-top-color: var(--cm-line) !important;
 }
- 
+
 /* Obere Leiste im Seiten-Rechtsklick (Zurück / Vor / Neu laden / Stern) */
 #context-navigation {
   margin-bottom: 2px !important;
@@ -2570,4 +2961,218 @@ menupopup > menuseparator::before {
 #context-bookmarkpage[starred="true"] {
   fill: var(--cm-accent) !important;
 }
- 
+
+
+/* ---------------------------------------------------------------------
+   36) DROPDOWNS AUF WEBSEITEN (<select>) lesbar machen
+   Die Seite gibt jedem Eintrag eine eigene (oft weiße) Hintergrundfarbe,
+   Abschnitt 35 setzt aber die Theme-Textfarbe darüber -> helle Schrift
+   auf weißem Grund. Hier wird der Hintergrund ans Theme angepasst.
+   --------------------------------------------------------------------- */
+#ContentSelectDropdown > menupopup {
+  color-scheme: dark !important;
+  --panel-background: #1b2219 !important;
+  --panel-color: #eef2e6 !important;
+  background: #1b2219 !important;
+  appearance: none !important;
+}
+#ContentSelectDropdown > menupopup::part(content),
+#ContentSelectDropdown > menupopup::part(arrowscrollbox),
+#ContentSelectDropdown > menupopup::part(arrowscrollbox-scrollbox) {
+  background: #1b2219 !important;
+}
+#ContentSelectDropdown menuitem,
+#ContentSelectDropdown menucaption {
+  background: transparent !important;
+  color: #1b2219 !important;            /* dunkle Schrift auf hellem Grund */
+}
+#ContentSelectDropdown menuitem[_moz-menuactive] {
+  background: #2c3a26 !important;       /* Hover: dunkel */
+  color: #eef2e6 !important;            /* Hover: helle Schrift */
+}
+#ContentSelectDropdown menuitem[selected="true"]:not([_moz-menuactive]) {
+  background: #e3ebd5 !important;       /* ausgewählter Eintrag: hellgrün */
+  color: #1b2219 !important;
+  font-weight: 600 !important;
+}
+#ContentSelectDropdown menuitem[disabled] {
+  color: rgba(27, 34, 25, 0.4) !important;
+}
+
+
+/* ---------------------------------------------------------------------
+   37) HELL-MODUS (für helle Paletten)
+   Wird automatisch aktiv bei: paper, snow, rosequartz, sagelight, cloud
+   Eigene helle Palette? about:config -> Boolean "userchrome.light" = true
+   Warum nötig: Firefox rendert die Oberfläche sonst weiter im dunklen
+   Modus, und Glas/Rahmen/Download-Karten sind oben mit Weiß gemischt ->
+   auf hellem Grund unsichtbar. Hier wird alles auf Dunkel-auf-Hell gedreht.
+   Dieser Abschnitt steht absichtlich ganz am Ende (gewinnt gegen alles
+   davor).
+   --------------------------------------------------------------------- */
+@media -moz-pref("userchrome.light"),
+       -moz-pref("userchrome.palette.paper"),
+       -moz-pref("userchrome.palette.snow"),
+       -moz-pref("userchrome.palette.rosequartz"),
+       -moz-pref("userchrome.palette.sagelight"),
+       -moz-pref("userchrome.palette.cloud") {
+
+  /* Firefox-Farbschema hart auf "hell" zwingen (auch gegen Windows-Dunkelmodus
+     und Firefox' eigene :root[lwtheme]-Regeln) */
+  :root,
+  :root[lwtheme],
+  :root[lwtheme-brighttext],
+  #navigator-toolbox,
+  #titlebar,
+  #nav-bar,
+  #TabsToolbar,
+  #tabbrowser-tabs,
+  #sidebar-main,
+  sidebar-main,
+  #urlbar,
+  panel,
+  menupopup {
+    color-scheme: light !important;
+  }
+
+  :root {
+    /* Firefox-Design-Token (Nova): Text & Symbole */
+    --text-color: var(--wd-text) !important;
+    --text-color-deemphasized: color-mix(in srgb, var(--wd-text) 65%, transparent) !important;
+    --icon-color: var(--wd-text) !important;
+    --icon-color-default: var(--wd-text) !important;
+    --icon-color-deemphasized: color-mix(in srgb, var(--wd-text) 65%, transparent) !important;
+    --button-text-color: var(--wd-text) !important;
+    --button-text-color-ghost: var(--wd-text) !important;
+    --button-text-color-hover: var(--wd-text) !important;
+    --button-text-color-ghost-hover: var(--wd-text) !important;
+    --tab-unselected-color: var(--wd-text) !important;
+    --tab-icon-overlay-fill: var(--wd-text) !important;
+    --urlbar-icon-fill: var(--wd-text) !important;
+    --toolbar-field-icon-fill: var(--wd-text) !important;
+
+    /* Text & Symbole dunkel */
+    --toolbar-color: var(--wd-text) !important;
+    --lwt-text-color: var(--wd-text) !important;
+    --tab-selected-textcolor: var(--wd-text) !important;
+    --lwt-tab-text: var(--wd-text) !important;
+    --toolbarbutton-icon-fill: var(--wd-text) !important;
+    --toolbar-field-color: var(--wd-text) !important;
+    --toolbar-field-focus-color: var(--wd-text) !important;
+    --arrowpanel-color: var(--wd-text) !important;
+    --sidebar-text-color: var(--wd-text) !important;
+
+    /* Adressleisten-Feld hell */
+    --toolbar-field-background-color: color-mix(in srgb, white 55%, var(--wd-night)) !important;
+    --toolbar-field-focus-background-color: #ffffff !important;
+    --toolbar-field-border-color: color-mix(in srgb, var(--wd-text) 16%, transparent) !important;
+    --arrowpanel-border-color: color-mix(in srgb, var(--wd-text) 16%, transparent) !important;
+
+    /* Glas: dunkel statt weiß getönt */
+    --en-glass:         color-mix(in srgb, var(--wd-text) 6%, transparent) !important;
+    --en-glass-hover:   color-mix(in srgb, var(--wd-text) 11%, transparent) !important;
+    --en-glass-border:  color-mix(in srgb, var(--wd-text) 16%, transparent) !important;
+    --en-glass-shine:   inset 0 1px 0 color-mix(in srgb, white 70%, transparent) !important;
+    --en-active-border: color-mix(in srgb, var(--wd-accent) 60%, black) !important;
+    --en-active-bg:     color-mix(in srgb, var(--wd-accent) 20%, white) !important;
+    --en-open-border:   color-mix(in srgb, var(--wd-accent) 55%, var(--wd-text)) !important;
+    --en-popup-bg:      color-mix(in srgb, var(--wd-panel) 94%, transparent) !important;
+    --en-text:          var(--wd-text) !important;
+    --en-text-muted:    color-mix(in srgb, var(--wd-text) 65%, transparent) !important;
+    --en-domain-color:  color-mix(in srgb, var(--wd-accent) 85%, black) !important;
+    --en-close-hover:   #c0334a !important;
+    --en-splitter-color: color-mix(in srgb, var(--wd-text) 18%, transparent) !important;
+
+    /* Download-Panel */
+    --en-dl-row:   color-mix(in srgb, var(--wd-text) 5%, transparent) !important;
+    --en-dl-hover: color-mix(in srgb, var(--wd-text) 10%, transparent) !important;
+    --en-dl-line:  color-mix(in srgb, var(--wd-text) 14%, transparent) !important;
+    --en-dl-muted: color-mix(in srgb, var(--wd-text) 62%, transparent) !important;
+
+    /* Kontextmenüs */
+    --cm-line:  color-mix(in srgb, var(--wd-text) 16%, transparent) !important;
+    --cm-hover: color-mix(in srgb, var(--wd-accent) 22%, transparent) !important;
+  }
+
+  /* Library-Fenster */
+  #places {
+    --lib-line:  color-mix(in srgb, var(--wd-text) 14%, transparent) !important;
+    --lib-hover: color-mix(in srgb, var(--wd-text) 9%, transparent) !important;
+    --lib-sel:   color-mix(in srgb, var(--wd-accent) 22%, transparent) !important;
+  }
+
+  /* fest eingebaute Weiß-Mischungen -> dunkel */
+  #downloadsPanel .downloadTypeIcon,
+  #places #downloadsListBox .downloadTypeIcon {
+    background: color-mix(in srgb, var(--wd-text) 8%, transparent) !important;
+  }
+  #downloadsPanel .downloadProgress {
+    background: color-mix(in srgb, var(--wd-text) 14%, transparent) !important;
+  }
+  #places #searchFilter,
+  #places #detailsPane input,
+  #places #detailsPane textarea,
+  #places #detailsPane menulist {
+    background: color-mix(in srgb, white 60%, var(--wd-night)) !important;
+    color: var(--wd-text) !important;
+  }
+
+  /* Tab-Titel (horizontal + vertikal), Sidebar, "New Tab", Fenster-Knöpfe:
+     Text explizit dunkel, nicht abhängig von Firefox' Variablen */
+  .tabbrowser-tab,
+  .tabbrowser-tab .tab-label,
+  .tabbrowser-tab .tab-text,
+  .tabbrowser-tab .tab-label-container,
+  #tabbrowser-tabs .tab-label,
+  #vertical-tabs-newtab-button,
+  #vertical-tabs-newtab-button .toolbarbutton-text,
+  #tabs-newtab-button,
+  #new-tab-button,
+  #sidebar-main,
+  sidebar-main,
+  .titlebar-button,
+  #urlbar-input,
+  #urlbar .urlbar-input,
+  .urlbarView-row,
+  .urlbarView-title,
+  .urlbarView-url {
+    color: var(--wd-text) !important;
+  }
+  .tabbrowser-tab:not([selected]) .tab-label {
+    opacity: 0.85 !important;
+  }
+
+  /* Symbole die über context-fill gezeichnet werden */
+  .titlebar-button,
+  .toolbarbutton-badge-stack,
+  #identity-icon,
+  #tracking-protection-icon,
+  #star-button-box .urlbar-icon,
+  #vertical-tabs-newtab-button .toolbarbutton-icon,
+  #tabs-newtab-button .toolbarbutton-icon,
+  #new-tab-button .toolbarbutton-icon {
+    fill: var(--wd-text) !important;
+    color: var(--wd-text) !important;
+    -moz-context-properties: fill, fill-opacity, stroke;
+  }
+  .titlebar-button > .toolbarbutton-icon,
+  .titlebar-button .button-icon {
+    fill: var(--wd-text) !important;
+  }
+
+  /* Symbole in der Toolbar sicher dunkel */
+  #nav-bar toolbarbutton,
+  #TabsToolbar toolbarbutton,
+  #sidebar-main {
+    color: var(--wd-text) !important;
+    fill: currentColor;
+  }
+  #nav-bar toolbarbutton > .toolbarbutton-icon,
+  #TabsToolbar toolbarbutton > .toolbarbutton-icon,
+  #urlbar .urlbar-icon,
+  #tabbrowser-tabs .tab-close-button,
+  #tabbrowser-tabs .tab-icon-overlay {
+    fill: var(--wd-text) !important;
+    -moz-context-properties: fill, fill-opacity;
+  }
+}
